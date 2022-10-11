@@ -1,10 +1,13 @@
 import './App.css';
+import RouterWrapper from './components/RouterWrapper/RouterWrapper';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola mundo, comienza la nueva app, y con ello el fin del bootcamp!!!!</h1>
-      <s style={{textDecoration:'none'}}>Happy codding!</s>
+        
+          <RouterWrapper />
+        
     </div>
   );
 }
