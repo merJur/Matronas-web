@@ -1,8 +1,33 @@
-import React from "react";
-import("./LoginScreen.css");
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+import "./LoginScreen.css";
+import { login } from './../../services/AuthService';
+import { useAuthContext } from './../../context/AuthContext';
+
 
 const LoginScreen = () => {
-  const handleChange = (event) => {};
+  const { login: loginContext } = useAuthContext()
+  const [ user, setUser ] = useState({ email:'', password: '' })
+  const navigate = useNavigate()
+
+  const handleOnChange = (event) => {
+    const { name, value } = event.target
+    setUser( {
+      ...user,
+      [name]: value,
+    })
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+
+    login(user)
+      .then(response => {
+        loginContext(response.accessToken, () => {
+          navigate('/users/:id') 
+        })
+      })
+  }
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -17,7 +42,7 @@ const LoginScreen = () => {
                         Login
                       </p>
 
-                      <form className="mx-1 mx-md-4">
+                      <form  onSubmit={(event) => onSubmit(event)} className="mx-1 mx-md-4">
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -26,7 +51,7 @@ const LoginScreen = () => {
                               name="email"
                               placeholder="e-mail"
                               className="form-control"
-                              onChange={(event) => handleChange(event)}
+                              onChange={(event) => handleOnChange(event)}
                             />
                             <label
                               className="form-label"
@@ -45,7 +70,7 @@ const LoginScreen = () => {
                               name="password"
                               placeholder="password"
                               className="form-control"
-                              onChange={(event) => handleChange(event)}
+                              onChange={(event) => handleOnChange(event)}
                             />
                             <label
                               className="form-label"

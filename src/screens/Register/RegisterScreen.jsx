@@ -1,29 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { createUser, getUserDetail, updateUser, deleteUser } from '../../services/UserServices'
-import { useParams  } from 'react-router-dom';
+import React, {  useState } from 'react';
+import { createUser } from '../../services/UserServices'
 import("./RegisterScreen.css");
 
 
-const RegisterScreen = ({ edit }) => {
+const RegisterScreen = () => {
   const [user, setUser] = useState({ email: '', name: '', password: '', phone: '', userType: '' }) 
-  const { id } = useParams()
+  
+   const handleOnChange = (event) => {
+    const { name, value } = event
 
-  // useEffect(() => {
-  //   createUser()
-  //     .then(user => setUser(user))
-  //   }, [user])
-
-  const handleOnChange = (event) => {
-    const { name, email, password, phone, userType, value } = event.target
     setUser({
-      ...user, 
-      [name]: value,
-      [email]: value,
-      [password]: value,
-      [phone]: value,
-      [userType]: value
+      ...user,
+      [name]: value
     })
-   }
+  }
 
    const onSubmit = (event) => {
     event.preventDefault()

@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect } from 'react'
 import { setToken, getAccessToken, logout } from '../store/AccessTokenStore'
 import { verifyJWT } from '../helpers/jwtHelper'
-import { getUserDetail } from '../services/UserServices'
+import { getCurrentUser } from '../services/UserServices'
 
 
 
@@ -13,18 +13,18 @@ export const useAuthContext = () => useContext(AuthContext)
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState()
 
-  const login = (token) => {
+  const login = (token, cb) => {
     setToken(token)
 
-    getUserDetail()
+    getUser(cb)
   }
 
-  const getUserDetail = (cb) => {
-    getUserDetail()
+  const getUser = (cb) => {
+    getCurrentUser()
       .then(user => {
         setUser(user)
 
-        // cb && cb() Callback por si queremos hacer algo justo al traernos el usuario
+        cb && cb()  //  Callback por si queremos hacer algo justo al traernos el usuario
       })
   }
 
@@ -35,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
       if (!verifyJWT(getAccessToken())) {
         logout()
       } else {
-        //getUserDetail()
+        getUser()
       }
     }
   }, [])
@@ -43,7 +43,7 @@ export const AuthContextProvider = ({ children }) => {
   const value = {
     user,
     login,
-    getUserDetail
+    getUser
   }
 
   return (
