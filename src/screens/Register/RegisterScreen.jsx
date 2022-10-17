@@ -1,21 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
+import { createUser, getUserDetail, updateUser, deleteUser } from '../../services/UserServices'
+import { useParams  } from 'react-router-dom';
 import("./RegisterScreen.css");
 
-const Register = () => {
-  const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
+const RegisterScreen = ({ edit }) => {
+  const [user, setUser] = useState({ email: '', name: '', password: '', phone: '', userType: '' }) 
+  const { id } = useParams()
 
+  // useEffect(() => {
+  //   createUser()
+  //     .then(user => setUser(user))
+  //   }, [user])
+
+  const handleOnChange = (event) => {
+    const { name, email, password, phone, userType, value } = event.target
+    setUser({
+      ...user, 
+      [name]: value,
+      [email]: value,
+      [password]: value,
+      [phone]: value,
+      [userType]: value
+    })
+   }
+
+   const onSubmit = (event) => {
+    event.preventDefault()
+
+      createUser(user).then(user => console.log(user))
+    }
+
+console.log('....................', user);
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -31,7 +47,7 @@ const Register = () => {
                       </p>
 
                       <form
-                        onSubmit={(event) => handleSubmit(event)}
+                        onSubmit={(event) => onSubmit(event)}
                         className="mx-1 mx-md-4"
                       >
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -42,14 +58,13 @@ const Register = () => {
                               name="userName"
                               placeholder="User name"
                               className="form-control"
-                              onChange={(event) => handleChange(event)}
+                              onChange={(event) => handleOnChange(event)}
                             />
                             <label
                               className="form-label"
                               htmlFor="form3Example1c"
                             >
-                              Your Name
-                            </label>
+                              </label>
                           </div>
                         </div>
 
@@ -61,14 +76,12 @@ const Register = () => {
                               name="email"
                               placeholder="e-mail"
                               className="form-control"
-                              onChange={(event) => handleChange(event)}
+                              onChange={(event) => handleOnChange(event)}
                             />
                             <label
                               className="form-label"
                               htmlFor="form3Example3c"
-                            >
-                              Your Email
-                            </label>
+                            >  </label>
                           </div>
                         </div>
 
@@ -80,21 +93,52 @@ const Register = () => {
                               name="password"
                               placeholder="Enter password"
                               className="form-control"
-                              onChange={(event) => handleChange(event)}
+                              onChange={(event) => handleOnChange(event)}
                             />
                             <label
                               className="form-label"
                               htmlFor="form3Example4c"
-                            >
-                              Password
-                            </label>
+                            > </label>
+                          </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Phone number"
+                              className="form-control"
+                              onChange={(event) => handleOnChange(event)}
+                            />
+                            <label
+                              className="form-label"
+                              htmlFor="form3Example1c"
+                            > </label>
+                          </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              name="userType"
+                              placeholder="Type of user: client or proffesional"
+                              className="form-control"
+                              onChange={(event) => handleOnChange(event)}
+                            />
+                            <label
+                              className="form-label"
+                              htmlFor="form3Example1c"
+                            > </label>
                           </div>
                         </div>
 
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4" style={{width: '20rem'}}>
                           <button
-                            type="button"
+                            type="submit"
                             className="btn btn-primary btn-lg"
+                            
                           >
                             Register
                           </button>
@@ -105,6 +149,7 @@ const Register = () => {
                             <a
                               href="/login/google"
                               className="btn btn-danger border-0"
+                              style={{width: '20rem', margin: '0 auto', padding: '0.5rem 1 rem', fontSize: '1.25rem'}}
                             >
                               <i className="fa fa-google"></i>
                               Sign up with Google
@@ -131,4 +176,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterScreen;

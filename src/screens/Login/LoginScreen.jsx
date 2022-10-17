@@ -55,23 +55,26 @@ const LoginScreen = () => {
                             </label>
                           </div>
                         </div>
-                        <div className="d-grid gap-2 mt-2">
-                          <a
-                            href="/login/google"
-                            class="btn btn-danger border-0"
-                          >
-                            <i className="fa fa-google"></i>
-                            Inicia sesión con Google
-                          </a>
-                        </div>
-
+                     
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
-                            type="button"
+                            type="submit"
                             className="btn btn-primary btn-lg"
+                            style={{width: '20rem'}}                            
                           >
                             Login
                           </button>
+                        </div>
+
+                        <div className="d-grid gap-2 mt-2">
+                          <a
+                            href="/login/google"
+                            className="btn btn-danger border-0"
+                            style={{width: '20rem', margin: '0 auto', padding: '0.5rem 1 rem', fontSize: '1.25rem'}}
+                          >
+                            <i className="fa fa-google"></i>
+                            Login with Google
+                          </a>
                         </div>
                       </form>
                     </div>
