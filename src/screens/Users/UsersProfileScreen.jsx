@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getUserDetail } from '../../services/UserServices';
 
@@ -17,7 +17,7 @@ const UsersProfileScreen = () => {
     }, [id, navigate])
     return (
         <div>
-            <h1>Hola profile de {`${user.name}`}</h1>            
+            <h1>Hola profile de {`${user.name }`}</h1>            
         </div>
     );
 };

@@ -1,28 +1,60 @@
-import React, {  useState } from 'react';
-import { createUser } from '../../services/UserServices'
-import"./RegisterScreen.css"
-import { useNavigate } from 'react-router-dom';
-
+import React, { useState, useEffect } from "react";
+import { createUser } from "../../services/UserServices";
+import "./RegisterScreen.css";
+import { useNavigate } from "react-router-dom";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { gapi } from "gapi-script";
 
 const RegisterScreen = () => {
-  const [user, setUser] = useState({ email: '', name: '', password: '', phone: '', userType: '' }) 
-  
-  const navigate = useNavigate()
+  const [user, setUser, profile, setProfile ] = useState({
+    email: "",
+    name: "",
+    password: "",
+    phone: "",
+    userType: "",
+  });
+
+  const navigate = useNavigate();
 
   const onSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-      createUser(user).then(user => {
-        console.log('usuario creado  👍 ---------------------',user)
-        navigate('/login')
-      })
-    }
+    createUser(user).then((user) => {
+      console.log("usuario creado  👍 ---------------------", user);
+      navigate("/login");
+    });
+  };
 
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
-        setPasswordShown(!passwordShown)
+    setPasswordShown(!passwordShown);
+  };
+
+  
+
+  const clientId = '315326601748-mihd0mo5n5ptonikrhb3ppch6c1h14d1.apps.googleusercontent.com'
+
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId,
+        scope: "",
+      });
+    };
+    gapi.load("client:auth2", initClient);
+  });
+
+  const onSuccess = (res) => {
+    console.log('success:', res)
+    navigate('/users/:id');
   }
-console.log('.................... aparexco dos veces?', user);
+  const onFailure = (err) => {
+    console.log('failed:', err);
+  }
+  const logOut = () => {
+    setProfile(null)
+  }
+
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -34,7 +66,7 @@ console.log('.................... aparexco dos veces?', user);
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                       Register
+                        Register
                       </p>
 
                       <form
@@ -49,7 +81,9 @@ console.log('.................... aparexco dos veces?', user);
                               name="userName"
                               placeholder="User name"
                               className="form-control"
-                              onChange={event => setUser({...user, name:event.target.value})}
+                              onChange={(event) =>
+                                setUser({ ...user, name: event.target.value })
+                              }
                               value={user.name}
                             />
                           </div>
@@ -63,7 +97,9 @@ console.log('.................... aparexco dos veces?', user);
                               name="email"
                               placeholder="e-mail"
                               className="form-control"
-                              onChange={event => setUser({...user, email:event.target.value})}
+                              onChange={(event) =>
+                                setUser({ ...user, email: event.target.value })
+                              }
                               value={user.email}
                             />
                           </div>
@@ -73,14 +109,21 @@ console.log('.................... aparexco dos veces?', user);
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type={passwordShown ? 'text' : 'password'}
+                              type={passwordShown ? "text" : "password"}
                               name="password"
                               placeholder="Enter password"
                               className="form-control"
-                              onChange={event => setUser({...user, password:event.target.value})}
+                              onChange={(event) =>
+                                setUser({
+                                  ...user,
+                                  password: event.target.value,
+                                })
+                              }
                               value={user.password}
                             />
-                            <button onClick={togglePassword}>Show Password</button>
+                            <button onClick={togglePassword}>
+                              Show Password
+                            </button>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -91,7 +134,9 @@ console.log('.................... aparexco dos veces?', user);
                               name="phone"
                               placeholder="Phone number"
                               className="form-control"
-                              onChange={event => setUser({...user, phone:event.target.value})}
+                              onChange={(event) =>
+                                setUser({ ...user, phone: event.target.value })
+                              }
                               value={user.phone}
                             />
                           </div>
@@ -104,31 +149,46 @@ console.log('.................... aparexco dos veces?', user);
                               name="userType"
                               placeholder="Type of user: client or professional"
                               className="form-control"
-                              onChange={event => setUser({...user, userType:event.target.value})}
+                              onChange={(event) =>
+                                setUser({
+                                  ...user,
+                                  userType: event.target.value,
+                                })
+                              }
                               value={user.userType}
                             />
                           </div>
                         </div>
 
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4" style={{width: '20rem'}}>
+                        <div
+                          className="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                          style={{ width: "20rem" }}
+                        >
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg"
-                         >
+                          >
                             Register
                           </button>
                         </div>
                         <div className="d-grid gap-2">
-                          
                           <div className="d-grid gap-2 mt-2">
-                            <a
-                              href="/login/google"
-                              className="btn btn-danger border-0"
-                              style={{width: '20rem', margin: '0 auto', padding: '0.5rem 1 rem', fontSize: '1.25rem'}}
-                            >
-                              <i className="fa fa-google"></i>
-                              Sign up with Google
-                            </a>
+                            {profile ? (
+                              <div>
+                                <img src={profile.imageUrl} alt='userPicture' />
+                                <p>Name: {profile.name} </p>
+                                <GoogleLogout clientId={clientId} buttonText='Log out' onLogoutSuccess={logOut} />
+                              </div>
+                            ) : (
+                              <GoogleLogin
+                              clientId={clientId}
+                              buttonText='Register with Google'
+                              onSuccess={onSuccess}
+                              onFailure={onFailure}
+                              cookiePolicy={'single_host_origin'}
+                              isSignedIn={true}
+                              />
+                            )}
                           </div>
                         </div>
                       </form>
