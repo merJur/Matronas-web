@@ -1,27 +1,28 @@
 import React, {  useState } from 'react';
 import { createUser } from '../../services/UserServices'
-import("./RegisterScreen.css");
+import"./RegisterScreen.css"
+import { useNavigate } from 'react-router-dom';
 
 
 const RegisterScreen = () => {
   const [user, setUser] = useState({ email: '', name: '', password: '', phone: '', userType: '' }) 
   
-   const handleOnChange = (event) => {
-    const { name, value } = event
+  const navigate = useNavigate()
 
-    setUser({
-      ...user,
-      [name]: value
-    })
-  }
-
-   const onSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault()
 
-      createUser(user).then(user => console.log(user))
+      createUser(user).then(user => {
+        console.log('usuario creado  👍 ---------------------',user)
+        navigate('/login')
+      })
     }
 
-console.log('....................', user);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePassword = () => {
+        setPasswordShown(!passwordShown)
+  }
+console.log('.................... aparexco dos veces?', user);
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -33,7 +34,7 @@ console.log('....................', user);
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Sign up
+                       Register
                       </p>
 
                       <form
@@ -48,13 +49,9 @@ console.log('....................', user);
                               name="userName"
                               placeholder="User name"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={event => setUser({...user, name:event.target.value})}
+                              value={user.name}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example1c"
-                            >
-                              </label>
                           </div>
                         </div>
 
@@ -66,12 +63,9 @@ console.log('....................', user);
                               name="email"
                               placeholder="e-mail"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={event => setUser({...user, email:event.target.value})}
+                              value={user.email}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example3c"
-                            >  </label>
                           </div>
                         </div>
 
@@ -79,16 +73,14 @@ console.log('....................', user);
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type="password"
+                              type={passwordShown ? 'text' : 'password'}
                               name="password"
                               placeholder="Enter password"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={event => setUser({...user, password:event.target.value})}
+                              value={user.password}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example4c"
-                            > </label>
+                            <button onClick={togglePassword}>Show Password</button>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -99,12 +91,9 @@ console.log('....................', user);
                               name="phone"
                               placeholder="Phone number"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={event => setUser({...user, phone:event.target.value})}
+                              value={user.phone}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example1c"
-                            > </label>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -113,14 +102,11 @@ console.log('....................', user);
                             <input
                               type="text"
                               name="userType"
-                              placeholder="Type of user: client or proffesional"
+                              placeholder="Type of user: client or professional"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={event => setUser({...user, userType:event.target.value})}
+                              value={user.userType}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example1c"
-                            > </label>
                           </div>
                         </div>
 
@@ -128,8 +114,7 @@ console.log('....................', user);
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg"
-                            
-                          >
+                         >
                             Register
                           </button>
                         </div>

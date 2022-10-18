@@ -23,10 +23,15 @@ const LoginScreen = () => {
 
     login(user)
       .then(response => {
+        console.log('log de login****', user)
         loginContext(response.accessToken, () => {
           navigate('/users/:id') 
         })
       })
+  }
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePassword = () => {
+        setPasswordShown(!passwordShown)
   }
   return (
     <div>
@@ -53,12 +58,6 @@ const LoginScreen = () => {
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example3c"
-                            >
-                              Your Email
-                            </label>
                           </div>
                         </div>
 
@@ -66,18 +65,13 @@ const LoginScreen = () => {
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type="password"
+                              type={passwordShown ? 'text' : 'password'}
                               name="password"
                               placeholder="password"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                             />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example4c"
-                            >
-                              Password
-                            </label>
+                            <button onClick={togglePassword}>Show Password</button>
                           </div>
                         </div>
                      

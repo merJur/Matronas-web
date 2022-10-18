@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-const UsersFormScreen = () => {
+const UsersUpdateScreen = () => {
     const [user, setUser] = useState({ email: '', name: ''}) 
   const { id } = useParams()
 
@@ -39,7 +39,7 @@ console.log('....................', user);
     );
 };
 
-export default UsersFormScreen;
+export default UsersUpdateScreen;
 
 
 
