@@ -10,9 +10,8 @@ const Navbar = () => {
                    <Link  style={{marginLeft:'5rem'}}className="navbar-brand" to='/'>Home</Link>
                    <Link className="navbar-brand" to='/register'>Register</Link>
                    <Link style={{marginRight:'5rem'}}className='navbar-brand' to='/login'>Login</Link>
-                   {/*<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                     <span className="navbar-toggler-icon"></span>
-                    </button>*/}
+                   <Link to="/profile" style={{marginLeft:'5rem'}}className="navbar-brand">Profile</Link>
+                   <Link to={"/blogs"} style={{textDecoration:'none'}} className={'navbar-brand'}> Blogs List</Link>  
                  </div>
             </nav>
         </div>

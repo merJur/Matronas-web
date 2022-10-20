@@ -1,47 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { getUserDetail } from '../../services/UserServices';
-import { logout } from '../../store/AccessTokenStore'; 
-import { GoogleLogout } from 'react-google-login';
-import { useAuthContext } from './../../context/AuthContext';
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../store/AccessTokenStore";
+import { useAuthContext } from "./../../context/AuthContext";
 
 
 const UsersProfileScreen = () => {
+  const { user } = useAuthContext();
 
-    const { user } = useAuthContext()
+  const navigate = useNavigate();
 
-    // const { id } = useParams()
-    const navigate = useNavigate()
+  const logoutSession = () => {
+    logout();
+    navigate("/");
+  };
 
-    // useEffect(() => {
-    //     getUserDetail(id)
-    //     .then(user => {
-    //         setUser(user)
-    //     })
-    // }, [id, navigate])
-
-
-    const logoutSession = () => {
-        logout() || GoogleLogout()
-       }
-    const navigateHome = () => {
-        if (logoutSession) {
-            navigate('/')           
-        }
-    }
-
-
-
-    return (
-        <div>
+  return (
+    <div>
+      <h1>Hola profile de {`${user && user.name}`}</h1>
+      <div>
+        <button onClick={() => logoutSession()} className={'btn btn-primary'} > Logout </button>
+        {user && user.isAdmin ? (
+          <div>
+            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Create post</Link>            
+            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Users List</Link>     
+            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Users List</Link>     
             
-            <h1>Hola profile de {`${user && user.name }`}</h1>            
-            <div>
-                <button onClick={logoutSession && navigateHome}> Logout </button>
-                {user && user.isAdmin ? <Link to={'/blog/create'}> <p> Create post</p> </Link> : null}
-            </div>
-        </div>
-    );
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
 };
 
-export default UsersProfileScreen;        
+export default UsersProfileScreen;

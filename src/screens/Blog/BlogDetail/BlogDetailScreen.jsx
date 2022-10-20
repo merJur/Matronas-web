@@ -5,14 +5,13 @@ import { useParams } from 'react-router-dom';
 
 
 const BlogDetailScreen = () => {
-    const { id } = useParams
+    const { id } = useParams()
+    console.log(id);
 
     const [ blog, setBlogs ] = useState([])
+
     useEffect(() => {
-        getBlogDetail(id)
-        .then(blog => {
-            setBlogs(blog)
-        } )
+        getBlogDetail(id).then(blog => setBlogs(blog)).catch(err => console.log(err))
     }, [id])
 
 

@@ -9,6 +9,8 @@ import UsersProfileScreen from "../../screens/Users/UsersProfileScreen";
 import BlogFormScreen from './../../screens/Blog/BlogForm/BlogFormScreen';
 import BlogListScreen from "../../screens/Blog/BlogList/BlogListScreen";
 import BlogDetailScreen from './../../screens/Blog/BlogDetail/BlogDetailScreen';
+import UsersListScreen from '../../screens/Users/UsersListScreen'
+import UsersUpdateScreen from "../../screens/Users/UsersUpdateScreen";
 
 const RouterWrapper = () => {
   return (
@@ -19,9 +21,12 @@ const RouterWrapper = () => {
         <Route path="/register" element={<RegisterScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/profile" element={<UsersProfileScreen />} />
-        <Route path="/blog/create" element={<BlogFormScreen />} />
+        <Route path="/users" element={<UsersListScreen />} />
+        <Route path='/users/:id/update' element={<UsersUpdateScreen />} />
         <Route path="/blogs" element={<BlogListScreen />} />
+        <Route path="/blog/create" element={<BlogFormScreen />} />
         <Route path="/blog/:id" element={<BlogDetailScreen />} />
+        
       </Routes>
     </BrowserRouter>
   );

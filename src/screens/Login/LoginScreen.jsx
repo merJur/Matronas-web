@@ -21,8 +21,7 @@ const LoginScreen = () => {
     event.preventDefault();
 
     login(user).then((response) => {
-      console.log("log de login****", user);
-      loginContext(response.accessToken, () => {
+        loginContext(response.accessToken, () => {
         navigate("/profile");
       });
     });

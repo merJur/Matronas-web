@@ -22,7 +22,7 @@ const BlogFormScreen = () => {
 
         createBlog(blog).then((blog) => {
             console.log('entrada de blog creada...........', blog);
-            navigate('/blogs/:id') //aún no existe
+            navigate('/blogs') 
         })
      }
 
