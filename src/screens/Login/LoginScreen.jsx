@@ -1,38 +1,36 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import "./LoginScreen.css";
-import { login } from './../../services/AuthService';
-import { useAuthContext } from './../../context/AuthContext';
-
+import { login } from "./../../services/AuthService";
+import { useAuthContext } from "./../../context/AuthContext";
 
 const LoginScreen = () => {
-  const { login: loginContext } = useAuthContext()
-  const [ user, setUser ] = useState({ email:'', password: '' })
-  const navigate = useNavigate()
+  const { login: loginContext } = useAuthContext();
+  const [user, setUser] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
   const handleOnChange = (event) => {
-    const { name, value } = event.target
-    setUser( {
+    const { name, value } = event.target;
+    setUser({
       ...user,
       [name]: value,
-    })
+    });
   };
 
   const onSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    login(user)
-      .then(response => {
-        console.log('log de login****', user)
-        loginContext(response.accessToken, () => {
-          navigate('/users/:id') 
-        })
-      })
-  }
+    login(user).then((response) => {
+      console.log("log de login****", user);
+      loginContext(response.accessToken, () => {
+        navigate("/profile");
+      });
+    });
+  };
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
-        setPasswordShown(!passwordShown)
-  }
+    setPasswordShown(!passwordShown);
+  };
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -47,7 +45,10 @@ const LoginScreen = () => {
                         Login
                       </p>
 
-                      <form  onSubmit={(event) => onSubmit(event)} className="mx-1 mx-md-4">
+                      <form
+                        onSubmit={(event) => onSubmit(event)}
+                        className="mx-1 mx-md-4"
+                      >
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -65,35 +66,26 @@ const LoginScreen = () => {
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type={passwordShown ? 'text' : 'password'}
+                              type={passwordShown ? "text" : "password"}
                               name="password"
                               placeholder="password"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                             />
-                            <button onClick={togglePassword}>Show Password</button>
+                            <button onClick={togglePassword} type='button'>
+                              Show Password
+                            </button>
                           </div>
                         </div>
-                     
+
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg"
-                            style={{width: '20rem'}}                            
+                            style={{ width: "20rem" }}
                           >
                             Login
                           </button>
-                        </div>
-
-                        <div className="d-grid gap-2 mt-2">
-                          <a
-                            href="/login/google"
-                            className="btn btn-danger border-0"
-                            style={{width: '20rem', margin: '0 auto', padding: '0.5rem 1 rem', fontSize: '1.25rem'}}
-                          >
-                            <i className="fa fa-google"></i>
-                            Login with Google
-                          </a>
                         </div>
                       </form>
                     </div>

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { createUser } from "../../services/UserServices";
 import "./RegisterScreen.css";
 import { useNavigate } from "react-router-dom";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
-import { gapi } from "gapi-script";
+
+
 
 const RegisterScreen = () => {
-  const [user, setUser, profile, setProfile ] = useState({
+  const [user, setUser ] = useState({
     email: "",
     name: "",
     password: "",
@@ -29,32 +29,6 @@ const RegisterScreen = () => {
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-
-  
-
-  const clientId = '315326601748-mihd0mo5n5ptonikrhb3ppch6c1h14d1.apps.googleusercontent.com'
-
-  useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        clientId,
-        scope: "",
-      });
-    };
-    gapi.load("client:auth2", initClient);
-  });
-
-  const onSuccess = (res) => {
-    console.log('success:', res)
-    navigate('/users/:id');
-  }
-  const onFailure = (err) => {
-    console.log('failed:', err);
-  }
-  const logOut = () => {
-    setProfile(null)
-  }
-
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -121,7 +95,7 @@ const RegisterScreen = () => {
                               }
                               value={user.password}
                             />
-                            <button onClick={togglePassword}>
+                            <button onClick={togglePassword} type='button'>
                               Show Password
                             </button>
                           </div>
@@ -170,26 +144,6 @@ const RegisterScreen = () => {
                           >
                             Register
                           </button>
-                        </div>
-                        <div className="d-grid gap-2">
-                          <div className="d-grid gap-2 mt-2">
-                            {profile ? (
-                              <div>
-                                <img src={profile.imageUrl} alt='userPicture' />
-                                <p>Name: {profile.name} </p>
-                                <GoogleLogout clientId={clientId} buttonText='Log out' onLogoutSuccess={logOut} />
-                              </div>
-                            ) : (
-                              <GoogleLogin
-                              clientId={clientId}
-                              buttonText='Register with Google'
-                              onSuccess={onSuccess}
-                              onFailure={onFailure}
-                              cookiePolicy={'single_host_origin'}
-                              isSignedIn={true}
-                              />
-                            )}
-                          </div>
                         </div>
                       </form>
                     </div>
