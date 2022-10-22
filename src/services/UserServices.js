@@ -2,7 +2,10 @@ import createHttp from './BaseService'
 
 const http = createHttp(true)
 
-export const getUsers = () => http.get('/users')
+export const getUsers = () => {
+    debugger
+    return http.get('/users')
+}
 export const getCurrentUser = () => http.get('/users/me')
 export const getUserDetail = (id) => http.get(`/users/${id}`)
 export const createUser = (body) => http.post('/users', body)

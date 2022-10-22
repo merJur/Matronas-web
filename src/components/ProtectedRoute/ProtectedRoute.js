@@ -5,10 +5,9 @@ import { getAccessToken } from './../../store/AccessTokenStore';
 
 const ProtectedRoute = ({children}) => {
     const token = getAccessToken()
-    const { user } = useAuthContext()
+    const { user, isAuthFetched } = useAuthContext()
 
-    console.log(user);
-    if (!token && !user) {
+    if (isAuthFetched && !user) {
         return <Navigate to='/login' replace />
     }
     return children

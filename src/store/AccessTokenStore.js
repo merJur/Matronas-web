@@ -8,8 +8,7 @@ export const setToken = (token) => {
 };
 
 export const getAccessToken = () => {
-  //console.log(window.location);
-  return accessToken; 
+    return accessToken; 
 };
 
 export const logout = () => {

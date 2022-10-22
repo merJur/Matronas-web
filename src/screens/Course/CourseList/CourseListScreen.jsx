@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
 
 const CourseListScreen = () => {
-    const refresh = () => {
-        getCourse().then((courses) => {
-          setCourses(courses);
-        });
-      };
-      const [courses, setCourses] = useState([], refresh());
+      const [courses, setCourses] = useState([]);
       const { user } = useAuthContext();
     
       const handleDelete = (id) => {

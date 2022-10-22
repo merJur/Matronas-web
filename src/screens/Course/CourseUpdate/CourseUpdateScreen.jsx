@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { updateCourse  } from '../../../services/CourseServices';
+import { updateCourse, getCourseDetail } from '../../../services/CourseServices';
 import { useParams, useNavigate } from 'react-router-dom';
 
 
@@ -9,7 +9,7 @@ const CourseUpdateScreen = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        updateCourse(id).then((updatedCourse) => updatedCourse)
+        getCourseDetail(id).then((fetchedCourse) => fetchedCourse)
     }, [id])
 
     const handleOnChange = (event) => {
@@ -23,9 +23,8 @@ const CourseUpdateScreen = () => {
       const onSubmit = (event) => {
         event.preventDefault();
     
-        updateCourse(course).then((course) => {
-          console.log(course);
-          navigate("/courses");
+        updateCourse(id, course).then((course) => {
+            navigate("/courses");
         });
       };
 

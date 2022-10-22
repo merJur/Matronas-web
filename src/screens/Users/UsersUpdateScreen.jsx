@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { updateUser } from "../../services/UserServices";
+import { updateUser, getUserDetail } from "../../services/UserServices";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UsersUpdateScreen = () => {
@@ -12,7 +12,7 @@ const UsersUpdateScreen = () => {
     setPasswordShown(!passwordShown);
   };
   useEffect(() => {
-    updateUser(id).then((updatedUser) => updatedUser);
+    getUserDetail(id).then((fetchedUser) => fetchedUser);
   }, [id]);
 
   const handleOnChange = (event) => {
@@ -26,14 +26,13 @@ const UsersUpdateScreen = () => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    updateUser(user).then((user) => {
+    updateUser(id, user).then((user) => {
       console.log(user);
       navigate("/users");
     });
   };
 
-  console.log("....................", user);
-  return (
+   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
         <div className="container h-100">
