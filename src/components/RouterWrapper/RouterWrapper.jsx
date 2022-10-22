@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import HomeScreen from "../../screens/Home/HomeScreen";
 import RegisterScreen from "../../screens/Register/RegisterScreen";
@@ -7,10 +8,12 @@ import LoginScreen from './../../screens/Login/LoginScreen';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";  //falta por usar, sólo está creado
 import UsersProfileScreen from "../../screens/Users/UsersProfileScreen";
 
+
 const RouterWrapper = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <Header/>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
