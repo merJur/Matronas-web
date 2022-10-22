@@ -1,4 +1,6 @@
-import http from './BaseService'
+import createHttp from './BaseService'
+
+const http = createHttp(false)
 
 export const getCourse = () => http.get('/courses').then((res) => res)
 export const getCourseDetail = (id) => http.get(`/courses/${id}`).then((res) => res)

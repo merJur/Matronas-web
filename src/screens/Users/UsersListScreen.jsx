@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { getUsers, deleteUser } from "../../services/UserServices";
 
 const UsersListScreen = () => {
-    const needRefresh = () => {
+    const refresh = () => {
         getUsers().then((users) => {
           setUsers(users);
         });
       };
 
-  const [users, setUsers, ] = useState([], needRefresh());
+  const [users, setUsers, ] = useState([], refresh());
 
   const handleDelete = (id) => {
     deleteUser(id).then((deletedUser) => {

@@ -22,7 +22,7 @@ const UsersProfileScreen = () => {
           <div>
             <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Create post</Link>            
             <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Users List</Link>     
-            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Users List</Link>     
+            <Link to={"/course/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}>Create course </Link>     
             
           </div>
         ) : null}

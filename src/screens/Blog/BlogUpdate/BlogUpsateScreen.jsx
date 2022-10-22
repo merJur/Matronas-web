@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { createCourse } from "../../../services/CourseServices";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { updateBlog, getBlogDetail } from "../../../services/BlogServices";
 
-const CourseFormScreen = () => {
-  const [course, setCourse] = useState({
-    name: "",
-    typeOfCourse: "",
-    schedule: "",
-    hours: "",
-    price: "",
-    description: "",
+const BlogUpsateScreen = () => {
+  const [blog, setBlog] = useState({
+    title: "",
+    prof: "",
     image: "",
+    keyWords: "",
+    post: "",
   });
+  const { id } = useParams();
   const navigate = useNavigate();
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-
-    createCourse(course).then((course) => {
-      console.log("entrada de course creada...........", course);
-      navigate("/courses");
-    });
-  };
+  useEffect(() => {
+    getBlogDetail(id).then((fetchedBlog) => setBlog(fetchedBlog));
+  }, [id]);
 
   const handleOnChange = (event) => {
     const { name, value } = event.target;
-    setCourse({
-      ...course,
+    setBlog({
+      ...blog,
       [name]: value,
     });
   };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    updateBlog(id ,blog).then((blog) => navigate("/blogs"));
+  };
+
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -41,7 +41,7 @@ const CourseFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        New course
+                        Entry your post!
                       </p>
 
                       <form
@@ -53,11 +53,11 @@ const CourseFormScreen = () => {
                           <div className="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              name="name"
-                              placeholder="Course´s name"
+                              name="title"
+                              placeholder="Title"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                              value={course.name}
+                              value={blog.title}
                             />
                           </div>
                         </div>
@@ -68,10 +68,10 @@ const CourseFormScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Course´s image"
+                              placeholder="Post´s image"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                              value={course.image}
+                              value={blog.image}
                             />
                           </div>
                         </div>
@@ -79,23 +79,11 @@ const CourseFormScreen = () => {
                           <div className="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              name="typeOfCourse"
-                              placeholder="Activity, Presencial-Course, or On-line-Course"
+                              name="keyWords"
+                              placeholder="Key words"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                              value={course.typeOfCourse}
-                            />
-                          </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="description"
-                              placeholder="description"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.description}
+                              value={blog.keyWords}
                             />
                           </div>
                         </div>
@@ -103,43 +91,17 @@ const CourseFormScreen = () => {
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type="date"
-                              name="schedule"
+                              type="textarea"
+                              name="post"
                               placeholder="Enter the text of the post"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                              value={course.schedule}
+                              value={blog.post}
                               style={{ heigth: "5rem" }}
                             />
                           </div>
                         </div>
 
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                          <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="hours"
-                              placeholder="Dating hours"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.hours}
-                            />
-                          </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                          <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="price"
-                              placeholder="price os the course"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.price}
-                            />
-                          </div>
-                        </div>
                         <div
                           className="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
                           style={{ width: "20rem" }}
@@ -148,7 +110,7 @@ const CourseFormScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            new course done!
+                            Update post
                           </button>
                         </div>
                       </form>
@@ -164,4 +126,4 @@ const CourseFormScreen = () => {
   );
 };
 
-export default CourseFormScreen;
+export default BlogUpsateScreen;

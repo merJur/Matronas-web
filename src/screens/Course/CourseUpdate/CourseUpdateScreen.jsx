@@ -1,38 +1,37 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { createCourse } from "../../../services/CourseServices";
+import React, { useState, useEffect } from 'react';
+import { updateCourse  } from '../../../services/CourseServices';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const CourseFormScreen = () => {
-  const [course, setCourse] = useState({
-    name: "",
-    typeOfCourse: "",
-    schedule: "",
-    hours: "",
-    price: "",
-    description: "",
-    image: "",
-  });
-  const navigate = useNavigate();
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+const CourseUpdateScreen = () => {
+    const [course, setCourse] = useState(({ name:'', image:'', typeOfCourse:'', description:'', schedule:'', hours:'', price:''}))
+    const { id } = useParams()
+    const navigate = useNavigate()
 
-    createCourse(course).then((course) => {
-      console.log("entrada de course creada...........", course);
-      navigate("/courses");
-    });
-  };
+    useEffect(() => {
+        updateCourse(id).then((updatedCourse) => updatedCourse)
+    }, [id])
 
-  const handleOnChange = (event) => {
-    const { name, value } = event.target;
-    setCourse({
-      ...course,
-      [name]: value,
-    });
-  };
-  return (
-    <div>
-      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+    const handleOnChange = (event) => {
+        const { name, value } = event.target;
+        setCourse({
+          ...course,
+          [name]: value,
+        });
+      };
+    
+      const onSubmit = (event) => {
+        event.preventDefault();
+    
+        updateCourse(course).then((course) => {
+          console.log(course);
+          navigate("/courses");
+        });
+      };
+
+    return (
+        <div>
+            <section className="vh-100" style={{ backgroundColor: "#eee" }}>
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -148,7 +147,7 @@ const CourseFormScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            new course done!
+                            update course
                           </button>
                         </div>
                       </form>
@@ -160,8 +159,8 @@ const CourseFormScreen = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default CourseFormScreen;
+export default CourseUpdateScreen;
