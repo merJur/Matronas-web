@@ -3,7 +3,7 @@ import { updateUser, getUserDetail } from "../../services/UserServices";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UsersUpdateScreen = () => {
-  const [user, setUser] = useState({ email: "", name: "" });
+  const [user, setUser] = useState({ email: "", name: "", password:'', phone:'', userType:'' });
   const { id } = useParams();
   const [passwordShown, setPasswordShown] = useState(false);
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const UsersUpdateScreen = () => {
     setPasswordShown(!passwordShown);
   };
   useEffect(() => {
-    getUserDetail(id).then((fetchedUser) => fetchedUser);
+    getUserDetail(id).then((fetchedUser) => setUser(fetchedUser));
   }, [id]);
 
   const handleOnChange = (event) => {

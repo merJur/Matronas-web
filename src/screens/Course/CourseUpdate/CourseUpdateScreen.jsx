@@ -1,36 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { updateCourse, getCourseDetail } from '../../../services/CourseServices';
-import { useParams, useNavigate } from 'react-router-dom';
-
+import React, { useState, useEffect } from "react";
+import {
+  updateCourse,
+  getCourseDetail,
+} from "../../../services/CourseServices";
+import { useParams, useNavigate } from "react-router-dom";
 
 const CourseUpdateScreen = () => {
-    const [course, setCourse] = useState(({ name:'', image:'', typeOfCourse:'', description:'', schedule:'', hours:'', price:''}))
-    const { id } = useParams()
-    const navigate = useNavigate()
+  const [course, setCourse] = useState({
+    name: "",
+    image: "",
+    typeOfCourse: "",
+    description: "",
+    schedule: "",
+    hours: "",
+    price: "",
+  });
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        getCourseDetail(id).then((fetchedCourse) => fetchedCourse)
-    }, [id])
+  useEffect(() => {
+    getCourseDetail(id).then((fetchedCourse) => setCourse(fetchedCourse));
+  }, [id]);
 
-    const handleOnChange = (event) => {
-        const { name, value } = event.target;
-        setCourse({
-          ...course,
-          [name]: value,
-        });
-      };
-    
-      const onSubmit = (event) => {
-        event.preventDefault();
-    
-        updateCourse(id, course).then((course) => {
-            navigate("/courses");
-        });
-      };
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setCourse({
+      ...course,
+      [name]: value,
+    });
+  };
 
-    return (
-        <div>
-            <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    updateCourse(id, course).then((course) => {
+      navigate("/courses");
+    });
+  };
+
+  return (
+    <div>
+      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -39,7 +49,7 @@ const CourseUpdateScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        New course
+                        Edit course
                       </p>
 
                       <form
@@ -158,8 +168,8 @@ const CourseUpdateScreen = () => {
           </div>
         </div>
       </section>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default CourseUpdateScreen;

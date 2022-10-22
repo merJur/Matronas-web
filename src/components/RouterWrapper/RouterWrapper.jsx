@@ -10,7 +10,7 @@ import UsersProfileScreen from "../../screens/Users/UsersProfileScreen";
 import BlogFormScreen from './../../screens/Blog/BlogForm/BlogFormScreen';
 import BlogListScreen from "../../screens/Blog/BlogList/BlogListScreen";
 import BlogDetailScreen from './../../screens/Blog/BlogDetail/BlogDetailScreen';
-import BlogUpdateScreen from '../../screens/Blog/BlogUpdate/BlogUpsateScreen'
+import BlogUpdateScreen from '../../screens/Blog/BlogUpdate/BlogUpdateScreen'
 import UsersListScreen from '../../screens/Users/UsersListScreen'
 import UsersUpdateScreen from "../../screens/Users/UsersUpdateScreen";
 import CourseListScreen from '../../screens/Course/CourseList/CourseListScreen'
@@ -27,11 +27,11 @@ const RouterWrapper = () => {
       {isAuthFetched ? (
       <Routes>
         {/* rutas no protegidas: home, resgiter, login, coursesList y blogList*/}
-        <Route path="/" element={<UnprotectedRoute ><HomeScreen /></UnprotectedRoute>} />
-        <Route path="/register" element={<UnprotectedRoute ><RegisterScreen /></UnprotectedRoute>} />
-        <Route path="/login" element={ <UnprotectedRoute ><LoginScreen /></UnprotectedRoute>} />
-        <Route path="/blogs" element={<UnprotectedRoute ><BlogListScreen /></UnprotectedRoute>} />
-        <Route path='/courses' element={<UnprotectedRoute> <CourseListScreen /></UnprotectedRoute>} />
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/register" element={<RegisterScreen />} />
+        <Route path="/login" element={ <LoginScreen />} />
+        <Route path="/blogs" element={<BlogListScreen />} />
+        <Route path='/courses' element={ <CourseListScreen />} />
 
 
         {/*rutas protegidas -> hace falta tener token -> estar logado */}

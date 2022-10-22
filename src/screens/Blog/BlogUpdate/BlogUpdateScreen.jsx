@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { updateBlog, getBlogDetail } from "../../../services/BlogServices";
 
-const BlogUpsateScreen = () => {
+const BlogUpdateScreen = () => {
   const [blog, setBlog] = useState({
     title: "",
     prof: "",
@@ -26,8 +26,7 @@ const BlogUpsateScreen = () => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
-    updateBlog(id ,blog).then((blog) => navigate("/blogs"));
+    updateBlog(id, blog).then((blog) => navigate("/blogs"));
   };
 
   return (
@@ -126,4 +125,4 @@ const BlogUpsateScreen = () => {
   );
 };
 
-export default BlogUpsateScreen;
+export default BlogUpdateScreen;
