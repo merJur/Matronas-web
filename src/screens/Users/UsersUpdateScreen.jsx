@@ -1,35 +1,38 @@
-import React, { useState } from "react";
-import { createUser } from "../../services/UserServices";
-import "./RegisterScreen.css";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { updateUser, getUserDetail } from "../../services/UserServices";
+import { useParams, useNavigate } from "react-router-dom";
 
-
-
-const RegisterScreen = () => {
-  const [user, setUser ] = useState({
-    email: "",
-    name: "",
-    password: "",
-    phone: "",
-    userType: "",
-  });
-
+const UsersUpdateScreen = () => {
+  const [user, setUser] = useState({ email: "", name: "", password:'', phone:'', userType:'' });
+  const { id } = useParams();
+  const [passwordShown, setPasswordShown] = useState(false);
   const navigate = useNavigate();
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+  useEffect(() => {
+    getUserDetail(id).then((fetchedUser) => setUser(fetchedUser));
+  }, [id]);
+
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    createUser(user).then((user) => {
-      console.log("usuario creado  👍 ---------------------", user);
-      navigate("/login");
+    updateUser(id, user).then((user) => {
+      console.log(user);
+      navigate("/users");
     });
   };
 
-  const [passwordShown, setPasswordShown] = useState(false);
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
-  return (
+   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
         <div className="container h-100">
@@ -40,7 +43,7 @@ const RegisterScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Register
+                        Update user
                       </p>
 
                       <form
@@ -55,9 +58,7 @@ const RegisterScreen = () => {
                               name="userName"
                               placeholder="User name"
                               className="form-control"
-                              onChange={(event) =>
-                                setUser({ ...user, name: event.target.value })
-                              }
+                              onChange={(event) => handleOnChange(event)}
                               value={user.name}
                             />
                           </div>
@@ -71,9 +72,7 @@ const RegisterScreen = () => {
                               name="email"
                               placeholder="e-mail"
                               className="form-control"
-                              onChange={(event) =>
-                                setUser({ ...user, email: event.target.value })
-                              }
+                              onChange={(event) => handleOnChange(event)}
                               value={user.email}
                             />
                           </div>
@@ -87,15 +86,10 @@ const RegisterScreen = () => {
                               name="password"
                               placeholder="Enter password"
                               className="form-control"
-                              onChange={(event) =>
-                                setUser({
-                                  ...user,
-                                  password: event.target.value,
-                                })
-                              }
+                              onChange={(event) => handleOnChange(event)}
                               value={user.password}
                             />
-                            <button onClick={togglePassword} type='button'>
+                            <button onClick={togglePassword} type="button">
                               Show Password
                             </button>
                           </div>
@@ -123,12 +117,7 @@ const RegisterScreen = () => {
                               name="userType"
                               placeholder="Type of user: client or professional"
                               className="form-control"
-                              onChange={(event) =>
-                                setUser({
-                                  ...user,
-                                  userType: event.target.value,
-                                })
-                              }
+                              onChange={(event) => handleOnChange(event)}
                               value={user.userType}
                             />
                           </div>
@@ -142,17 +131,10 @@ const RegisterScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Register
+                            Update user info
                           </button>
                         </div>
                       </form>
-                    </div>
-                    <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                      <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                        className="img-fluid"
-                        alt="Register img"
-                      />
                     </div>
                   </div>
                 </div>
@@ -165,4 +147,4 @@ const RegisterScreen = () => {
   );
 };
 
-export default RegisterScreen;
+export default UsersUpdateScreen;
