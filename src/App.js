@@ -3,6 +3,7 @@ import RouterWrapper from './components/RouterWrapper/RouterWrapper';
 
 
 function App() {
+  console.log('entra app')
   return (
     <div className="App">
         

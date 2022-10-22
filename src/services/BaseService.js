@@ -8,6 +8,7 @@ const createHttp = (useAccessToken = false) => {
 
   // interceptors response / request
   http.interceptors.request.use((request) => {
+    debugger
     if (useAccessToken && getAccessToken()) {
       // entro en este if si quiero enviar cabecera y además hay token en el localStorage
       // meto el token en la cabezera Authorization

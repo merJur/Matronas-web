@@ -3,7 +3,12 @@ import { setToken, getAccessToken, logout } from '../store/AccessTokenStore'
 import { verifyJWT } from '../helpers/jwtHelper'
 import { getCurrentUser } from '../services/UserServices'
 
-const AuthContext = createContext()
+const AuthContext = createContext({
+  user: {},
+  login: () => {},
+  getUser: () => {},
+  isAuthFetched: true
+})
 
 export const useAuthContext = () => useContext(AuthContext)
 

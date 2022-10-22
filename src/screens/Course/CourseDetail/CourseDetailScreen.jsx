@@ -9,7 +9,7 @@ const CourseDetailScreen = () => {
     useEffect(() => {
         getCourseDetail(id).then(course => setCourse(course)).catch(err => console.log(err))
 
-    })
+    }, [])
     return (
         <div>
             <h2>{course.name}</h2>
