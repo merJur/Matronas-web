@@ -5,7 +5,7 @@ import ('../Header/Header.css');
 const Header = () => {
     return (
       <div>
-        <nav className="navbar bg-light fixed-top">
+        <nav className="navbar bg-light fixed-top  header">
   <div className="container-fluid">
     <Link className="navbar-brand" to="#">OM Matronas</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
