@@ -7,7 +7,15 @@ const Header = () => {
       <div>
         <nav className="navbar bg-light fixed-top  header">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="#">OM Matronas</Link>
+    <Link className="navbar-brand" to="/">
+    <img
+              src="/logo-om-matronas.png"
+              width="80"
+              height=""
+              className="d-inline-block align-top"
+              alt="Logo Om Matronas"
+            />
+    </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span className="navbar-toggler-icon"></span>
     </button>

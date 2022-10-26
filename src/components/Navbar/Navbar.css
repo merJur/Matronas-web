@@ -1,5 +1,9 @@
 .my-own-navbar{
-    background-color: #AB4966
+    background-color: #AB4966;
+    position: fixed !important;
+    top: 55px;
+    left: 0px;
+    right: 0px;
 }
 .searchDiv{
     display: flex;
