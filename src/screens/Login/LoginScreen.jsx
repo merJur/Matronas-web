@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginScreen.css";
 import { login } from "./../../services/AuthService";
 import { useAuthContext } from "./../../context/AuthContext";
@@ -41,7 +41,7 @@ const LoginScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Login
+                        Iniciar sesión
                       </p>
 
                       <form
@@ -67,12 +67,12 @@ const LoginScreen = () => {
                             <input
                               type={passwordShown ? "text" : "password"}
                               name="password"
-                              placeholder="password"
+                              placeholder="Contraseña"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                             />
                             <button onClick={togglePassword} type='button'>
-                              Show Password
+                              Ver la contraseña
                             </button>
                           </div>
                         </div>
@@ -83,10 +83,11 @@ const LoginScreen = () => {
                             className="btn btn-primary btn-lg"
                             style={{ width: "20rem" }}
                           >
-                            Login
+                            Entrar
                           </button>
                         </div>
                       </form>
+                      <p>¿No tienes cuenta? pincha {<Link to='/register'><strong>aquí</strong></Link>}</p>
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img

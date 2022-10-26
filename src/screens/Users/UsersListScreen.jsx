@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { getUsers, deleteUser } from "../../services/UserServices";
 
 const UsersListScreen = () => {
   const [users, setUsers, ] = useState([]);
 
+  const fetchUsers = useCallback(() => {
+    getUsers().then((user) => {
+      setUsers(user);
+    });
+  }, [])
+
   const handleDelete = (id) => {
-    deleteUser(id).then((deletedUser) => {
-      const newUsers = users.filter((user) => user.id !== deletedUser.id);
-      setUsers(newUsers);
+    deleteUser(id)
+    .then((deletedUser) => {
+      fetchUsers()
     });
   };
 
  
   useEffect(() => {
-    getUsers().then((users) => {
-      setUsers(users)
-    });
+    fetchUsers()
   }, []);
 
   return (

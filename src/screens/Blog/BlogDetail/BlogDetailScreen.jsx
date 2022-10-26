@@ -19,10 +19,16 @@ const BlogDetailScreen = () => {
     return (
         <div>
             <div>
-                <h2>{blog.title}</h2>
+                <h2 >{blog.title}</h2>
                 <p>imagen</p>
             </div>
-            <p>{blog.keyWords}</p>
+            <div>
+                <h3>Palabras clave</h3>
+                <p>{' ' + blog.keyWords+ ' '}</p>
+            </div>
+            <div className='post-text'>
+                <p>{blog.post}</p>
+            </div>
         </div>
     );
 };
