@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
+import Card from "../Card/Card";
 import HomeScreen from "../../screens/Home/HomeScreen";
 import RegisterScreen from "../../screens/Register/RegisterScreen";
 import LoginScreen from "./../../screens/Login/LoginScreen";
@@ -34,6 +35,7 @@ const RouterWrapper = () => {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/blogs" element={<BlogListScreen />} />
           <Route path="/courses" element={<CourseListScreen />} />
+          <Route path="/aboutus" element={<Card />} />
 
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route

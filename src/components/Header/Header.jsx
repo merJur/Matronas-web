@@ -21,14 +21,8 @@ const Header = () => {
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="#">Inicio</Link>
           </li>
-          <li className="nav-item dropdown">
-            <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sobre Nosotras
-            </Link>
-            <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="#">Elena Rivilla Lizano</Link></li>
-              <li><Link className="dropdown-item" to="#">Rosa Mª Sánchez Molina</Link></li>
-            </ul>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">Sobre Nosotras</Link>
           </li>
           <li className="nav-item dropdown">
             <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
