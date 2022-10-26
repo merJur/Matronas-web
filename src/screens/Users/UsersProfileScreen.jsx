@@ -14,7 +14,7 @@ const UsersProfileScreen = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Hola {`${user && user.name}`}</h1>
       <div>
         <button onClick={() => logoutSession()} className={'btn btn-primary'} > Cerrar Sesión </button>
