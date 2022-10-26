@@ -11,16 +11,9 @@ const Navbar = () => {
     setSearch(event.target.value);
   }
 
-  const handleOnsearchClick = () => {
-    searchBlogs(search)
-     .then((search) => {
-      console.log('**************************',search);
-      if ( search ) {
-        tagSearch()
-        console.log(search, tagSearch);
-      }
-     })
-    .catch(navigate('/blogs'))
+  const handleOnsearchClick = (e) => {
+    e.preventDefault();
+    navigate(`/search/${search}`)
   }
 
 
@@ -68,7 +61,7 @@ const Navbar = () => {
             {" "}
             Cursos
           </Link>
-          <form className="form-inline my-2 my-lg-0">
+          <form className="form-inline my-2 my-lg-0" onSubmit={handleOnsearchClick}>
             <div className="searchDiv">
               <input
                 className="form-control mr-sm-2"
@@ -79,8 +72,7 @@ const Navbar = () => {
               />
               <button
                 className="btn btn-outline-success my-2 my-sm-0"
-                type="button"
-                onClick={handleOnsearchClick}
+                type="submit"
                 style={{ width: "6rem" }}
               >
                 Buscar

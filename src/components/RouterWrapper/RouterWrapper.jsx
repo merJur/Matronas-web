@@ -20,6 +20,7 @@ import CourseFormScreen from "../../screens/Course/CourseForm/CourseFormScreen";
 import CourseUpdateScreen from "../../screens/Course/CourseUpdate/CourseUpdateScreen";
 import CourseDetailScreen from "../../screens/Course/CourseDetail/CourseDetailScreen";
 import { useAuthContext } from "./../../context/AuthContext";
+import BlogKeywordScreen from './../../screens/Blog/BlogKeywords/BlogKeywordScreen';
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
@@ -75,6 +76,14 @@ const RouterWrapper = () => {
             element={
               <ProtectedRoute>
                 <BlogDetailScreen />
+              </ProtectedRoute>
+            }
+          />
+            <Route
+            path="/search/:keyword"
+            element={
+              <ProtectedRoute>
+                <BlogKeywordScreen />
               </ProtectedRoute>
             }
           />

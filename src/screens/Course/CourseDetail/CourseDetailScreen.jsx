@@ -7,7 +7,9 @@ const CourseDetailScreen = () => {
     const [course, setCourse] = useState([])
 
     useEffect(() => {
-        getCourseDetail(id).then(course => setCourse(course)).catch(err => console.log(err))
+        getCourseDetail(id)
+        .then(course => setCourse(course))
+        .catch(err => console.log(err))
 
     }, [])
     return (
