@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { getCourse, deleteCourse } from './../../../services/CourseServices';
+import React, { useState, useEffect, useCallback } from 'react';
+import { getCourses, deleteCourse } from './../../../services/CourseServices';
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
+
 
 const CourseListScreen = () => {
       const [courses, setCourses] = useState([]);
       const { user } = useAuthContext();
     
-      const handleDelete = (id) => {
-        deleteCourse(id).then((deletedCourse) => {
-          const newCourses = courses.filter((course) => course.id !== deletedCourse.id);
-          setCourses(newCourses);
-        });
-      };
-      useEffect(() => {
-        getCourse().then((course) => {
+      const fetchCourses = useCallback(() => {
+        getCourses().then((course) => {
           setCourses(course);
         });
       }, []);
+
+    
+      const handleDelete = (id) => {
+        deleteCourse(id).
+        then((deletedCourse) => {
+          fetchCourses()
+        });
+      };
+      
+      useEffect(() => {
+        fetchCourses()
+      }, [])
+
     return (
         <div>
             <ul className="list-group container mt-4">
         {courses.map((course) => (
           <li key={course.id}>
-            <Link to={`/course/${course.id}`}>See details</Link>
+            <Link to={`/course/${course.id}`}>Ver detalles</Link>
 
             <p>{course.name}</p>
             <p>{course.typeOfCourse}</p>
@@ -36,7 +44,7 @@ const CourseListScreen = () => {
                   to={`/course/${course.id}/update`}
                 >
                   <span className="badge badge-primary bg-primary badge-pill">
-                    Edit
+                    Editar
                   </span>
                 </Link>
                 <i
@@ -44,7 +52,7 @@ const CourseListScreen = () => {
                   className="btn badge badge-danger text-light bg-danger badge-pill"
                   type={"btn"}
                 >
-                  Delete
+                  Borrar
                 </i>
               </div>
             ) : null}

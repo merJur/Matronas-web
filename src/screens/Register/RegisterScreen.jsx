@@ -28,7 +28,17 @@ const RegisterScreen = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
+
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
   };
+  }
+
+  
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -40,7 +50,7 @@ const RegisterScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Register
+                        Registro
                       </p>
 
                       <form
@@ -53,7 +63,7 @@ const RegisterScreen = () => {
                             <input
                               type="text"
                               name="userName"
-                              placeholder="User name"
+                              placeholder="Nombre"
                               className="form-control"
                               onChange={(event) =>
                                 setUser({ ...user, name: event.target.value })
@@ -85,7 +95,7 @@ const RegisterScreen = () => {
                             <input
                               type={passwordShown ? "text" : "password"}
                               name="password"
-                              placeholder="Enter password"
+                              placeholder="Contraseña"
                               className="form-control"
                               onChange={(event) =>
                                 setUser({
@@ -106,7 +116,7 @@ const RegisterScreen = () => {
                             <input
                               type="text"
                               name="phone"
-                              placeholder="Phone number"
+                              placeholder="Número de teléfono"
                               className="form-control"
                               onChange={(event) =>
                                 setUser({ ...user, phone: event.target.value })
@@ -116,9 +126,13 @@ const RegisterScreen = () => {
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <input
+                            <p>Tipo de usuario:</p>
+                            <select name="userType" onChange={(event) => handleOnChange(event)} >
+                                <opction value='client'>Cliente</opction>
+                                <opction value='professional'>Profesional sanitario</opction>
+                            </select>
+                            {/* <input
                               type="text"
                               name="userType"
                               placeholder="Type of user: client or professional"
@@ -130,7 +144,7 @@ const RegisterScreen = () => {
                                 })
                               }
                               value={user.userType}
-                            />
+                            /> */}
                           </div>
                         </div>
 
@@ -142,7 +156,7 @@ const RegisterScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Register
+                            Registrarse
                           </button>
                         </div>
                       </form>

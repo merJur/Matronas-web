@@ -41,7 +41,7 @@ const CourseFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        New course
+                        Nuevo curso
                       </p>
 
                       <form
@@ -54,7 +54,7 @@ const CourseFormScreen = () => {
                             <input
                               type="text"
                               name="name"
-                              placeholder="Course´s name"
+                              placeholder="Nombre del curso"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.name}
@@ -68,7 +68,7 @@ const CourseFormScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Course´s image"
+                              placeholder="Imagen del curso"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.image}
@@ -77,14 +77,14 @@ const CourseFormScreen = () => {
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="typeOfCourse"
-                              placeholder="Activity, Presencial-Course, or On-line-Course"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.typeOfCourse}
-                            />
+                            <p>Tipo de actividad</p>
+                            <select onChange={(event) => handleOnChange(event)} name="typeOfCourse">
+                              <option value='Activity'>Clases</option>
+                              <option value='Presencial-Course'>Curso Presencial</option>
+                              <option value='On-line-Course'>Curso on-line</option>
+
+                            </select>
+                           
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -92,7 +92,7 @@ const CourseFormScreen = () => {
                             <input
                               type="text"
                               name="description"
-                              placeholder="description"
+                              placeholder="Descripción"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
@@ -105,7 +105,7 @@ const CourseFormScreen = () => {
                             <input
                               type="date"
                               name="schedule"
-                              placeholder="Enter the text of the post"
+                              placeholder="Entra el texto del post"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
@@ -120,7 +120,7 @@ const CourseFormScreen = () => {
                             <input
                               type="text"
                               name="hours"
-                              placeholder="Dating hours"
+                              placeholder="Hora de la actividad"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.hours}
@@ -133,7 +133,7 @@ const CourseFormScreen = () => {
                             <input
                               type="text"
                               name="price"
-                              placeholder="price os the course"
+                              placeholder="Precio del curso"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.price}
@@ -148,7 +148,7 @@ const CourseFormScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            new course done!
+                            Crear curso
                           </button>
                         </div>
                       </form>

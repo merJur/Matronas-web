@@ -15,14 +15,14 @@ const UsersProfileScreen = () => {
 
   return (
     <div>
-      <h1>Hola profile de {`${user && user.name}`}</h1>
+      <h1>Hola {`${user && user.name}`}</h1>
       <div>
-        <button onClick={() => logoutSession()} className={'btn btn-primary'} > Logout </button>
+        <button onClick={() => logoutSession()} className={'btn btn-primary'} > Cerrar Sesión </button>
         {user && user.isAdmin ? (
           <div>
-            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Create post</Link>            
-            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Users List</Link>     
-            <Link to={"/course/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}>Create course </Link>     
+            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Crear un post</Link>            
+            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Listado de usuarios</Link>     
+            <Link to={"/course/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}>Crear un curso nuevo </Link>     
             
           </div>
         ) : null}

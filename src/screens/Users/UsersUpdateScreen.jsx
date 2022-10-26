@@ -55,7 +55,7 @@ const UsersUpdateScreen = () => {
                           <div className="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              name="userName"
+                              name="name"
                               placeholder="User name"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
