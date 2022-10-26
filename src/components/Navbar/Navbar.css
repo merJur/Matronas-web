@@ -1,0 +1,7 @@
+.my-own-navbar{
+    background-color: #AB4966
+}
+.searchDiv{
+    display: flex;
+    flex-direction: row;
+}

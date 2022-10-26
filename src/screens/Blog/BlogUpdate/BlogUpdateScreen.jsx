@@ -10,6 +10,7 @@ const BlogUpdateScreen = () => {
     keyWords: "",
     post: "",
   });
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -53,7 +54,7 @@ const BlogUpdateScreen = () => {
                             <input
                               type="text"
                               name="title"
-                              placeholder="Title"
+                              placeholder="Título"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.title}
@@ -67,7 +68,7 @@ const BlogUpdateScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Post´s image"
+                              placeholder="Imagen del post"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.image}
@@ -79,7 +80,7 @@ const BlogUpdateScreen = () => {
                             <input
                               type="text"
                               name="keyWords"
-                              placeholder="Key words"
+                              placeholder="Palabras clave"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.keyWords}
@@ -92,7 +93,7 @@ const BlogUpdateScreen = () => {
                             <input
                               type="textarea"
                               name="post"
-                              placeholder="Enter the text of the post"
+                              placeholder="Entra el texto del post"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.post}
@@ -109,7 +110,7 @@ const BlogUpdateScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Update post
+                            Actualiza el post
                           </button>
                         </div>
                       </form>

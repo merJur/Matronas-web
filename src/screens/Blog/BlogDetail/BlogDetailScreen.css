@@ -1,0 +1,9 @@
+.post-text{
+    border: 1px, solid, black;
+    border-radius: 2rem;
+    background-color: #E4C0C1;
+    color: white;
+    margin: 5rem auto;
+    padding: 3rem;
+}
+

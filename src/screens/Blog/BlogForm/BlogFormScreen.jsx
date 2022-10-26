@@ -11,20 +11,31 @@ const BlogFormScreen = () => {
         title: "",
         prof: '',
         image: '',
-        keyWords: '',
         post: ''
      })
      
      const navigate = useNavigate();
 
+     const [tags, addTags] = useState([])
+     const [tag, setTag] = useState()
+     
+     const onAddTag = () => {
+      addTags(prev => [...prev, tag])
+      setTag("")
+     }
+
      const onSubmit = (event) => {
         event.preventDefault()
 
-        createBlog(blog).then((blog) => {
+        createBlog({
+          ...blog,
+          keyWords: tags
+        }).then((blog) => {
             console.log('entrada de blog creada...........', blog);
             navigate('/blogs') 
         })
      }
+
 
     return (
         <div>
@@ -37,7 +48,7 @@ const BlogFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Entry your post!
+                        Nueva entrada del blog
                       </p>
 
                       <form
@@ -50,7 +61,7 @@ const BlogFormScreen = () => {
                             <input
                               type="text"
                               name="title"
-                              placeholder="Title"
+                              placeholder="Título"
                               className="form-control"
                               onChange={(event) =>
                                 setBlog({ ...blog, title: event.target.value })
@@ -66,7 +77,7 @@ const BlogFormScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Post´s image"
+                              placeholder="Imagen del post"
                               className="form-control"
                               onChange={(event) =>
                                 setBlog({ ...blog, image: event.target.value })
@@ -75,21 +86,28 @@ const BlogFormScreen = () => {
                             />
                           </div>
                         </div>
+                        <div>
+                        </div>
+                        <div>
+                          {tags.map((tag, idx) => {
+                            return <div key={idx}>
+                              {tag}
+                            </div>
+                          })}
+                        </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                          <div className="form-outline flex-fill mb-0">
                             <input
                               type="text"
                               name="keyWords"
-                              placeholder="Key words"
+                              placeholder="Palabras clave"
                               className="form-control"
                               onChange={(event) =>
-                                setBlog({
-                                  ...blog,
-                                  keyWords: event.target.value,
-                                })
+                                setTag(event.target.value)
                               }
-                              value={blog.keyWords}
+                              value={tag}
                             />
+                              <button type='button' onClick={onAddTag} className='btn btn-primary'>Añade la palabra clave</button>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -98,13 +116,13 @@ const BlogFormScreen = () => {
                             <input
                               type="textarea"
                               name="post"
-                              placeholder="Enter the text of the post"
+                              placeholder="Entra el texto del post"
                               className="form-control"
                               onChange={(event) =>
                                 setBlog({ ...blog, post: event.target.value })
                               }
                               value={blog.post}
-                              style={{heigth:'5rem'}}
+                              style={{heigth:'50rem'}}
                             />
                           </div>
                         </div>
@@ -117,7 +135,7 @@ const BlogFormScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Post
+                            Crea el post!
                           </button>
                         </div>
                      
