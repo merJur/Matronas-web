@@ -15,7 +15,7 @@ const CourseDetailScreen = () => {
     return (
         <div>
             <h2>{course.name}</h2>
-            {/*image*/}
+            <img src={course.image}/>
             <div>
                 <p>{course.typeOfCourse}</p>
                 <p>{course.description}</p>

@@ -20,7 +20,7 @@ const UsersProfileScreen = () => {
         <button onClick={() => logoutSession()} className={'btn btn-primary'} > Cerrar Sesión </button>
         {user && user.isAdmin ? (
           <div>
-            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Crear un post</Link>            
+            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Nueva entrada del blog</Link>            
             <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Listado de usuarios</Link>     
             <Link to={"/course/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}>Crear un curso nuevo </Link>     
             
