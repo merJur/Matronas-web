@@ -1,79 +1,62 @@
-import "./RegisterScreen.css";
 import React, { useState } from "react";
 import { createUser } from "../../services/UserServices";
+import "./RegisterScreen.css";
 import { useNavigate } from "react-router-dom";
-import { useFormik } from "formik";
-import RegisterSchema from "./RegisterSchema";
-import Input from "../../components/Input/Input";
-
-const INITIAL_VALUES = {
-  email: "",
-  name: "",
-  password: "",
-  phone: "",
-  userType: ["client"],
-};
 
 const RegisterScreen = () => {
-  const {
-    values,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    errors,
-    isSubmitting,
-    setSubmitting,
-    setFieldError,
-    setFieldValue,
-    getFieldProps,
-    field,
-    ...props
-  } = useFormik({
-    initialValues: INITIAL_VALUES,
-    onSubmit: onSubmit,
-    validationSchema: RegisterSchema,
-    validateOnBlur: false,
-    validateOnChange: false,
-  });
-
-  const navigate = useNavigate();
-
-  function onSubmit(values) {
-    const formData = new formData();
-
-    for (let value in values) {
-      formData.append(value, values[value]);
-    }
-
-    createUser(formData)
-      .then((user) => {
-        console.log("usuario creado  👍 ---------------------", user);
-        navigate("/login", {
-          state: {
-            email: values.email,
-          },
-        });
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-
-        err.response.data &&
-          Object.keys(err.response.data.errors).forEach((errorKey) => {
-            setFieldError(errorKey, err.response.data.errors[errorKey]);
-          });
-      })
-      .finally(() => {
-        setSubmitting(false);
-      });
-  }
-
-  const [form, setForm] = useState({
+  const [user, setUser] = useState({
     email: "",
     name: "",
     password: "",
     phone: "",
-    userType: "",
+    userType: "client",
   });
+  const [errors, setErrors] = useState({
+    email: "",
+    name: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+
+  const validateUser = () => {
+    const isValid = true;
+    if (!user.name) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: "El nombre es necesario",
+      }));
+      isValid = false;
+    }
+    if (!user.email) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "El email es necesario",
+      }));
+      isValid = false;
+    }
+    if (!user.password) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password:
+          "La contraseña debe tener al menos: una mayúscula, una minúscula, un número y una longitud de 8 caracteres",
+      }));
+      isValid = false;
+    }
+    return isValid;
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    const isUserValid = validateUser();
+    if (isUserValid) {
+      createUser(user).then((user) => {
+        console.log("usuario creado  👍 ---------------------", user);
+        navigate("/login");
+      });
+    }
+  };
 
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
@@ -81,13 +64,11 @@ const RegisterScreen = () => {
   };
 
   const handleOnChange = (event) => {
-    const { name, value, type, file } = event;
-
-    if (type === "file") {
-      setForm({ ...form, [name]: file[0] });
-    } else {
-      setForm({ ...form, [name]: value });
-    }
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
   };
 
   return (
@@ -104,68 +85,131 @@ const RegisterScreen = () => {
                         Registro
                       </p>
 
-                      <form onSubmit={handleSubmit}>
-                        <Input
-                          type="text"
-                          placeholder="Nombre"
-                          name="name"
-                          id="name"
-                          value={values.userName}
-                          onChange={handleChange}
-                          error={errors.name}
-                          onBlur={handleBlur}
-                        />
-                        <Input
-                          type="email"
-                          placeholder="email"
-                          name="email"
-                          id="email"
-                          value={values.email}
-                          onChange={handleChange}
-                          error={errors.email}
-                          onBlur={handleBlur}
-                        />
-                        <Input
-                          type={passwordShown ? "text" : "password"}
-                          placeholder="contraseña"
-                          name="password"
-                          id="password"
-                          value={values.password}
-                          onChange={handleChange}
-                          error={errors.password}
-                          onBlur={handleBlur}
-                        />
-                        <button
-                          className="btnPassword"
-                          onClick={togglePassword}
-                          type="button"
-                        >
-                          Ver la contraseña
-                        </button>
-
-                          <Input
-                            type="text"
-                            placeholder="phone"
-                            name="phone"
-                            id="phone"
-                            value={values.phone}
-                            onChange={handleChange}
-                            error={errors.phone}
-                            onBlur={handleBlur}
-                          />
-
-                        <div className='userType'>
-                          <p>Tipo de usuario</p>
-                              <select name="userType" onChange={handleChange} error={errors.userType} onBlur={handleBlur} value={values.userType} multiple={false}>
-                                <option value="client">Cliente</option>
-                                <option value="professional">Profesional sanitario</option>
-                              </select>
+                      <form
+                        onSubmit={(event) => onSubmit(event)}
+                        className="mx-1 mx-md-4"
+                      >
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              name="name"
+                              placeholder="Nombre"
+                              className="form-control"
+                              onChange={(event) =>
+                                setUser({ ...user, name: event.target.value })
+                              }
+                              value={user.name}
+                            />
+                          </div>
+                          {`${errors.name}` ? (
+                            <span
+                              className="alert alert-warning"
+                              role="alert"
+                            >{`${errors.name}`}</span>
+                          ) : null}
                         </div>
 
-                        <button type="submit" className="btnPassword" disabled={isSubmitting}>
-                          {isSubmitting ? 'Loading' : 'Registrarse'}
-                        </button>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="email"
+                              name="email"
+                              placeholder="e-mail"
+                              className="form-control"
+                              onChange={(event) =>
+                                setUser({ ...user, email: event.target.value })
+                              }
+                              value={user.email}
+                            />
+                          </div>
+                          {`${errors.email}` ? (
+                            <span
+                              className="alert alert-warning"
+                              role="alert"
+                            >{`${errors.email}`}</span>
+                          ) : null}
+                        </div>
+
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type={passwordShown ? "text" : "password"}
+                              name="password"
+                              placeholder="Contraseña"
+                              className="form-control"
+                              onChange={(event) =>
+                                setUser({
+                                  ...user,
+                                  password: event.target.value,
+                                })
+                              }
+                              value={user.password}
+                            />
+                            {`${errors.password}` ? (
+                              <span
+                                className="alert alert-warning"
+                                role="alert"
+                              >{`${errors.password}`}</span>
+                            ) : null}
+                            <button onClick={togglePassword} type="button">
+                              Ver contraseña
+                            </button>
+                          </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="Número de teléfono"
+                              className="form-control"
+                              onChange={(event) =>
+                                setUser({ ...user, phone: event.target.value })
+                              }
+                              value={user.phone}
+                            />
+                          </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="userType">
+                            <p>Tipo de usuario</p>
+                            <select
+                              name="userType"
+                              onChange={handleOnChange}
+                              value={user.userType}
+                            >
+                              <option value="client">Cliente</option>
+                              <option value="professional">
+                                Profesional sanitario
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div
+                          className="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                          style={{ width: "20rem" }}
+                        >
+                          <button
+                            type="submit"
+                            className="btn btn-primary btn-lg"
+                          >
+                            Registrarse
+                          </button>
+                        </div>
                       </form>
+                    </div>
+                    <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        className="img-fluid"
+                        alt="Register img"
+                      />
                     </div>
                   </div>
                 </div>
@@ -177,4 +221,5 @@ const RegisterScreen = () => {
     </div>
   );
 };
+
 export default RegisterScreen;
