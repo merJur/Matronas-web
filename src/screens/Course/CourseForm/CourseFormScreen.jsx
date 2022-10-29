@@ -14,10 +14,16 @@ const CourseFormScreen = () => {
   });
   const navigate = useNavigate();
 
-  const onSubmit = (event) => {
+  function onSubmit(event){
     event.preventDefault();
+    const formData = new FormData();      
 
-    createCourse(course).then((course) => {
+    for (let value in course) {                   
+      formData.append(value, course[value]);
+    }
+
+    createCourse(formData)            
+      .then((course) => {
       console.log("entrada de course creada...........", course);
       navigate("/courses");
     });
@@ -28,8 +34,15 @@ const CourseFormScreen = () => {
     setCourse({
       ...course,
       [name]: value,
-    });
+    })
   };
+
+  const handleonChangeImage = (file) => {    
+    setCourse({
+      ...course, image: file 
+    })
+  }
+
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -70,21 +83,25 @@ const CourseFormScreen = () => {
                               name="image"
                               placeholder="Imagen del curso"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.image}
+                              onChange={(e) => handleonChangeImage(e.target.files[0])}
                             />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
                             <p>Tipo de actividad</p>
-                            <select onChange={(event) => handleOnChange(event)} name="typeOfCourse">
-                              <option value='Activity'>Clases</option>
-                              <option value='Presencial-Course'>Curso Presencial</option>
-                              <option value='On-line-Course'>Curso on-line</option>
-
+                            <select
+                              onChange={(event) => handleOnChange(event)}
+                              name="typeOfCourse"
+                            >
+                              <option value="Activity">Clases</option>
+                              <option value="Presencial-Course">
+                                Curso Presencial
+                              </option>
+                              <option value="On-line-Course">
+                                Curso on-line
+                              </option>
                             </select>
-                           
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">

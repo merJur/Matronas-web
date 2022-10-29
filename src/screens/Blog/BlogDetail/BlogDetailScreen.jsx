@@ -20,7 +20,7 @@ const BlogDetailScreen = () => {
         <div>
             <div>
                 <h2 >{blog.title}</h2>
-                <p>imagen</p>
+                <img src={blog.image}/>
             </div>
             <div>
                 <h3>Palabras clave</h3>
