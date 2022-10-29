@@ -4,32 +4,65 @@ import "./LoginScreen.css";
 import { login } from "./../../services/AuthService";
 import { useAuthContext } from "./../../context/AuthContext";
 
+
+
 const LoginScreen = () => {
   const { login: loginContext } = useAuthContext();
   const [user, setUser] = useState({ email: "", password: "" });
+
+  const [errors, setErrors] = useState({email: "", password: "" })
+
   const navigate = useNavigate();
 
+  const validateUser = () => {
+    const isValid = true;
+    if (!user.email) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: "El email es necesario",
+      }));
+      isValid = false;
+    }
+    if (!user.password) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password:
+          "La contraseña debe tener al menos: una mayúscula, una minúscula, un número y una longitud de 8 caracteres",
+      }));
+      isValid = false;
+    }
+    return isValid;
+  };
+  
+  
   const handleOnChange = (event) => {
     const { name, value } = event.target;
     setUser({
       ...user,
       [name]: value,
     });
-  };
-
+  }
+    
   const onSubmit = (event) => {
     event.preventDefault();
 
+    const isUserValid = validateUser();
+    if (isUserValid) {
     login(user).then((response) => {
         loginContext(response.accessToken, () => {
         navigate("/profile");
       });
     });
   };
+}
+
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
+
+ 
+
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
@@ -57,8 +90,15 @@ const LoginScreen = () => {
                               placeholder="e-mail"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
+                         
                             />
                           </div>
+                          {`${errors.email}` ? (
+                            <span
+                              className="alert alert-warning"
+                              role="alert"
+                            >{`${errors.email}`}</span>
+                          ) : null}
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -71,6 +111,12 @@ const LoginScreen = () => {
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                             />
+                             {`${errors.password}` ? (
+                              <span
+                                className="alert alert-warning"
+                                role="alert"
+                              >{`${errors.password}`}</span>
+                            ) : null}
                             <button onClick={togglePassword} type='button'>
                               Ver la contraseña
                             </button>

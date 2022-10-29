@@ -1,6 +1,6 @@
 import "./BlogListScreen.css";
 import { getBlogs, deleteBlog } from "../../../services/BlogServices";
-import React, { useState, useEffect,useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
 
@@ -9,23 +9,23 @@ const BlogListScreen = () => {
   const { user } = useAuthContext();
 
   const fetchBlogs = useCallback(() => {
-    getBlogs().then((blogsData) => {
+    getBlogs()
+    .then((blogsData) => {
       setBlogs(blogsData);
     });
-  }, [])
+  }, []);
 
   const handleDelete = (id) => {
-    deleteBlog(id)
-      .then((deletedBlog) => {
-        fetchBlogs()
+    deleteBlog(id).then((deletedBlog) => {
+      fetchBlogs();
     });
   };
 
   useEffect(() => {
-    fetchBlogs()
+    fetchBlogs();
   }, []);
 
-   return (
+  return (
     <div>
       <ul className="list-group container mt-4">
         {blogs.map((blog) => (
