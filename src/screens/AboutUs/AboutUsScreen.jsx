@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../../components/Card/Card';
 import { Link } from 'react-router-dom';
-import './AboutUs/AboutUs.css'
+import './AboutUsScreen.css'
 
 const AboutUs = () => {
     return (
@@ -18,15 +18,24 @@ const AboutUs = () => {
             </p>
             <title>¿Qué ofrecemos?</title>
             <p>
-            Queremos acompañarte a ti mujer en todo tu ciclo vital.  Y es que, la transcendencia de nuestra labor va desde el acompañamiento en el embarazo, el parto y la crianza; hasta brindarles atención integral en materia de salud sexual y reproductiva en todas sus etapas. 
+            Queremos acompañarte a ti mujer en todo tu ciclo vital. Y es que, la transcendencia de nuestra labor va desde el acompañamiento en el embarazo, el parto y la crianza; hasta brindarles atención integral en materia de salud sexual y reproductiva en todas sus etapas. 
             Por ello, ofrecemos servicios que cubren todas estas esferas vitales desde la infancia, para recibir vuestra primera luna hasta la llegada de la madurez cíclica, pasando,cómo no, por la maravillosa etapa de recibir a vuestras hijas e hijos.
             </p>
-            <Card />
+            <Card 
+                image=""
+                title="Elena Rivilla Lizano"
+                description="Soy Elena, matrona enamorada de mi profesión y mamá de dos niños que son los grandes maestros de mi vida."
+            />
 
-            <Card />
+            <Card 
+                image=""
+                title="Rosa Mª Sánchez Molina"
+                description="Soy Rosa, matrona enamorada de mi profesión y mamá de dos niños que son los grandes maestros de mi vida.."
+            />
 
         </div>
     );
 };
+
 
 export default AboutUs;

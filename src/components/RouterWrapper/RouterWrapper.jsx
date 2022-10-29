@@ -20,6 +20,7 @@ import CourseFormScreen from "../../screens/Course/CourseForm/CourseFormScreen";
 import CourseUpdateScreen from "../../screens/Course/CourseUpdate/CourseUpdateScreen";
 import CourseDetailScreen from "../../screens/Course/CourseDetail/CourseDetailScreen";
 import { useAuthContext } from "./../../context/AuthContext";
+import AboutUs from "../../screens/AboutUs/AboutUsScreen";
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
@@ -35,7 +36,7 @@ const RouterWrapper = () => {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/blogs" element={<BlogListScreen />} />
           <Route path="/courses" element={<CourseListScreen />} />
-          <Route path="/aboutus" element={<Card />} />
+          <Route path="/aboutus" element={<AboutUs />} />
 
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route
