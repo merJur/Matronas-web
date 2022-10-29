@@ -122,11 +122,11 @@ const CourseFormScreen = () => {
                             <input
                               type="date"
                               name="schedule"
-                              placeholder="Entra el texto del post"
+                              placeholder="Agenda"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
-                              style={{ heigth: "5rem" }}
+                              style={{ heigth: "5rem !important" }}
                             />
                           </div>
                         </div>

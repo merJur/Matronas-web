@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { updateBlog, getBlogDetail } from "../../../services/BlogServices";
-
+import './BlogUpdateScreen.css'
 const BlogUpdateScreen = () => {
   const [blog, setBlog] = useState({
     title: "",
@@ -13,6 +13,14 @@ const BlogUpdateScreen = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [tags, addTags] = useState([]);
+  const [tag, setTag] = useState();
+
+  const onAddTag = () => {
+    addTags((prev) => [...prev, tag]);
+    setTag("");
+  };
 
   useEffect(() => {
     getBlogDetail(id).then((fetchedBlog) => setBlog(fetchedBlog));
@@ -27,7 +35,24 @@ const BlogUpdateScreen = () => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    updateBlog(id, blog).then((blog) => navigate("/blogs"));
+    const formData = new FormData();
+
+    for (let value in blog) {
+      formData.append(value, blog[value]);
+    }
+
+    updateBlog(formData, id, blog)
+    .then((blog) => {
+      console.log('blog actualizado', blog);
+      navigate("/blogs")
+    });
+  };
+
+  const handleonChangeImage = (file) => {
+    setBlog({
+      ...blog,
+      image: file,
+    });
   };
 
   return (
@@ -41,7 +66,7 @@ const BlogUpdateScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Entry your post!
+                        Actualiza la entrada del blog: <br/> <strong>{`${blog.title}`}</strong>.
                       </p>
 
                       <form
@@ -57,7 +82,7 @@ const BlogUpdateScreen = () => {
                               placeholder="Título"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                              value={blog.title}
+                              value={blog.name}
                             />
                           </div>
                         </div>
@@ -70,10 +95,16 @@ const BlogUpdateScreen = () => {
                               name="image"
                               placeholder="Imagen del post"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={blog.image}
+                              onChange={(e) =>
+                                handleonChangeImage(e.target.files[0])
+                              }
                             />
                           </div>
+                        </div>
+                        <div>
+                          {tags.map((tag, idx) => {
+                            return <div className='tag' key={idx}>{tag}</div>;
+                          })}
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
@@ -82,22 +113,30 @@ const BlogUpdateScreen = () => {
                               name="keyWords"
                               placeholder="Palabras clave"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={blog.keyWords}
+                              onChange={(event) => setTag(event.target.value)}
+                              value={tag}
                             />
+
+                            <button
+                              type="button"
+                              onClick={onAddTag}
+                              className="btn btn-primary"
+                            >
+                              Añade la palabra clave
+                            </button>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type="textarea"
+                              type="text"
                               name="post"
                               placeholder="Entra el texto del post"
-                              className="form-control"
+                              className="form-control textarea"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.post}
-                              style={{ heigth: "5rem" }}
+                              
                             />
                           </div>
                         </div>
@@ -110,7 +149,7 @@ const BlogUpdateScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Actualiza el post
+                            Actualiza el post del blog
                           </button>
                         </div>
                       </form>

@@ -30,11 +30,23 @@ const CourseUpdateScreen = () => {
     });
   };
 
-  const onSubmit = (event) => {
+  function onSubmit(event) {
     event.preventDefault();
+    const formData = new FormData();
 
-    updateCourse(id, course).then((course) => {
+    for (let value in course) {
+      formData.append(value, course[value]);
+    }
+
+    updateCourse(id, course, formData).then((course) => {
+      console.log("**************entrada de blog actualizada", course);
       navigate("/courses");
+    });
+  }
+  const handleonChangeImage = (file) => {
+    setCourse({
+      ...course,
+      image: file,
     });
   };
 
@@ -49,7 +61,7 @@ const CourseUpdateScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Edit course
+                        Edita el curso: <strong>{`${course.name}`}</strong>.
                       </p>
 
                       <form
@@ -62,7 +74,7 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="name"
-                              placeholder="Course´s name"
+                              placeholder="Nombre del curso"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.name}
@@ -76,23 +88,29 @@ const CourseUpdateScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Course´s image"
+                              placeholder="Selecciona la imagen"
                               className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.image}
+                              onChange={(e) =>
+                                handleonChangeImage(e.target.files[0])
+                              }
                             />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="typeOfCourse"
-                              placeholder="Activity, Presencial-Course, or On-line-Course"
-                              className="form-control"
+                            <p>Tipo de actividad</p>
+                            <select
                               onChange={(event) => handleOnChange(event)}
-                              value={course.typeOfCourse}
-                            />
+                              name="typeOfCourse"
+                            >
+                              <option value="Activity">Clases</option>
+                              <option value="Presencial-Course">
+                                Curso Presencial
+                              </option>
+                              <option value="On-line-Course">
+                                Curso on-line
+                              </option>
+                            </select>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -100,7 +118,7 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="description"
-                              placeholder="description"
+                              placeholder="Descripción"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
@@ -113,11 +131,11 @@ const CourseUpdateScreen = () => {
                             <input
                               type="date"
                               name="schedule"
-                              placeholder="Enter the text of the post"
+                              placeholder="Agenda"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
-                              style={{ heigth: "5rem" }}
+                              style={{ heigth: "5rem !important" }}
                             />
                           </div>
                         </div>
@@ -128,7 +146,7 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="hours"
-                              placeholder="Dating hours"
+                              placeholder="Hora de la actividad"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.hours}
@@ -141,7 +159,7 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="price"
-                              placeholder="price os the course"
+                              placeholder="Precio del curso"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
                               value={course.price}
@@ -156,7 +174,7 @@ const CourseUpdateScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            update course
+                            Actualiza el curso
                           </button>
                         </div>
                       </form>
