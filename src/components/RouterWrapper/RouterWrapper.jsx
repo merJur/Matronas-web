@@ -2,12 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
-import Card from "../Card/Card";
 import HomeScreen from "../../screens/Home/HomeScreen";
 import RegisterScreen from "../../screens/Register/RegisterScreen";
 import LoginScreen from "./../../screens/Login/LoginScreen";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import UnprotectedRoute from "../UnprotectedRoute/UnprotectedRoute";
 import UsersProfileScreen from "../../screens/Users/UsersProfileScreen";
 import BlogFormScreen from "./../../screens/Blog/BlogForm/BlogFormScreen";
 import BlogListScreen from "../../screens/Blog/BlogList/BlogListScreen";
@@ -20,7 +18,8 @@ import CourseFormScreen from "../../screens/Course/CourseForm/CourseFormScreen";
 import CourseUpdateScreen from "../../screens/Course/CourseUpdate/CourseUpdateScreen";
 import CourseDetailScreen from "../../screens/Course/CourseDetail/CourseDetailScreen";
 import { useAuthContext } from "./../../context/AuthContext";
-import BlogKeywordScreen from './../../screens/Blog/BlogKeywords/BlogKeywordScreen';
+import AboutUs from "../../screens/AboutUs/AboutUsScreen";
+import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
@@ -36,7 +35,7 @@ const RouterWrapper = () => {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/blogs" element={<BlogListScreen />} />
           <Route path="/courses" element={<CourseListScreen />} />
-          <Route path="/aboutus" element={<Card />} />
+          <Route path="/aboutus" element={<AboutUs />} />
 
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route
@@ -79,7 +78,7 @@ const RouterWrapper = () => {
               </ProtectedRoute>
             }
           />
-            <Route
+          <Route
             path="/search/:keyword"
             element={
               <ProtectedRoute>

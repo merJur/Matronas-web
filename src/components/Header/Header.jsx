@@ -9,9 +9,9 @@ const Header = () => {
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">
     <img
-              src="/logo-om-matronas.png"
-              width="80"
-              height=""
+              src="/OM.png"
+              width=""
+              height="30"
               className="d-inline-block align-top"
               alt="Logo Om Matronas"
             />
@@ -37,9 +37,8 @@ const Header = () => {
               Niña y Adolescente
             </Link>
             <ul className="dropdown-menu">
+              <li><Link className="dropdown-item" to="#">Sexualidad en la adolescencia</Link></li>
               <li><Link className="dropdown-item" to="#">Taller de menarquia</Link></li>
-              <li><Link className="dropdown-item" to="#">Sexualidad en la adolescencia</Link></li>
-              <li><Link className="dropdown-item" to="#">Sexualidad en la adolescencia</Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -47,7 +46,6 @@ const Header = () => {
               Mujer
             </Link>
             <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="#">Yoga Mujer</Link></li>
               <li><Link className="dropdown-item" to="#">Sexualidad saludable</Link></li>
               <li><Link className="dropdown-item" to="#">Fertilidad</Link></li>
             </ul>
@@ -59,8 +57,7 @@ const Header = () => {
             <ul className="dropdown-menu">
               <li><Link className="dropdown-item" to="#">Yoga Prenatal</Link></li>
               <li><Link className="dropdown-item" to="#">Esferodinamia e Hipnoparto</Link></li>
-              <li><Link className="dropdown-item" to="#">Curso Preparación al parto</Link></li>
-              <li><Link className="dropdown-item" to="#">Taller de Lactancia Materna</Link></li>
+              <li><Link className="dropdown-item" to="#">Nuestra tribu de madres</Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -68,19 +65,8 @@ const Header = () => {
               Postparto
             </Link>
             <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="#">Yoga madres y bebés</Link></li>
-              <li><Link className="dropdown-item" to="#">Taller creación banco de leche e incorporación al trabajo.</Link></li>
               <li><Link className="dropdown-item" to="#">Sexualidad tras la cuarentena</Link></li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown">
-            <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Crianza
-            </Link>
-            <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="#">Yoga Mujer</Link></li>
-              <li><Link className="dropdown-item" to="#">Sexualidad saludable</Link></li>
-              <li><Link className="dropdown-item" to="#">Fertilidad</Link></li>
+              <li><Link className="dropdown-item" to="#">Yoga madres y bebés</Link></li>
             </ul>
           </li>
           <li className="nav-item dropdown">
@@ -88,10 +74,15 @@ const Header = () => {
               Menopausia
             </Link>
             <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="#">A</Link></li>
-              <li><Link className="dropdown-item" to="#">B</Link></li>
-              <li><Link className="dropdown-item" to="#">C</Link></li>
+              <li><Link className="dropdown-item" to="#">Sexualidad en la Menopausia</Link></li>
+              <li><Link className="dropdown-item" to="#">Fortaleciendo el suelo pélvico</Link></li>
             </ul>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">Blog</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">Cursos</Link>
           </li>
         </ul>
         <form className="d-flex mt-3" role="search">
