@@ -78,6 +78,12 @@ const Header = () => {
               <li><Link className="dropdown-item" to="#">Fortaleciendo el suelo pélvico</Link></li>
             </ul>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">Blog</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/">Cursos</Link>
+          </li>
         </ul>
         <form className="d-flex mt-3" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
