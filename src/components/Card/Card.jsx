@@ -6,15 +6,16 @@ import("../Card/Card.css");
 
 function CardMidwives({image, title, description}) {
   return (
-    <div style={{ width: "18rem" }}>
-      <img src={image} />
+    <div className="card" style={{ width: "18rem" }}>
+      <img src={image} className="card-img-top" alt={title}/>
       <div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <button variant="card-link">Leer más</button>
+        <h3 className="card-title">{title}</h3>
+        <p className="card-text">{description}</p>
+        <button variant="card-link" href="#" class="btn btn-primary">Leer más</button>
       </div>
     </div>
   );
 }
 
 export default CardMidwives;
+

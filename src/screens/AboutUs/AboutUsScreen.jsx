@@ -5,7 +5,7 @@ import './AboutUsScreen.css'
 
 const AboutUs = () => {
     return (
-        <div>
+        <div className='container'>
             <p>
             Comadrona. Midwife, sage femme, partera,…MATRONA; eso somos.
             Las matronas, somos los profesionales sanitarios oficialmente reconocidos y preparados específicamente para acompañar a las mujeres en todo su ciclo vital.
@@ -21,17 +21,33 @@ const AboutUs = () => {
             Queremos acompañarte a ti mujer en todo tu ciclo vital. Y es que, la transcendencia de nuestra labor va desde el acompañamiento en el embarazo, el parto y la crianza; hasta brindarles atención integral en materia de salud sexual y reproductiva en todas sus etapas. 
             Por ello, ofrecemos servicios que cubren todas estas esferas vitales desde la infancia, para recibir vuestra primera luna hasta la llegada de la madurez cíclica, pasando,cómo no, por la maravillosa etapa de recibir a vuestras hijas e hijos.
             </p>
+            <div className='cards-container'>
             <Card 
-                image=""
+                image="/src/assets/img/Elena.jpeg"
                 title="Elena Rivilla Lizano"
-                description="Soy Elena, matrona enamorada de mi profesión y mamá de dos niños que son los grandes maestros de mi vida."
+                description="
+                Enfermera especialista obstétrico-ginecológica (matrona).
+                Asesora de Lactancia materna.
+                Instructora certificada Hatha Yoga
+                Instructora de esferodinamia aplicada al embarazo y al parto
+                "
             />
 
             <Card 
-                image=""
+                image="/src/assets/img/Rosa.jpg"
                 title="Rosa Mª Sánchez Molina"
-                description="Soy Rosa, matrona enamorada de mi profesión y mamá de dos niños que son los grandes maestros de mi vida.."
+                description="
+                Enfermera especialista obstétrico-ginecológica (matrona).
+                Asesora de Lactancia Materna.
+                Instructora certificada Hatha Yoga (escuela internacional de yoga).
+                Instructora de esferodinamia aplicada al embarazo y al parto.
+                Profesional certificada de hipnoparto (Método Naces y Método Parto Postitivo).
+                Anatomía para el movimiento y enseñanzas para cursos de preparación al nacimiento.
+                Formación canto prenatal y voz en el parto.
+                Educadora certificada de masaje infantil y Baby Led Weaning.
+                "
             />
+            </div>
 
         </div>
     );
