@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { getUsers, deleteUser } from "../../services/UserServices";
+import { getUsers, deleteUser } from "../../../services/UserServices";
 
 const UsersListScreen = () => {
   const [users, setUsers, ] = useState([]);

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../store/AccessTokenStore";
-import { useAuthContext } from "./../../context/AuthContext";
+import { logout } from './../../../store/AccessTokenStore'
+import { useAuthContext } from "./../../../context/AuthContext";
 
 
 const UsersProfileScreen = () => {
