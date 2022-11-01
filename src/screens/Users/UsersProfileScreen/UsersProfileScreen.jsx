@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from './../../../store/AccessTokenStore'
+import { logout } from "./../../../store/AccessTokenStore";
 import { useAuthContext } from "./../../../context/AuthContext";
-
+import "./UsersProfileScreen.css";
 
 const UsersProfileScreen = () => {
   const { user } = useAuthContext();
@@ -15,17 +15,41 @@ const UsersProfileScreen = () => {
 
   return (
     <div className="container">
-      <h1>Hola {`${user && user.name}`}</h1>
-      <div>
-        <button onClick={() => logoutSession()} className={'btn btn-primary'} > Cerrar Sesión </button>
+      
+      <h1 className="<profile">Hola {`${user && user.name}`}</h1>
+
+      <div className="btn-profile">
         {user && user.isAdmin ? (
-          <div>
-            <Link to={"/blog/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Nueva entrada del blog</Link>            
-            <Link to={"/users"} style={{textDecoration:'none'}} className={'btn btn-primary'}> Listado de usuarios</Link>     
-            <Link to={"/course/create"} style={{textDecoration:'none'}} className={'btn btn-primary'}>Crear un curso nuevo </Link>     
-            
+          <div className="btn-profile">
+            <Link
+              to={"/blog/create"}
+              style={{ textDecoration: "none" }}
+              className={"btn btn-primary btns-admin"}
+            >
+              Nueva entrada del blog
+            </Link>
+            <Link
+              to={"/users"}
+              style={{ textDecoration: "none" }}
+              className={"btn btn-primary btns-admin"}
+            >
+              Listado de usuarios
+            </Link>
+            <Link
+              to={"/course/create"}
+              style={{ textDecoration: "none" }}
+              className={"btn btn-primary btns-admin"}
+            >
+              Crear un curso nuevo
+            </Link>
           </div>
         ) : null}
+        <button 
+        onClick={() => logoutSession()}
+        className={"btn btn-primary btn-log-out"}
+      >
+        Cerrar Sesión
+      </button>
       </div>
     </div>
   );

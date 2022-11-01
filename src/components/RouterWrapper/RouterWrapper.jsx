@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
 import HomeScreen from "../../screens/Home/HomeScreen";
 import RegisterScreen from "../../screens/Register/RegisterScreen";
 import LoginScreen from "./../../screens/Login/LoginScreen";
@@ -25,10 +24,11 @@ import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScre
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
   return (
+   
     <>
-      <Navbar />
-      <Header />
+   <Header />
       {isAuthFetched ? (
+       
         <Routes>
           {/* rutas no protegidas: home, resgiter, login, coursesList y blogList*/}
           <Route path="/" element={<HomeScreen />} />
@@ -120,10 +120,12 @@ const RouterWrapper = () => {
             }
           />
         </Routes>
+        
       ) : (
         <p>Loading ...</p>
       )}
-    </>
+      </>
+   
   );
 };
 

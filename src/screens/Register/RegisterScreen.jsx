@@ -101,6 +101,7 @@ const RegisterScreen = () => {
                                 setUser({ ...user, name: event.target.value })
                               }
                               value={user.name}
+                              style={{width:'308px'}}
                             />
                           </div>
                           {`${errors.name}` ? (
@@ -123,6 +124,7 @@ const RegisterScreen = () => {
                                 setUser({ ...user, email: event.target.value })
                               }
                               value={user.email}
+                              style={{width:'308px'}}
                             />
                           </div>
                           {`${errors.email}` ? (
@@ -136,28 +138,30 @@ const RegisterScreen = () => {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type={passwordShown ? "text" : "password"}
-                              name="password"
-                              placeholder="Contraseña"
-                              className="form-control"
-                              onChange={(event) =>
-                                setUser({
-                                  ...user,
-                                  password: event.target.value,
-                                })
-                              }
-                              value={user.password}
-                            />
-                            {`${errors.password}` ? (
-                              <span
-                                className="alert alert-warning"
-                                role="alert"
-                              >{`${errors.password}`}</span>
-                            ) : null}
-                            <button onClick={togglePassword} type="button">
-                              Ver contraseña
-                            </button>
+                            <div className='password-row'>
+                                  <input
+                                    type={passwordShown ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Contraseña"
+                                    className="form-control-password "
+                                    onChange={(event) =>
+                                      setUser({
+                                        ...user,
+                                        password: event.target.value,
+                                      })
+                                    }
+                                    value={user.password}
+                                  />
+                                  {`${errors.password}` ? (
+                                    <span
+                                      className="alert alert-warning"
+                                      role="alert"
+                                    >{`${errors.password}`}</span>
+                                  ) : null}
+                                  <button onClick={togglePassword} type="button" className="btn-eye">
+                                    <img src='https://res.cloudinary.com/merjur/image/upload/v1667324728/matronas/password-eye-icon_vc2r0z.png' alt='ver contraseña' className='eye'/>
+                                  </button>
+                            </div>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -172,18 +176,20 @@ const RegisterScreen = () => {
                                 setUser({ ...user, phone: event.target.value })
                               }
                               value={user.phone}
+                              style={{width:'308px'}}
                             />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="userType">
-                            <p>Tipo de usuario</p>
+                            <p className="userType-p">Tipo de usuario</p>
                             <select
+                            className="userType-select"
                               name="userType"
                               onChange={handleOnChange}
                               value={user.userType}
                             >
-                              <option value="client">Cliente</option>
+                              <option value="client" selected>Cliente</option>
                               <option value="professional">
                                 Profesional sanitario
                               </option>
@@ -197,7 +203,7 @@ const RegisterScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg btn-form"
                           >
                             Registrarse
                           </button>
