@@ -1,3 +1,55 @@
-.header{
+.searchDiv{
+    display: flex;
+    flex-direction: row;
+    max-height: 2.5rem;
+    margin-left: 1.5rem;
+}
+
+.home-icon{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+}
+ 
+.user-icon{
+    width: 3rem;
+    height: 3rem;  
+    position: absolute;
+    right: 6rem;
+}
+
+.hamburguer-icon{
+   position: absolute;
+   right: 1.5rem;
+   background-color:  #AAB966 ;
+   border: 2px solid black;
+}
+
+.my-header{
+    background-color: #AABAAB ;
+    
+    }
+
+.btn-search{
+    height: 2.4rem;
+    margin-top: 0rem !important;
+    position: absolute;
+    margin-left: 250px;
+    background-color:  #AABAAB !important; 
+    border: 1px solid #AAB966 !important;
+    margin-top: 1rem;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.search-nav{
+    width: 250px !important;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.container-header{
+    
+    display: flex;
+    flex-direction: row;
+   
     
 }

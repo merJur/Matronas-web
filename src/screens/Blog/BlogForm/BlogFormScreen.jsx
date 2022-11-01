@@ -56,7 +56,7 @@ const BlogFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Nueva entrada del blog
+                        Nueva entrada del blog: <strong> {`${blog.title}`}</strong>
                       </p>
 
                       <form
@@ -96,7 +96,7 @@ const BlogFormScreen = () => {
                         <div></div>
                         <div>
                           {tags.map((tag, idx) => {
-                            return <div key={idx}>{tag}</div>;
+                            return <div className='tag' key={idx}>{tag}</div>;
                           })}
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -130,7 +130,7 @@ const BlogFormScreen = () => {
                                 setBlog({ ...blog, post: event.target.value })
                               }
                               value={blog.post}
-                              style={{ heigth: "50rem" }}
+                              style={{ heigth: "20rem !important" }}
                             />
                           </div>
                         </div>
@@ -143,7 +143,7 @@ const BlogFormScreen = () => {
                             type="submit"
                             className="btn btn-primary btn-lg"
                           >
-                            Crea el post!
+                            Crea la entrada al blog
                           </button>
                         </div>
                       </form>
