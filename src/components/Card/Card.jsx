@@ -1,21 +1,20 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 import("../Card/Card.css");
 
-
-function CardMidwives({image, title, description}) {
+function Card({ image, title, description }) {
   return (
     <div className="card" style={{ width: "18rem" }}>
-      <img src={image} className="card-img-top" alt={title}/>
+      <img src={image} className="card-img-top" alt={title} />
       <div>
         <h3 className="card-title">{title}</h3>
         <p className="card-text">{description}</p>
-        <button variant="card-link" href="#" class="btn btn-primary">Leer más</button>
+        <Link variant="card-link" to="" className="btn btn-primary">
+          Leer más
+        </Link>
       </div>
     </div>
   );
 }
 
-export default CardMidwives;
-
+export default Card;

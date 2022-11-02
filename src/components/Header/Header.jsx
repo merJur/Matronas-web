@@ -9,7 +9,7 @@ const Header = () => {
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">
     <img
-              src="/public/favicon1.png"
+              src="/public/favicon.ico"
               width=""
               height="30"
               className="d-inline-block align-top"
