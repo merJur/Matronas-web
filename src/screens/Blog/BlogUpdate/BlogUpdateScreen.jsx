@@ -41,7 +41,7 @@ const BlogUpdateScreen = () => {
       formData.append(value, blog[value]);
     }
 
-    updateBlog(formData, id, blog)
+    updateBlog( id, formData)
     .then((blog) => {
       console.log('blog actualizado', blog);
       navigate("/blogs")
@@ -80,7 +80,7 @@ const BlogUpdateScreen = () => {
                               type="text"
                               name="title"
                               placeholder="Título"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={blog.name}
                             />
@@ -94,7 +94,7 @@ const BlogUpdateScreen = () => {
                               type="file"
                               name="image"
                               placeholder="Imagen del post"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(e) =>
                                 handleonChangeImage(e.target.files[0])
                               }
@@ -112,7 +112,7 @@ const BlogUpdateScreen = () => {
                               type="text"
                               name="keyWords"
                               placeholder="Palabras clave"
-                              className="form-control"
+                              className="form-control update-blog keyword-input"
                               onChange={(event) => setTag(event.target.value)}
                               value={tag}
                             />
@@ -120,7 +120,7 @@ const BlogUpdateScreen = () => {
                             <button
                               type="button"
                               onClick={onAddTag}
-                              className="btn btn-primary"
+                              className="btn btn-primary btns-update"
                             >
                               Añade la palabra clave
                             </button>
@@ -129,15 +129,18 @@ const BlogUpdateScreen = () => {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
+                          <textarea
+                              type="textarea"
                               name="post"
                               placeholder="Entra el texto del post"
                               className="form-control textarea"
-                              onChange={(event) => handleOnChange(event)}
-                              value={blog.post}
-                              
-                            />
+                              onChange={(event) =>
+                                setBlog({ ...blog, post: event.target.value })
+                              }
+                              rows={4}
+                            >
+                              {blog.post}
+                            </textarea>
                           </div>
                         </div>
 
@@ -147,7 +150,7 @@ const BlogUpdateScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg btns-update"
                           >
                             Actualiza el post del blog
                           </button>

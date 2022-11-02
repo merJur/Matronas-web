@@ -189,7 +189,7 @@ const RegisterScreen = () => {
                               onChange={handleOnChange}
                               value={user.userType}
                             >
-                              <option value="client" selected>Cliente</option>
+                              <option value="client" >Cliente</option>
                               <option value="professional">
                                 Profesional sanitario
                               </option>

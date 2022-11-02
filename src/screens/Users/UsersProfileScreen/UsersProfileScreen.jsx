@@ -26,7 +26,14 @@ const UsersProfileScreen = () => {
               style={{ textDecoration: "none" }}
               className={"btn btn-primary btns-admin"}
             >
-              Nueva entrada del blog
+              Crear nuevo post
+            </Link>
+            <Link
+              to={"/course/create"}
+              style={{ textDecoration: "none" }}
+              className={"btn btn-primary btns-admin"}
+            >
+              Crear nuevo curso
             </Link>
             <Link
               to={"/users"}
@@ -34,13 +41,6 @@ const UsersProfileScreen = () => {
               className={"btn btn-primary btns-admin"}
             >
               Listado de usuarios
-            </Link>
-            <Link
-              to={"/course/create"}
-              style={{ textDecoration: "none" }}
-              className={"btn btn-primary btns-admin"}
-            >
-              Crear un curso nuevo
             </Link>
           </div>
         ) : null}

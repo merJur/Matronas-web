@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { getUsers, deleteUser } from "../../../services/UserServices";
+import './UsersListScreen.css'
 
 const UsersListScreen = () => {
   const [users, setUsers, ] = useState([]);
@@ -25,32 +26,33 @@ const UsersListScreen = () => {
 
   return (
     <div>
-      <h1>Lista de usuarios</h1>
+      <h1 className="title-user-list">Lista de usuarios</h1>
       <div>
-        <ul className="list-group container mt-4">
+        <ul className="list-group container-user-list mt-4">
           {users.map((user) => (
             <li
               key={user.id}
-              className="mb-2 list-group-item d-flex justify-content-between align-items-center"
+              className="mb-2 list-group-item d-flex justify-content-between align-items-center container-li-user-list"
             >
-              <Link className="link-unstyled" to={`/users/${user.id}`}>
-                {user.name}
-              </Link>
+              <p className="user-name"> <strong>{user.name} </strong></p>
+                
+              
               <div className="badge">
                 <Link
                   className="link-unstyled me-3"
                   to={`/users/${user.id}/update`} 
                 >
-                  <span className="badge badge-primary bg-primary badge-pill">
-                    Edit
+                  <span className="btn btn-edit-user">
+                    <p className="btn-edit-text">Editar datos</p>
                   </span>
                 </Link>
                 <i
                   onClick={() => handleDelete(user.id)}
-                  className="btn badge badge-danger text-light bg-danger badge-pill"
+                  className="btn  btn-edit-user"
                   type={"btn"}
                 >
-                  Delete
+                  
+                  <p className="btn-edit-text">Borrar </p>
                 </i>
               </div>
             </li>
