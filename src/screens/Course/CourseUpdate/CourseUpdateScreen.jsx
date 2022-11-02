@@ -4,6 +4,7 @@ import {
   getCourseDetail,
 } from "../../../services/CourseServices";
 import { useParams, useNavigate } from "react-router-dom";
+import './CourseUpdateScreen.css'
 
 const CourseUpdateScreen = () => {
   const [course, setCourse] = useState({
@@ -38,7 +39,7 @@ const CourseUpdateScreen = () => {
       formData.append(value, course[value]);
     }
 
-    updateCourse(id, course, formData).then((course) => {
+    updateCourse(id, formData).then((course) => {
       console.log("**************entrada de blog actualizada", course);
       navigate("/courses");
     });
@@ -75,7 +76,7 @@ const CourseUpdateScreen = () => {
                               type="text"
                               name="name"
                               placeholder="Nombre del curso"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.name}
                             />
@@ -89,7 +90,7 @@ const CourseUpdateScreen = () => {
                               type="file"
                               name="image"
                               placeholder="Selecciona la imagen"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(e) =>
                                 handleonChangeImage(e.target.files[0])
                               }
@@ -98,10 +99,12 @@ const CourseUpdateScreen = () => {
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <p>Tipo de actividad</p>
+                          <div className="userType">
+                            <p className="userType-p ">Tipo de actividad</p>
                             <select
                               onChange={(event) => handleOnChange(event)}
                               name="typeOfCourse"
+                              className="userType-select"
                             >
                               <option value="Activity">Clases</option>
                               <option value="Presencial-Course">
@@ -111,6 +114,7 @@ const CourseUpdateScreen = () => {
                                 Curso on-line
                               </option>
                             </select>
+                            </div>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -119,10 +123,10 @@ const CourseUpdateScreen = () => {
                               type="text"
                               name="description"
                               placeholder="Descripción"
-                              className="form-control"
+                              className="form-control update-blog description-input"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
-                            />
+                           />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -132,7 +136,7 @@ const CourseUpdateScreen = () => {
                               type="date"
                               name="schedule"
                               placeholder="Agenda"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
                               style={{ heigth: "5rem !important" }}
@@ -147,7 +151,7 @@ const CourseUpdateScreen = () => {
                               type="text"
                               name="hours"
                               placeholder="Hora de la actividad"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.hours}
                             />
@@ -160,7 +164,7 @@ const CourseUpdateScreen = () => {
                               type="text"
                               name="price"
                               placeholder="Precio del curso"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.price}
                             />
@@ -172,7 +176,8 @@ const CourseUpdateScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            style={{marginLeft:'-1rem !important'}}
+                            className="btn btn-primary btn-lg btns-update blog-create-btn"
                           >
                             Actualiza el curso
                           </button>

@@ -34,7 +34,7 @@ const Header = () => {
         <div className="container-header">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/merjur/image/upload/v1667301256/matronas/5a2836d9-3a03-4572-b591-ab1da2201aeb_zh13er.png"
+              src="https://res.cloudinary.com/merjur/image/upload/v1667408752/matronas/logo-om-matronas_murynl.png"
               className="d-inline-block align-top  home-icon"
               alt="Logo Om Matronas"
             />

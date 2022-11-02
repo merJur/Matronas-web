@@ -3,7 +3,14 @@ import { updateUser, getUserDetail } from "../../../services/UserServices";
 import { useParams, useNavigate } from "react-router-dom";
 
 const UsersUpdateScreen = () => {
-  const [user, setUser] = useState({ email: "", name: "", password:'', phone:'', userType:'' });
+  const [user, setUser] = useState({ email: "", name: "", password:'', phone:'', userType:'client' });
+
+  const [errors, setErrors] = useState({
+    email: "",
+    name: "",
+    password: "",
+  });
+
   const { id } = useParams();
   const [passwordShown, setPasswordShown] = useState(false);
   const navigate = useNavigate();
@@ -43,7 +50,7 @@ const UsersUpdateScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Update user
+                        Actualiza los datos del usuario
                       </p>
 
                       <form
@@ -57,11 +64,17 @@ const UsersUpdateScreen = () => {
                               type="text"
                               name="name"
                               placeholder="User name"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={user.name}
                             />
                           </div>
+                          {`${errors.name}` ? (
+                            <span
+                              className="alert alert-warning"
+                              role="alert"
+                            >{`${errors.name}`}</span>
+                          ) : null}
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -71,27 +84,41 @@ const UsersUpdateScreen = () => {
                               type="email"
                               name="email"
                               placeholder="e-mail"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={user.email}
                             />
                           </div>
+                          {`${errors.email}` ? (
+                            <span
+                              className="alert alert-warning"
+                              role="alert"
+                            >{`${errors.email}`}</span>
+                          ) : null}
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-                          <div className="form-outline flex-fill mb-0">
+                          <div className="form-outline flex-fill mb-0 ">
+                          <div className='password-row'>
                             <input
                               type={passwordShown ? "text" : "password"}
                               name="password"
-                              placeholder="Enter password"
-                              className="form-control"
+                              placeholder="Contraseña"
+                              className="form-control-password"
                               onChange={(event) => handleOnChange(event)}
                               value={user.password}
                             />
-                            <button onClick={togglePassword} type="button">
-                              Show Password
+                            {`${errors.password}` ? (
+                                    <span
+                                      className="alert alert-warning"
+                                      role="alert"
+                                    >{`${errors.password}`}</span>
+                                  ) : null}
+                            <button onClick={togglePassword} type="button" className="btn-eye">
+                            <img src='https://res.cloudinary.com/merjur/image/upload/v1667324728/matronas/password-eye-icon_vc2r0z.png' alt='ver contraseña' className='eye'/>
                             </button>
+                            </div>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -100,8 +127,8 @@ const UsersUpdateScreen = () => {
                             <input
                               type="text"
                               name="phone"
-                              placeholder="Phone number"
-                              className="form-control"
+                              placeholder="Número de teléfono"
+                              className="form-control update-blog"
                               onChange={(event) =>
                                 setUser({ ...user, phone: event.target.value })
                               }
@@ -110,16 +137,19 @@ const UsersUpdateScreen = () => {
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                          <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
+                          <div className="userType">
+                            <p className="userType-p">Tipo de usuario</p>
+                            <select
+                            className="userType-select"
                               name="userType"
-                              placeholder="Type of user: client or professional"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
+                              onChange={handleOnChange}
                               value={user.userType}
-                            />
+                            >
+                              <option value="client" >Cliente</option>
+                              <option value="professional">
+                                Profesional sanitario
+                              </option>
+                            </select>
                           </div>
                         </div>
 
@@ -129,9 +159,9 @@ const UsersUpdateScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg btn-form"
                           >
-                            Update user info
+                            Actualiza los datos
                           </button>
                         </div>
                       </form>

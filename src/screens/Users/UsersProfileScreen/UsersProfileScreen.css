@@ -2,7 +2,6 @@
   background-color: #aabaab !important;
   border: 1px solid #aab966 !important;
   margin-top: 1.5rem;
-  border-radius: 50% !important;
   width: 15rem;
   height: 3rem;
   
@@ -13,10 +12,6 @@
 .btn-log-out {
   border: 1px solid #aab966 !important;
   background-color: #96778a !important;
-  /* right: 1rem;
-  position: absolute;
-  top: 4.5rem; */
-  border-radius: 50% !important;
   margin: 1.5rem auto !important;
   width: 15rem;
   height: 3rem;

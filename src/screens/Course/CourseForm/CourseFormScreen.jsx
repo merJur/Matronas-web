@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createCourse } from "../../../services/CourseServices";
+import './CourseFormScreen.css'
 
 const CourseFormScreen = () => {
   const [course, setCourse] = useState({
@@ -16,7 +17,9 @@ const CourseFormScreen = () => {
 
   function onSubmit(event){
     event.preventDefault();
-    const formData = new FormData();      
+    const formData = new FormData();     
+    
+    debugger
 
     for (let value in course) {                   
       formData.append(value, course[value]);
@@ -54,7 +57,7 @@ const CourseFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Nuevo curso
+                        Añade un curso nuevo:
                       </p>
 
                       <form
@@ -68,7 +71,7 @@ const CourseFormScreen = () => {
                               type="text"
                               name="name"
                               placeholder="Nombre del curso"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.name}
                             />
@@ -82,19 +85,21 @@ const CourseFormScreen = () => {
                               type="file"
                               name="image"
                               placeholder="Imagen del curso"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(e) => handleonChangeImage(e.target.files[0])}
                             />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <p>Tipo de actividad</p>
+                          <div className="userType">
+                            <p className="userType-p">Tipo de actividad</p>
                             <select
                               onChange={(event) => handleOnChange(event)}
                               name="typeOfCourse"
+                              className="userType-select"
                             >
-                              <option value="Activity">Clases</option>
+                              <option value="Activity" selected>Clases</option>
                               <option value="Presencial-Course">
                                 Curso Presencial
                               </option>
@@ -102,6 +107,7 @@ const CourseFormScreen = () => {
                                 Curso on-line
                               </option>
                             </select>
+                            </div>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -110,9 +116,10 @@ const CourseFormScreen = () => {
                               type="text"
                               name="description"
                               placeholder="Descripción"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
+                              style={{marginLeft:'1rem'}}
                             />
                           </div>
                         </div>
@@ -123,7 +130,7 @@ const CourseFormScreen = () => {
                               type="date"
                               name="schedule"
                               placeholder="Agenda"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
                               style={{ heigth: "5rem !important" }}
@@ -138,7 +145,7 @@ const CourseFormScreen = () => {
                               type="text"
                               name="hours"
                               placeholder="Hora de la actividad"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.hours}
                             />
@@ -151,7 +158,7 @@ const CourseFormScreen = () => {
                               type="text"
                               name="price"
                               placeholder="Precio del curso"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.price}
                             />
@@ -163,7 +170,7 @@ const CourseFormScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg btns-update btb-create-course"
                           >
                             Crear curso
                           </button>

@@ -21,12 +21,15 @@
 .hamburguer-icon{
    position: absolute;
    right: 1.5rem;
-   background-color:  #AAB966 ;
+   background-color:  #E4C0C1;
    border: 2px solid black;
+   width: 2.5rem;
+   height: 2.5rem;
+   margin-top: 2px;
 }
 
 .my-header{
-    background-color: #AABAAB ;
+    background-color:  #E4C0C1 ;
     
     }
 
@@ -52,4 +55,7 @@
     flex-direction: row;
    
     
+}
+.navbar-toggler-icon{
+    margin-left: -0.6rem !important;
 }
