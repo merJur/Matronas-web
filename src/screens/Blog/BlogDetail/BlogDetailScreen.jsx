@@ -11,7 +11,9 @@ const BlogDetailScreen = () => {
     const [ blog, setBlogs ] = useState([])
 
     useEffect(() => {
-        getBlogDetail(id).then(blog => setBlogs(blog)).catch(err => console.log(err))
+        getBlogDetail(id).
+        then(blog => setBlogs(blog))
+        .catch(err => console.log(err))
     }, [id])
 
 
@@ -20,11 +22,11 @@ const BlogDetailScreen = () => {
         <div>
             <div>
                 <h2 >{blog.title}</h2>
-                <img src={blog.image}/>
+                <img src={blog.image} className='imgBlog'/>
             </div>
             <div>
-                <h3>Palabras clave</h3>
-                <p>{' ' + blog.keyWords+ ' '}</p>
+                <h3>Palabras clave :</h3>
+                <p>{ `${blog.keyWords}`}</p>
             </div>
             <div className='post-text'>
                 <p>{blog.post}</p>

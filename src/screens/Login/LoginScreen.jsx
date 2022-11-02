@@ -90,7 +90,7 @@ const LoginScreen = () => {
                               placeholder="e-mail"
                               className="form-control"
                               onChange={(event) => handleOnChange(event)}
-                         
+                              style={{width:'308px'}}
                             />
                           </div>
                           {`${errors.email}` ? (
@@ -104,30 +104,33 @@ const LoginScreen = () => {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
+                          <div className='password-row'>
                             <input
                               type={passwordShown ? "text" : "password"}
                               name="password"
                               placeholder="Contraseña"
-                              className="form-control"
+                              className="form-control-password"
                               onChange={(event) => handleOnChange(event)}
-                            />
+                             />
                              {`${errors.password}` ? (
                               <span
                                 className="alert alert-warning"
                                 role="alert"
                               >{`${errors.password}`}</span>
                             ) : null}
-                            <button onClick={togglePassword} type='button'>
-                              Ver la contraseña
+                            <button onClick={togglePassword} type='button' className="btn-eye">
+                            <img src='https://res.cloudinary.com/merjur/image/upload/v1667324728/matronas/password-eye-icon_vc2r0z.png' alt='ver contraseña' className='eye'/>
+
                             </button>
+                          </div>
                           </div>
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
-                            style={{ width: "20rem" }}
+                            className="btn btn-primary btn-lg btn-form"
+                            style={{ width: '130px' }}
                           >
                             Entrar
                           </button>

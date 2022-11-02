@@ -4,6 +4,7 @@ import {
   getCourseDetail,
 } from "../../../services/CourseServices";
 import { useParams, useNavigate } from "react-router-dom";
+import './CourseUpdateScreen.css'
 
 const CourseUpdateScreen = () => {
   const [course, setCourse] = useState({
@@ -30,11 +31,23 @@ const CourseUpdateScreen = () => {
     });
   };
 
-  const onSubmit = (event) => {
+  function onSubmit(event) {
     event.preventDefault();
+    const formData = new FormData();
 
-    updateCourse(id, course).then((course) => {
+    for (let value in course) {
+      formData.append(value, course[value]);
+    }
+
+    updateCourse(id, formData).then((course) => {
+      console.log("**************entrada de blog actualizada", course);
       navigate("/courses");
+    });
+  }
+  const handleonChangeImage = (file) => {
+    setCourse({
+      ...course,
+      image: file,
     });
   };
 
@@ -49,7 +62,7 @@ const CourseUpdateScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Edit course
+                        Edita el curso: <strong>{`${course.name}`}</strong>.
                       </p>
 
                       <form
@@ -62,8 +75,8 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="name"
-                              placeholder="Course´s name"
-                              className="form-control"
+                              placeholder="Nombre del curso"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.name}
                             />
@@ -76,23 +89,32 @@ const CourseUpdateScreen = () => {
                             <input
                               type="file"
                               name="image"
-                              placeholder="Course´s image"
-                              className="form-control"
-                              onChange={(event) => handleOnChange(event)}
-                              value={course.image}
+                              placeholder="Selecciona la imagen"
+                              className="form-control update-blog"
+                              onChange={(e) =>
+                                handleonChangeImage(e.target.files[0])
+                              }
                             />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
-                              name="typeOfCourse"
-                              placeholder="Activity, Presencial-Course, or On-line-Course"
-                              className="form-control"
+                          <div className="userType">
+                            <p className="userType-p ">Tipo de actividad</p>
+                            <select
                               onChange={(event) => handleOnChange(event)}
-                              value={course.typeOfCourse}
-                            />
+                              name="typeOfCourse"
+                              className="userType-select"
+                            >
+                              <option value="Activity">Clases</option>
+                              <option value="Presencial-Course">
+                                Curso Presencial
+                              </option>
+                              <option value="On-line-Course">
+                                Curso on-line
+                              </option>
+                            </select>
+                            </div>
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -100,11 +122,11 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="description"
-                              placeholder="description"
-                              className="form-control"
+                              placeholder="Descripción"
+                              className="form-control update-blog description-input"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
-                            />
+                           />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -113,11 +135,11 @@ const CourseUpdateScreen = () => {
                             <input
                               type="date"
                               name="schedule"
-                              placeholder="Enter the text of the post"
-                              className="form-control"
+                              placeholder="Agenda"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.schedule}
-                              style={{ heigth: "5rem" }}
+                              style={{ heigth: "5rem !important" }}
                             />
                           </div>
                         </div>
@@ -128,8 +150,8 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="hours"
-                              placeholder="Dating hours"
-                              className="form-control"
+                              placeholder="Hora de la actividad"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.hours}
                             />
@@ -141,8 +163,8 @@ const CourseUpdateScreen = () => {
                             <input
                               type="text"
                               name="price"
-                              placeholder="price os the course"
-                              className="form-control"
+                              placeholder="Precio del curso"
+                              className="form-control update-blog"
                               onChange={(event) => handleOnChange(event)}
                               value={course.price}
                             />
@@ -154,9 +176,10 @@ const CourseUpdateScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            style={{marginLeft:'-1rem !important'}}
+                            className="btn btn-primary btn-lg btns-update blog-create-btn"
                           >
-                            update course
+                            Actualiza el curso
                           </button>
                         </div>
                       </form>

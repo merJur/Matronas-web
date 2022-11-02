@@ -29,7 +29,7 @@ const BlogFormScreen = () => {
       formData.append(value, blog[value]);
     }
 
-    createBlog(formData,{
+    createBlog(formData, {
       ...blog,
       keyWords: tags,
     }).then((blog) => {
@@ -56,7 +56,8 @@ const BlogFormScreen = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Nueva entrada del blog
+                        Nueva entrada del blog:{" "}
+                        <strong> {`${blog.title}`}</strong>
                       </p>
 
                       <form
@@ -70,11 +71,11 @@ const BlogFormScreen = () => {
                               type="text"
                               name="title"
                               placeholder="Título"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(event) =>
                                 setBlog({ ...blog, title: event.target.value })
                               }
-                              value={blog.name}
+                              value={blog.title}
                             />
                           </div>
                         </div>
@@ -86,7 +87,7 @@ const BlogFormScreen = () => {
                               type="file"
                               name="image"
                               placeholder="Imagen del post"
-                              className="form-control"
+                              className="form-control update-blog"
                               onChange={(e) =>
                                 handleonChangeImage(e.target.files[0])
                               }
@@ -96,7 +97,11 @@ const BlogFormScreen = () => {
                         <div></div>
                         <div>
                           {tags.map((tag, idx) => {
-                            return <div key={idx}>{tag}</div>;
+                            return (
+                              <div className="tag" key={idx}>
+                                {tag}
+                              </div>
+                            );
                           })}
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -105,14 +110,14 @@ const BlogFormScreen = () => {
                               type="text"
                               name="keyWords"
                               placeholder="Palabras clave"
-                              className="form-control"
+                              className="form-control update-blog keyword-input"
                               onChange={(event) => setTag(event.target.value)}
                               value={tag}
                             />
                             <button
                               type="button"
                               onClick={onAddTag}
-                              className="btn btn-primary"
+                              className="btn btn-primary btns-update btn-add-keyword"
                             >
                               Añade la palabra clave
                             </button>
@@ -121,17 +126,18 @@ const BlogFormScreen = () => {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <input
+                            <textarea
                               type="textarea"
                               name="post"
                               placeholder="Entra el texto del post"
-                              className="form-control"
+                              className="form-control textarea"
                               onChange={(event) =>
                                 setBlog({ ...blog, post: event.target.value })
                               }
-                              value={blog.post}
-                              style={{ heigth: "50rem" }}
-                            />
+                              rows={4}
+                            >
+                              {blog.post}
+                            </textarea>
                           </div>
                         </div>
 
@@ -141,9 +147,9 @@ const BlogFormScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg btns-update blog-create-btn"
                           >
-                            Crea el post!
+                            Crea la entrada al blog
                           </button>
                         </div>
                       </form>

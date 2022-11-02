@@ -1,0 +1,16 @@
+.textarea{
+    height: 20rem !important;
+}
+
+.tag{
+    background-color: greenyellow;
+    border-radius: 3rem;
+    width: 12rem;
+    margin-bottom: 1rem;
+}
+.blog-create-btn{
+    margin-left: -1rem;
+}
+.btn-add-keyword{
+    margin-left: 1rem;
+}

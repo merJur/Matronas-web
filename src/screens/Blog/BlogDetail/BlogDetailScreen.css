@@ -5,5 +5,19 @@
     color: white;
     margin: 5rem auto;
     padding: 3rem;
+    max-width:60rem;
 }
 
+.imgBlog{
+    max-width:60rem;
+    border-radius: 25px;
+    height: 30rem;
+    
+}
+
+.tag{
+    background-color: greenyellow;
+    border-radius: 3rem;
+    width: 12rem;
+    margin-bottom: 1rem;
+}

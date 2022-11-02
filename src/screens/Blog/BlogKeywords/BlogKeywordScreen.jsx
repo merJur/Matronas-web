@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { searchBlogs, getBlogs } from "../../../services/BlogServices";
 
 const BlogKeywordScreen = () => {
   const { keyword } = useParams();
   const [blogs, setBlogs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (keyword) {
@@ -20,7 +21,8 @@ const BlogKeywordScreen = () => {
   }, [keyword]);
 
   if (!blogs) {
-    return "No hay blogs";
+    return 'not found'
+    // navigate('/notFound');
   }
 
   return (

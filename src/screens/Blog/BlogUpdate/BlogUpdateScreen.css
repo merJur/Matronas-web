@@ -1,0 +1,27 @@
+.textarea{
+    height: 20rem !important;
+}
+
+.tag{
+    background-color: #aab966;
+    border-radius: 3rem;
+    width: 12rem;
+    margin-bottom: 1rem;
+    margin-left: 4.5rem;
+}
+.update-blog{
+    width: 308px !important;
+}
+
+.btns-update {
+    background-color: #aabaab !important;
+    border: 1px solid #aab966 !important;
+    margin-top: 1.5rem;
+    width: 17rem;
+    height: 3rem;
+}
+
+.keyword-input{
+    margin-left: 1rem;
+}
+    

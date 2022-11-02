@@ -1,0 +1,41 @@
+.user-name{
+    margin: 1rem auto;
+}
+
+.btn-delete{
+  border: 1px solid #AABAAB !important;
+  background-color: #aab966 !important;
+  margin: 1.5rem auto !important;
+  width: 6rem;
+  height: 3rem;
+  color: white !important;
+  font-size: 0.8rem;
+}
+.btn-edit-user{
+  border: 1px solid #aab966 !important;
+  background-color: #AABAAB !important;
+  width: 6rem;
+  height: 3rem;
+  color: white !important;
+  font-size: 0.8rem;
+  padding-top: 0.7rem !important;
+
+}
+.title-user-list{
+    margin-top: 2rem;
+}
+.container-user-list{
+    border: 1px solid #96778A;
+    margin: 0 1rem;
+    background-color:#E4C0C1;
+}
+.container-li-user-list{
+    border: 1px solid #96778A ;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+.btn-edit-text{
+    margin-left: -0.3rem;
+}
