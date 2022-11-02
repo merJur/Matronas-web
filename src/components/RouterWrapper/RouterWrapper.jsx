@@ -18,6 +18,13 @@ import CourseUpdateScreen from "../../screens/Course/CourseUpdate/CourseUpdateSc
 import CourseDetailScreen from "../../screens/Course/CourseDetail/CourseDetailScreen";
 import { useAuthContext } from "./../../context/AuthContext";
 import AboutUs from "../../screens/AboutUs/AboutUsScreen";
+import ElenaScreen from "../../screens/Admins/Elena/elenaScreen";
+import RosaScreen from "../../screens/Admins/Rosa/rosaScreen";
+import GirlTeenagerScreen from "../../screens/GirlTeenager/girlTeenagerScreen";
+import WomanScreen from "../../screens/Woman/womanScreen";
+import PregnancyScreen from "../../screens/Pregnancy/pregnancyScreen";
+import PostpartumScreen from "../../screens/Postpartum/postpartumScreen";
+import MenopauseScreen from "../../screens/Menopause/menopauseScreen";
 
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
 
@@ -37,6 +44,13 @@ const RouterWrapper = () => {
           <Route path="/blogs" element={<BlogListScreen />} />
           <Route path="/courses" element={<CourseListScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/aboutus/elena" element={<ElenaScreen />} />
+          <Route path="/aboutus/rosa" element={<RosaScreen />} />
+          <Route path="/girlteenager" element={<GirlTeenagerScreen />} />
+          <Route path="/woman" element={<WomanScreen />} />
+          <Route path="/pregnancy" element={<PregnancyScreen />} />
+          <Route path="/postpartum" element={<PostpartumScreen />} />
+          <Route path="/menopause" element={<MenopauseScreen />} />
 
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route

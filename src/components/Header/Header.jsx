@@ -6,6 +6,7 @@ import { useAuthContext } from "./../../context/AuthContext"
 
 
 const Header = () => {
+
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
