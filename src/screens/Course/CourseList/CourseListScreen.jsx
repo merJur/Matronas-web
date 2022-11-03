@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { getCourses, deleteCourse } from './../../../services/CourseServices';
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
+import CourseCard from '../../../components/CourseCard/CourseCard';
 
 
 const CourseListScreen = () => {
@@ -28,10 +29,21 @@ const CourseListScreen = () => {
 
     return (
         <div>
-            <ul className="list-group container mt-4">
+            
         {courses.map((course) => (
-          <li key={course.id}>
-            <Link to={`/course/${course.id}`}>Ver detalles</Link>
+          <div key={course.id}>
+            <CourseCard 
+              name={course.name}
+              typeOfCourse={course.typeOfCourse}
+              image={course.image}
+              description={course.description}
+              schedule={course.schedule}
+              hours={course.hours}
+              price={course.price}
+            />
+          
+          
+            {/* <Link to={`/course/${course.id}`}>Ver detalles</Link>
 
             <p>{course.name}</p>
             <p>{course.typeOfCourse}</p>
@@ -56,10 +68,11 @@ const CourseListScreen = () => {
                 </i>
               </div>
             ) : null}
-          </li>
+            </li> */}
+          </div>
         ))}
-      </ul>
         </div>
+      
     );
 };
 

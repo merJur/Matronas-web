@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import("../Header/Header.css");
-import { getBlogs, searchBlogs } from "./../../services/BlogServices";
 import { useAuthContext } from "./../../context/AuthContext"
+import { getBlogs, searchBlogs } from "./../../services/BlogServices";
+import { Link, useNavigate } from "react-router-dom";
+import './Header.css'
 
 
 const Header = () => {

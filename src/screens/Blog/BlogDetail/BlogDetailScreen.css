@@ -3,15 +3,17 @@
     border-radius: 2rem;
     background-color: #E4C0C1;
     color: white;
-    margin: 5rem auto;
+    margin: 2rem 1rem;
     padding: 3rem;
     max-width:60rem;
 }
 
 .imgBlog{
-    max-width:60rem;
+    width:90%;
     border-radius: 25px;
-    height: 30rem;
+    height: auto;
+    margin: 1rem 1rem !important;
+    
     
 }
 
@@ -20,4 +22,7 @@
     border-radius: 3rem;
     width: 12rem;
     margin-bottom: 1rem;
+}
+.blog-detail-title{
+    margin: 2rem;
 }

@@ -21,7 +21,7 @@ const BlogDetailScreen = () => {
     return (
         <div>
             <div>
-                <h2 >{blog.title}</h2>
+                <h2 className='blog-detail-title'>{blog.title}</h2>
                 <img src={blog.image} className='imgBlog'/>
             </div>
             <div>
