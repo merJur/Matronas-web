@@ -1,9 +1,9 @@
 .blog-card-title{
     background-color: #AABAAB;
     padding: 0.5rem;
-    border-radius: 25px;
+    border-radius: 17px;
     margin-bottom: 15rem;
-    color:white
+    color:white;
 }
 .blog-card-img{
     width: 20rem;

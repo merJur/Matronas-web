@@ -17,8 +17,10 @@
     flex-direction: row;
     background-color: #AABAAB;
     margin: 0.5rem;
+    border-radius: 15px;
 }
 .course-card-s{
     padding: 0.3rem;
     color: white;
+    text-decoration: none;
 }

@@ -10,8 +10,7 @@ const BlogListScreen = () => {
   const { user } = useAuthContext();
 
   const fetchBlogs = useCallback(() => {
-    getBlogs()
-    .then((blogsData) => {
+    getBlogs().then((blogsData) => {
       setBlogs(blogsData);
     });
   }, []);
@@ -28,45 +27,48 @@ const BlogListScreen = () => {
 
   return (
     <div>
-      
+      <ul>
         {blogs.map((blog) => (
-          <div key={blog.id}>
-
-          <BlogCard 
+          <li key={blog.id}>
+            {/* <BlogCard 
             title={blog.title}
             image={blog.image}
             keyWords={blog.keyWords}
             to={`/blog/${blog.id}`}
+            isAdmin={user.isAdmin}
             />
-          </div>
+          </div> */}
 
-          // <li key={blog.id}>
-          //   <Link to={`/blog/${blog.id}`}>Ver detalles</Link>
-
-          //   <p>{blog.title}</p>
-          //   <p>{blog.keyWords}</p>
-          //   {user.isAdmin ? (
-          //     <div>
-          //       <Link
-          //         className="link-unstyled me-3"
-          //         to={`/blog/${blog.id}/update`}
-          //       >
-          //         <span className="badge badge-primary bg-primary badge-pill">
-          //           Editar
-          //         </span>
-          //       </Link>
-          //       <i
-          //         onClick={() => handleDelete(blog.id)}
-          //         className="btn badge badge-danger text-light bg-danger badge-pill"
-          //         type={"btn"}
-          //       >
-          //         Borrar
-          //       </i>
-          //     </div>
-          //   ) : null}
-          //    </li>
+            <div className='course-container ' style={{backgroundImage:`url(${blog.image})`, backgroundRepeat:"no-repeat", backgroundPosition:' center center' }}>
+              <h2 className="blog-card-title">{blog.title}</h2>
+              
+              <div className='blog-card-direction'>
+              <p className='blog-card-keyWords'><strong>Palabras clave: </strong>{blog.keyWords}</p>
+                 <Link to={`/blog/${blog.id}`} className='blog-list-link '>Ver detalles</Link>
+              </div>
+              {user.isAdmin ? (
+                <div>
+                  <Link
+                    className="link-unstyled me-3"
+                    to={`/blog/${blog.id}/update`}
+                  >
+                    <span className="btn btns-course">
+                      Editar
+                    </span>
+                  </Link>
+                  <i
+                    onClick={() => handleDelete(blog.id)}
+                    className="btn btns-course"
+                    type={"btn"}
+                  >
+                    Borrar
+                  </i>
+                </div>
+              ) : null}
+            </div>
+          </li>
         ))}
-      
+      </ul>
     </div>
   );
 };
