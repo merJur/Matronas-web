@@ -19,9 +19,7 @@ const CourseFormScreen = () => {
     event.preventDefault();
     const formData = new FormData();     
     
-    debugger
-
-    for (let value in course) {                   
+       for (let value in course) {                   
       formData.append(value, course[value]);
     }
 
@@ -127,7 +125,7 @@ const CourseFormScreen = () => {
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
-                              type="date"
+                              type="text"
                               name="schedule"
                               placeholder="Agenda"
                               className="form-control update-blog"
