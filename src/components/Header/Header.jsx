@@ -5,14 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import './Header.css'
 
 
-const Header = () => {
 
+const Header = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
 
-  
   const handleOnsearchChange = (event) => {
     setSearch(event.target.value);
   };
@@ -30,7 +29,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div >
+    <div>
       <nav className="navbar    my-header">
         <div className="container-header">
           <Link to="/">
@@ -41,27 +40,27 @@ const Header = () => {
             />
           </Link>
 
-          { !user ? (
+          {!user ? (
             <div>
-                <Link to='/login'>
-                    <img
-                    src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
-                    alt="login/profile-icon"
-                    className="user-icon"
-                    />
-                </Link> 
-            </div>  
+              <Link to="/login">
+                <img
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
+                  alt="login/profile-icon"
+                  className="user-icon"
+                />
+              </Link>
+            </div>
           ) : null}
-          { user ? (
+          {user ? (
             <div>
-                <Link to='/profile'>
-                    <img
-                    src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
-                    alt="login/profile-icon"
-                    className="user-icon"
-                    />
-                </Link> 
-            </div>  
+              <Link to="/profile">
+                <img
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
+                  alt="login/profile-icon"
+                  className="user-icon"
+                />
+              </Link>
+            </div>
           ) : null}
           <button
             className="navbar-toggler hamburguer-icon"
@@ -80,7 +79,7 @@ const Header = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                OM Matronas
+                Om Matronas
               </h5>
               <button
                 type="button"
@@ -92,19 +91,23 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="#">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Inicio
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/aboutus"
+                  >
                     Sobre Nosotras
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
-                    to="#"
+                    to=""
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -113,13 +116,13 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="#">
-                        Sexualidad en la adolescencia
+                      <Link className="dropdown-item" to="/menarche">
+                        Menarquia. De niña a adolescente
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
-                        Taller de menarquia
+                      <Link className="dropdown-item" to="/teenager-sexuality">
+                        Sexualidad en la adolescencia
                       </Link>
                     </li>
                   </ul>
@@ -136,12 +139,15 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link
+                        className="dropdown-item"
+                        to="/woman-healthy-sexuality"
+                      >
                         Sexualidad saludable
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link className="dropdown-item" to="/fertility">
                         Fertilidad
                       </Link>
                     </li>
@@ -159,18 +165,26 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="#">
-                        Yoga Prenatal
+                      <Link
+                        className="dropdown-item"
+                        to="/sexuality-pregnancy"
+                      >
+                        Sexualidad en el embarazo
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link className="dropdown-item" to="/courses">
                         Esferodinamia e Hipnoparto
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
-                        Nuestra tribu de madres
+                      <Link className="dropdown-item" to="/courses">
+                        Yoga Prenatal
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/tribu-tribu">
+                        ¡Nuestra tribu de madres!
                       </Link>
                     </li>
                   </ul>
@@ -187,12 +201,15 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link
+                        className="dropdown-item"
+                        to="/sexualidad-tras-la-cuarentena"
+                      >
                         Sexualidad tras la cuarentena
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link className="dropdown-item" to="/courses">
                         Yoga madres y bebés
                       </Link>
                     </li>
@@ -210,12 +227,18 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link
+                        className="dropdown-item"
+                        to="/sexualidad-en-la-menopausia"
+                      >
                         Sexualidad en la Menopausia
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="#">
+                      <Link
+                        className="dropdown-item"
+                        to="/fortaleciendo-el-suelo-pelvico"
+                      >
                         Fortaleciendo el suelo pélvico
                       </Link>
                     </li>
@@ -255,7 +278,6 @@ const Header = () => {
                   <button
                     className="btn btn-outline-success my-2 my-sm-0 btn-search"
                     type="submit"
-                    
                   >
                     Buscar
                   </button>

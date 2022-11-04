@@ -20,22 +20,24 @@ import { useAuthContext } from "./../../context/AuthContext";
 import AboutUs from "../../screens/AboutUs/AboutUsScreen";
 import ElenaScreen from "../../screens/Admins/Elena/elenaScreen";
 import RosaScreen from "../../screens/Admins/Rosa/rosaScreen";
-import GirlTeenagerScreen from "../../screens/GirlTeenager/girlTeenagerScreen";
-import WomanScreen from "../../screens/Woman/womanScreen";
-import PregnancyScreen from "../../screens/Pregnancy/pregnancyScreen";
+import MenarcheScreen from "../../screens/Menarche/MenarcheScreen";
+import TeenagerSexualityScreen from "../../screens/TeenagerSexuality/teenagerSexualityScreen";
+import WomanHealthySexualityScreen from "../../screens/WomanHealthySexuality/womanHealthySexualityScreen";
+import FertilityScreen from "../../screens/Fertility/fertilityScreen";
+import SexualityPregnancyScreen from "../../screens/SexualityPregnancy/sexualityPregnancyScreen";
+import PregnancyScreen from "../../screens/SexualityPregnancy/sexualityPregnancyScreen";
 import PostpartumScreen from "../../screens/Postpartum/postpartumScreen";
 import MenopauseScreen from "../../screens/Menopause/menopauseScreen";
+import PageNotFound from "../../screens/NotFound/notFound";
 
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
   return (
-   
     <>
-   <Header />
+      <Header />
       {isAuthFetched ? (
-       
         <Routes>
           {/* rutas no protegidas: home, resgiter, login, coursesList y blogList*/}
           <Route path="/" element={<HomeScreen />} />
@@ -46,9 +48,20 @@ const RouterWrapper = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/aboutus/elena" element={<ElenaScreen />} />
           <Route path="/aboutus/rosa" element={<RosaScreen />} />
-          <Route path="/girlteenager" element={<GirlTeenagerScreen />} />
-          <Route path="/woman" element={<WomanScreen />} />
-          <Route path="/pregnancy" element={<PregnancyScreen />} />
+          <Route path="/menarche" element={<MenarcheScreen />} />
+          <Route
+            path="/teenager-sexuality"
+            element={<TeenagerSexualityScreen />}
+          />
+          <Route
+            path="/woman-healthy-sexuality"
+            element={<WomanHealthySexualityScreen />}
+          />
+          <Route path="/fertility" element={<FertilityScreen />} />
+          <Route
+            path="/sexuality-pregnancy"
+            element={<SexualityPregnancyScreen />}
+          />
           <Route path="/postpartum" element={<PostpartumScreen />} />
           <Route path="/menopause" element={<MenopauseScreen />} />
 
@@ -133,13 +146,12 @@ const RouterWrapper = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        
       ) : (
         <p>Loading ...</p>
       )}
-      </>
-   
+    </>
   );
 };
 

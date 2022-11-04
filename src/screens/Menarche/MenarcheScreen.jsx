@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "../../components/Card/Card";
-import "./girlTeenagerScreen.css";
+import "./MenarcheScreen.css";
 
-const girlTeenagerScreen = () => {
+const MenarcheScreen = () => {
   return (
     <div className="container">
       <h1>Niña y Adolescente</h1>
@@ -58,4 +58,4 @@ const girlTeenagerScreen = () => {
   );
 };
 
-export default girlTeenagerScreen;
+export default MenarcheScreen;
