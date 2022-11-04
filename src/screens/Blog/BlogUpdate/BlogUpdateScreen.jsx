@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { updateBlog, getBlogDetail } from "../../../services/BlogServices";
 import './BlogUpdateScreen.css'
+
 const BlogUpdateScreen = () => {
   const [blog, setBlog] = useState({
     title: "",

@@ -21,17 +21,33 @@ const BlogKeywordScreen = () => {
   }, [keyword]);
 
   if (!blogs) {
-    return 'not found'
+    return "not found";
     // navigate('/notFound');
   }
 
   return (
     <div>
       {blogs.map((blog) => (
-        <div>
-            <h2>{blog.title}</h2>
-            <p>{blog.keyWords}</p>
-            <Link to={`/blog/${blog.id}`}> Entra al blog</Link>
+        <div key={blog.id}>
+          <div
+            className="course-container-keywords "
+            style={{
+              backgroundImage: `url(${blog.image})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: " center center",
+            }}
+          >
+            <h2 className="blog-card-title">{blog.title}</h2>
+            <div className="blog-card-direction">
+              <p className="blog-card-keyWords">
+                <strong>Palabras clave: </strong>
+                {blog.keyWords}
+              </p>
+              <Link className="blog-list-link-keywords" to={`/blog/${blog.id}`}>
+                Entra al blog
+              </Link>
+            </div>
+          </div>
         </div>
       ))}
     </div>

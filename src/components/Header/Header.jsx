@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from "react";
-import { useAuthContext } from "./../../context/AuthContext";
+import { useAuthContext } from "./../../context/AuthContext"
 import { getBlogs, searchBlogs } from "./../../services/BlogServices";
 import { Link, useNavigate } from "react-router-dom";
-import "./Header.css";
+import './Header.css'
+
+
 
 const Header = () => {
   const navigate = useNavigate();

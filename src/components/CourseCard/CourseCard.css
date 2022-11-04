@@ -1,0 +1,26 @@
+.course-card-column{
+    display: flex;
+    flex-direction: column;
+    background-color: #aab966 ;
+    border-radius: 15px;
+    padding: 1rem;
+    color: white;
+    margin: 1rem ;
+}
+.course-card-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.course-card-row-s{
+    display: flex;
+    flex-direction: row;
+    background-color: #AABAAB;
+    margin: 0.5rem;
+    border-radius: 15px;
+}
+.course-card-s{
+    padding: 0.3rem;
+    color: white;
+    text-decoration: none;
+}

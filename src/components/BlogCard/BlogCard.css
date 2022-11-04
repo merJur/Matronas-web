@@ -1,0 +1,41 @@
+.blog-card-title{
+    background-color: #AABAAB;
+    padding: 0.5rem;
+    border-radius: 17px;
+    margin-bottom: 15rem;
+    color:white;
+}
+.blog-card-img{
+    width: 20rem;
+    height: auto;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+.blog-card-keyWords{
+    background-color:#aab966 ;
+    color: white;
+    border-radius: 25px;
+    margin: 1rem, 3rem;
+    padding: 0.5rem 0;
+
+}
+.blog-card-container{
+    border-radius: 15px;
+    margin: 2rem 1rem;
+    border: 1px solid  #AABAAB;
+    padding: 1rem;
+
+}
+.blog-card-direction{
+    display: flex;
+    flex-direction: column;
+}
+.blog-card-link{
+    text-decoration: none;
+    background-color:  #E4C0C1;
+    border-radius: 15px;
+    width: 8rem;
+    color: white;
+    margin: 0 auto;
+
+}
