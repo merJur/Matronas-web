@@ -7,7 +7,7 @@ import "./CourseListScreen.css";
 
 const CourseListScreen = () => {
   const [courses, setCourses] = useState([]);
-  const { ...user } = useAuthContext();
+  const { user } = useAuthContext();
 
   const fetchCourses = useCallback(() => {
     getCourses().then((course) => {
