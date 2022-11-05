@@ -28,11 +28,13 @@ const sexualityPregnancyScreen = () => {
         A pesar de que la sexualidad forma parte de nuestras vidas, también
         durante el embarazo, hay ciertas circunstancias en las que suele
         recomendarse no mantener relaciones sexuales con penetración:
+        <div>
         <ul>
           <li>amenaza de aborto.</li>
           <li>amenaza de parto prematuro.</li>
           <li>placenta previa con sangrado al final del embarazo.</li>
         </ul>
+        </div>
       </p>
       <p>
         En estos casos, el especialista debería detallar qué actividades
