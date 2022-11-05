@@ -7,7 +7,7 @@ import BlogCard from "../../../components/BlogCard/BlogCard";
 
 const BlogListScreen = () => {
   const [blogs, setBlogs] = useState([]);
-  const { user } = useAuthContext();
+  const { ...user } = useAuthContext();
 
   const fetchBlogs = useCallback(() => {
     getBlogs().then((blogsData) => {

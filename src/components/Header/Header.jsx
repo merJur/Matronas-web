@@ -1,10 +1,8 @@
-import React, { useCallback, useState } from "react";
-import { useAuthContext } from "./../../context/AuthContext"
-import { getBlogs, searchBlogs } from "./../../services/BlogServices";
+import React, { useState } from "react";
+import { useAuthContext } from "./../../context/AuthContext";
+// import { getBlogs } from "./../../services/BlogServices";
 import { Link, useNavigate } from "react-router-dom";
-import './Header.css'
-
-
+import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,16 +19,16 @@ const Header = () => {
     navigate(`/search/${search}`);
   };
 
-  const tagSearch = useCallback(() => {
-    getBlogs.keyWords().then((keyWordsData) => {
-      setSearch(keyWordsData);
-      navigate("/blogDetail");
-    });
-  }, []);
+  // const tagSearch = useCallback(() => {
+  //   getBlogs.keyWords().then((keyWordsData) => {
+  //     setSearch(keyWordsData);
+  //     navigate("/blogDetail");
+  //   });
+  // }, []);
 
   return (
     <div>
-      <nav className="navbar    my-header">
+      <nav className="navbar my-header">
         <div className="container-header">
           <Link to="/">
             <img
@@ -90,12 +88,12 @@ const Header = () => {
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item">
+                <li className="nav-item" data-bs-toggle="offcanvas">
                   <Link className="nav-link active" aria-current="page" to="/">
                     Inicio
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-bs-toggle="offcanvas">
                   <Link
                     className="nav-link active"
                     aria-current="page"
@@ -115,12 +113,12 @@ const Header = () => {
                     Niña y Adolescente
                   </Link>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/menarche">
                         Menarquia. De niña a adolescente
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/teenager-sexuality">
                         Sexualidad en la adolescencia
                       </Link>
@@ -138,7 +136,7 @@ const Header = () => {
                     Mujer
                   </Link>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link
                         className="dropdown-item"
                         to="/woman-healthy-sexuality"
@@ -146,7 +144,7 @@ const Header = () => {
                         Sexualidad saludable
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/fertility">
                         Fertilidad
                       </Link>
@@ -163,26 +161,23 @@ const Header = () => {
                   >
                     Embarazo
                   </Link>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link
-                        className="dropdown-item"
-                        to="/sexuality-pregnancy"
-                      >
+                  <ul className="dropdown-menu" data-bs-toggle="offcanvas">
+                    <li data-bs-toggle="offcanvas">
+                      <Link className="dropdown-item" to="/sexuality-pregnancy">
                         Sexualidad en el embarazo
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/courses">
                         Esferodinamia e Hipnoparto
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/courses">
                         Yoga Prenatal
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/tribu-tribu">
                         ¡Nuestra tribu de madres!
                       </Link>
@@ -200,15 +195,15 @@ const Header = () => {
                     Postparto
                   </Link>
                   <ul className="dropdown-menu">
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link
                         className="dropdown-item"
-                        to="/sexualidad-tras-la-cuarentena"
+                        to="/postpartum-sexuality"
                       >
-                        Sexualidad tras la cuarentena
+                        Sexualidad tras el postparto
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/courses">
                         Yoga madres y bebés
                       </Link>
@@ -226,25 +221,22 @@ const Header = () => {
                     Menopausia
                   </Link>
                   <ul className="dropdown-menu">
-                    <li>
-                      <Link
-                        className="dropdown-item"
-                        to="/sexualidad-en-la-menopausia"
-                      >
+                    <li data-bs-toggle="offcanvas">
+                      <Link className="dropdown-item" to="/menopause-sexuality">
                         Sexualidad en la Menopausia
                       </Link>
                     </li>
-                    <li>
+                    <li data-bs-toggle="offcanvas">
                       <Link
                         className="dropdown-item"
-                        to="/fortaleciendo-el-suelo-pelvico"
+                        to="/physical-activity-menopause"
                       >
-                        Fortaleciendo el suelo pélvico
+                        Actividad Física en la Menopausia
                       </Link>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-bs-toggle="offcanvas">
                   <Link
                     className="nav-link active"
                     aria-current="page"
@@ -253,7 +245,7 @@ const Header = () => {
                     Blog
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-bs-toggle="offcanvas">
                   <Link
                     className="nav-link active"
                     aria-current="page"

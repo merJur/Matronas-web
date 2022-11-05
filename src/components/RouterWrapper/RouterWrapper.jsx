@@ -25,9 +25,10 @@ import TeenagerSexualityScreen from "../../screens/TeenagerSexuality/teenagerSex
 import WomanHealthySexualityScreen from "../../screens/WomanHealthySexuality/womanHealthySexualityScreen";
 import FertilityScreen from "../../screens/Fertility/fertilityScreen";
 import SexualityPregnancyScreen from "../../screens/SexualityPregnancy/sexualityPregnancyScreen";
-import PregnancyScreen from "../../screens/SexualityPregnancy/sexualityPregnancyScreen";
-import PostpartumScreen from "../../screens/Postpartum/postpartumScreen";
-import MenopauseScreen from "../../screens/Menopause/menopauseScreen";
+import PostpartumScreen from "../../screens/PostpartumSexuality/postPartumSexualityScreen";
+import TribuTribuScreen from "../../screens/TribuTribu/tribuTribuScreen";
+import SexualityMenopauseScreen from "../../screens/SexualityMenopause/sexualityMenopauseScreen";
+import PhysicalActivityMenopauseScreen from "../../screens/PhysicalActivityMenopause/physicalActivityMenopauseScreen";
 import PageNotFound from "../../screens/NotFound/notFound";
 
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
@@ -49,21 +50,14 @@ const RouterWrapper = () => {
           <Route path="/aboutus/elena" element={<ElenaScreen />} />
           <Route path="/aboutus/rosa" element={<RosaScreen />} />
           <Route path="/menarche" element={<MenarcheScreen />} />
-          <Route
-            path="/teenager-sexuality"
-            element={<TeenagerSexualityScreen />}
-          />
-          <Route
-            path="/woman-healthy-sexuality"
-            element={<WomanHealthySexualityScreen />}
-          />
+          <Route path="/teenager-sexuality" element={<TeenagerSexualityScreen />} />
+          <Route path="/woman-healthy-sexuality" element={<WomanHealthySexualityScreen />} />
           <Route path="/fertility" element={<FertilityScreen />} />
-          <Route
-            path="/sexuality-pregnancy"
-            element={<SexualityPregnancyScreen />}
-          />
-          <Route path="/postpartum" element={<PostpartumScreen />} />
-          <Route path="/menopause" element={<MenopauseScreen />} />
+          <Route path="/sexuality-pregnancy" element={<SexualityPregnancyScreen />} />
+          <Route path="/postpartum-sexuality" element={<PostpartumScreen />} />
+          <Route path="/tribu-tribu" element={<TribuTribuScreen />} />
+          <Route path="/menopause-sexuality" element={<SexualityMenopauseScreen />} />
+          <Route path="/physical-activity-menopause" element={<PhysicalActivityMenopauseScreen />} />
 
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route
