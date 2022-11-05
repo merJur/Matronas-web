@@ -7,7 +7,7 @@ import "./CourseListScreen.css";
 
 const CourseListScreen = () => {
   const [courses, setCourses] = useState([]);
-  const { ...user } = useAuthContext();
+  const { user } = useAuthContext();
 
   const fetchCourses = useCallback(() => {
     getCourses().then((course) => {
@@ -30,17 +30,6 @@ const CourseListScreen = () => {
       <ul className="courses-list-row">
         {courses.map((course) => (
           <li key={course.id} className='course-container'>
-            {/*    <CourseCard 
-              name={course.name}
-              typeOfCourse={course.typeOfCourse}
-              image={course.image}
-              description={course.description}
-              schedule={course.schedule}
-              hours={course.hours}
-              price={course.price}
-              isAdmin={user.isAdmin}
-            />
-           */}
            <div  style={{display:'flex', flexDirection:'column', height:'100%'}}>
             <img
                 src={course.image}
