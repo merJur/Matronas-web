@@ -21,35 +21,43 @@ const BlogKeywordScreen = () => {
   }, [keyword]);
 
   if (!blogs) {
-    return "not found";
-    // navigate('/notFound');
+    return navigate("/*");
   }
 
   return (
     <div>
-      {blogs.map((blog) => (
-        <div key={blog.id}>
-          <div
-            className="course-container-keywords "
-            style={{
-              backgroundImage: `url(${blog.image})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: " center center",
-            }}
-          >
-            <h2 className="blog-card-title">{blog.title}</h2>
-            <div className="blog-card-direction">
-              <p className="blog-card-keyWords">
-                <strong>Palabras clave: </strong>
-                {blog.keyWords}
-              </p>
-              <Link className="blog-list-link-keywords" to={`/blog/${blog.id}`}>
-                Entra al blog
-              </Link>
+      <ul>
+        {blogs.map((blog) => (
+          <li key={blog.id}>
+            <div
+              className="blog-container  "
+              style={{
+                backgroundImage: `url(${blog.image})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: " center center",
+              }}
+            >
+              <h2 className="blog-card-title">{blog.title}</h2>
+              <div className="blog-card-direction">
+                <p className="blog-card-keyWords-span">
+                  <strong>Palabras clave: </strong>
+                  {blog.keyWords.map((keyword) => (
+                    <span className="blog-keyWords" key={keyword}>
+                      {keyword}
+                    </span>
+                  ))}
+                </p>
+                <Link
+                  className="blog-list-link-keywords"
+                  to={`/blog/${blog.id}`}
+                >
+                  Entra al blog
+                </Link>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

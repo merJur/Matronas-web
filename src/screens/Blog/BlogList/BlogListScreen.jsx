@@ -30,21 +30,28 @@ const BlogListScreen = () => {
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id}>
-            {/* <BlogCard 
-            title={blog.title}
-            image={blog.image}
-            keyWords={blog.keyWords}
-            to={`/blog/${blog.id}`}
-            isAdmin={user.isAdmin}
-            />
-          </div> */}
-
-            <div className='course-container ' style={{backgroundImage:`url(${blog.image})`, backgroundRepeat:"no-repeat", backgroundPosition:' center center' }}>
+            <div
+              className="blog-container "
+              style={{
+                backgroundImage: `url(${blog.image})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: " center center",
+              }}
+            >
               <h2 className="blog-card-title">{blog.title}</h2>
-              
-              <div className='blog-card-direction'>
-              <p className='blog-card-keyWords'><strong>Palabras clave: </strong>{blog.keyWords}</p>
-                 <Link to={`/blog/${blog.id}`} className='blog-list-link '>Ver detalles</Link>
+
+              <div className="blog-card-direction">
+                <p className="blog-card-keyWords-span">
+                  <strong>Palabras clave: </strong>
+                  {blog.keyWords.map((keyword) => (
+                    <span className="blog-keyWords" key={keyword}>
+                      {keyword}
+                    </span>
+                  ))}
+                </p>
+                <Link to={`/blog/${blog.id}`} className="blog-link ">
+                  Ver detalles
+                </Link>
               </div>
               {user.isAdmin ? (
                 <div>
@@ -52,9 +59,7 @@ const BlogListScreen = () => {
                     className="link-unstyled me-3"
                     to={`/blog/${blog.id}/update`}
                   >
-                    <span className="btn btns-course">
-                      Editar
-                    </span>
+                    <span className="btn btns-course">Editar</span>
                   </Link>
                   <i
                     onClick={() => handleDelete(blog.id)}
