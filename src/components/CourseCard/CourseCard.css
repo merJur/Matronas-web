@@ -9,7 +9,8 @@
 }
 .course-card-row{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: auto;
 }
 
 .course-card-row-s{
@@ -18,9 +19,18 @@
     background-color: #AABAAB;
     margin: 0.5rem;
     border-radius: 15px;
+    justify-self: end;
+    margin-top: auto;
+    justify-content: center;
 }
 .course-card-s{
     padding: 0.3rem;
     color: white;
     text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .course-card-row {
+        flex-direction: row;
+    }
 }

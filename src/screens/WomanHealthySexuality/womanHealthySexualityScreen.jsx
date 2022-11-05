@@ -9,7 +9,7 @@ const womanHealthySexualityScreen = () => {
         SEXUALIDAD SALUDABLE EN LA MUJER.¿CÓMO HABLAR SOBRE TUS NECESIDADES
         SEXUALES?
       </title>
-      <p>
+      <p style={{textAlign: 'justify', padding: '2px 8px'}}>
         La salud sexual de las mujeres, al igual que la de los hombres, es
         importante para el bienestar emocional y físico. Para lograr una vida
         sexual satisfactoria se necesita autorreflexión y comunicación franca

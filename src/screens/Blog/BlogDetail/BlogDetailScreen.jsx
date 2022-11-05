@@ -26,10 +26,10 @@ const BlogDetailScreen = () => {
             </div>
             <div>
                 <h3>Palabras clave :</h3>
-                <p>{ `${blog.keyWords}`}</p>
+                <p >{ `${blog.keyWords}`}</p>
             </div>
             <div className='post-text'>
-                <p>{blog.post}</p>
+                <p style={{textAlign: 'justify', padding: '2px 8px'}}>{blog.post}</p>
             </div>
         </div>
     );
