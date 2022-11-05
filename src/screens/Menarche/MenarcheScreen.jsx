@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Card/Card";
+import CourseCard from "../../components/CourseCard/CourseCard";
 import "./MenarcheScreen.css";
 
 const MenarcheScreen = () => {
@@ -33,27 +34,26 @@ const MenarcheScreen = () => {
         con mayor autoestima y tolerancia, y, sobre todo, más felices.
       </p>
       <div className="cards-container">
-        <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png"
-          title="TALLER MENARQUIA. PRIMERA MENSTRUACIÓN."
-          description="
-            Hablaremos sobre cambios físicos y emocionales en la pubertad. 
-            ¿Qué deben saber las niñas antes de la primera menstruación?.
-            ¿Cómo hablar de menstruación sin transmitir miedos, estereotipos e informaciones que generen confusión?.
-            La importancia de los referentes femeninos en este periodo de la vida. 
-            Las competencias que se deben desarrollar en esta época para un adecuado desarrollo de la sexualidad.
-                "
-        />
+       
 
-        <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667411747/matronas/teenager_gs2ngu.png"
-          title="TALLER SEXUALIDAD EN LA ADOLESCENCIA."
-          description="
-                La educación sexual es un elemento de la educación en general, que busca cumplir con un objetivo de carácter formativo, creando en el individuo, sea niño, joven o adulto, una serie de actitudes, valores y comportamientos ante su propio cuerpo, hacia la realidad de su sexo, así como de su rol actual y futuro. 
-                De ahí que educar sexualmente implique completar el desarrollo integral del individuo, evitando que se forme una imagen distorsionada, negativa o falsa sobre el sexo y su sexualidad, contribuyendo así a evitar futuros problemas relacionados con este aspecto, así como una forma de sensibilizar y prevenir la violencia de género.
-                "
-        />
       </div>
+            <CourseCard
+              name='Taller de Menarquia. Primera menstruación'
+              typeOfCourse='Presencial'
+              image='https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png'
+              description="
+                 Hablaremos sobre cambios físicos y emocionales en la pubertad. 
+                 ¿Qué deben saber las niñas antes de la primera menstruación?.
+                 ¿Cómo hablar de menstruación sin transmitir miedos, estereotipos e informaciones que generen confusión?.
+                 La importancia de los referentes femeninos en este periodo de la vida. 
+                 Las competencias que se deben desarrollar en esta época para un adecuado desarrollo de la sexualidad.
+                     "
+              schedule='15 de dciembre de 2022'
+              hours='11:00h'
+              price='15€'
+             />
+
+            
     </div>
   );
 };
