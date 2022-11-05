@@ -35,18 +35,17 @@
 
 .btn-search{
     height: 2.4rem;
-    margin-top: 0rem !important;
+    margin-top: 0 !important;
     position: absolute;
     margin-left: 250px;
     background-color:  #AABAAB !important; 
     border: 1px solid #AAB966 !important;
-    margin-top: 1rem;
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0px 8px 8px 0px !important;
 }
 
 .search-nav{
     width: 250px !important;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8px 0px 0px 8px !important;
 }
 
 .container-header{

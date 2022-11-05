@@ -6,7 +6,7 @@ const teenagerSexualityScreen = () => {
   return (
     <div className="container">
       <h1>FORMACIÓN DE LA MATRONA COMO EDUCADORA SEXUAL</h1>
-      <p>
+      <p style={{textAlign: 'justify', padding: '2px 8px'}}>
         Somos, nos vivimos y nos expresamos como seres sexuados y es imposible
         no hacerlo. Podemos hacerlo de una forma gratificante o insatisfactoria,
         relajada o tensa, culpabilizada o natural... pero es imposible no

@@ -2,11 +2,10 @@ li{
  list-style: none;
 }
 .course-card-image{
-    max-width: 20rem;
-    width: 10rem;
-    height: 12rem;
+    max-width: 100%;
+    height: auto;
     max-height: 24rem;
-    margin-top: 2rem;
+    border-radius: 17px;
 }
 .btns-course{
     background-color: #aabaab !important;
@@ -17,11 +16,20 @@ li{
     height: 3rem;
 }
 .course-container{
-    border: 1px solid black;
+    width: 100%;
+    height: auto;
     border-radius: 20px;
-    margin: 1rem 1rem 1rem -0.5rem;
+   
 }
-
+ 
+.courses-list-row{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    margin-left: -0.5rem !important;
+} 
 .blog-list-link{
     text-decoration: none;
     background-color: white;
@@ -48,3 +56,15 @@ li{
     color:  #aabaab ;
     margin-bottom: 1rem;
 }
+
+@media (min-width: 1080px) {
+    .courses-list-row{
+        flex-direction: row;
+    }
+
+    .course-container{
+        width: 45%;
+       
+    }
+}
+
