@@ -10,7 +10,7 @@ const AboutUs = () => {
         src="https://res.cloudinary.com/merjur/image/upload/v1667410614/matronas/rosa-elena_o6sjjj.jpg"
         alt="Elena Rivilla y Rosa Sánchez"
       />
-      <p>
+      <p style={{ textAlign: "justify", padding: "2px 8px" }}>
         Comadrona. Midwife, sage femme, partera,…MATRONA; eso somos. Las
         matronas, somos los profesionales sanitarios oficialmente reconocidos y
         preparados específicamente para acompañar a las mujeres en todo su ciclo
@@ -50,31 +50,31 @@ const AboutUs = () => {
         madurez cíclica, pasando,cómo no, por la maravillosa etapa de recibir a
         vuestras hijas e hijos.
       </p>
-      <div className="cards-container">
+      <div className="cards-container row">
         <Card
           image="https://res.cloudinary.com/merjur/image/upload/v1667410188/matronas/Elena_nfs7uq.jpg"
           title="Elena Rivilla Lizano"
-          description="
-                Enfermera especialista obstétrico-ginecológica (matrona).
-                Asesora de Lactancia materna.
-                Instructora certificada Hatha Yoga
-                Instructora de esferodinamia aplicada al embarazo y al parto
-                "
+          // description="
+          //       Enfermera especialista obstétrico-ginecológica (matrona).
+          //       Asesora de Lactancia materna.
+          //       Instructora certificada Hatha Yoga
+          //       Instructora de esferodinamia aplicada al embarazo y al parto
+          //       "
         />
 
         <Card
           image="https://res.cloudinary.com/merjur/image/upload/v1667410184/matronas/Rosa_fil5fs.jpg"
           title="Rosa Mª Sánchez Molina"
-          description="
-                Enfermera especialista obstétrico-ginecológica (matrona).
-                Asesora de Lactancia Materna.
-                Instructora certificada Hatha Yoga (escuela internacional de yoga).
-                Instructora de esferodinamia aplicada al embarazo y al parto.
-                Profesional certificada de hipnoparto (Método Naces y Método Parto Postitivo).
-                Anatomía para el movimiento y enseñanzas para cursos de preparación al nacimiento.
-                Formación canto prenatal y voz en el parto.
-                Educadora certificada de masaje infantil y Baby Led Weaning.
-                "
+          // description="
+          //       Enfermera especialista obstétrico-ginecológica (matrona).
+          //       Asesora de Lactancia Materna.
+          //       Instructora certificada Hatha Yoga (escuela internacional de yoga).
+          //       Instructora de esferodinamia aplicada al embarazo y al parto.
+          //       Profesional certificada de hipnoparto (Método Naces y Método Parto Postitivo).
+          //       Anatomía para el movimiento y enseñanzas para cursos de preparación al nacimiento.
+          //       Formación canto prenatal y voz en el parto.
+          //       Educadora certificada de masaje infantil y Baby Led Weaning.
+          //       "
         />
       </div>
     </div>

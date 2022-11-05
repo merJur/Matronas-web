@@ -276,7 +276,7 @@ const Header = () => {
                     aria-label="Search"
                   />
                   <button
-                    className="btn btn-outline-success my-2 my-sm-0 btn-search"
+                    className="btn btn-outline-success  my-sm-0 btn-search"
                     type="submit"
                   >
                     Buscar

@@ -7,7 +7,7 @@ const sexualityPregnancyScreen = () => {
       <h1>EMBARAZO</h1>
 
       <h2>La sexualidad en el embarazo</h2>
-      <p>
+      <p style={{textAlign: 'justify', padding: '2px 8px'}}>
         Nuestra sexualidad es un fenómeno rico y multidimensional. Estudios
         recientes encuentran que la sexualidad durante el embarazo suele ser
         menos frecuente y menos satisfactoria que cuando no estamos embarazadas.

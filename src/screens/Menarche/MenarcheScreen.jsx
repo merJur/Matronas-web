@@ -6,7 +6,7 @@ const MenarcheScreen = () => {
   return (
     <div className="container">
       <h1>Niña y Adolescente</h1>
-      <p>
+      <p style={{textAlign: 'justify', padding: '2px 8px'}}>
         Las matronas podemos estar presentes en muchísimas áreas que no solo
         involucran el embarazo y nacimiento. Tenemos un rol fundamental en la
         educación para la salud sexual y afectiva de las mujeres, sus parejas,
