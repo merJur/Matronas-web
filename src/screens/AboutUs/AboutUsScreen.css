@@ -1,5 +1,13 @@
 .adminsPhoto{
     max-width: 100%;
     border-radius: 15px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+.text-about-us{
+    text-align: justify;
+    padding: 2px 8px;
+    background-color:  #f8f9fa;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    
 }

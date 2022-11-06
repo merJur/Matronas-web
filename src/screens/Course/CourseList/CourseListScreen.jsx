@@ -27,7 +27,7 @@ const CourseListScreen = () => {
 
   return (
     <div>
-      <ul className="courses-list-row">
+      <ul className="courses-list-row  ">
         {courses.map((course) => (
           <li key={course.id} className='course-container'>
            <div  style={{display:'flex', flexDirection:'column', height:'100%'}}>
@@ -50,7 +50,7 @@ const CourseListScreen = () => {
               <s className="course-card-s">{course.price}</s>
             </div>
              {/* <Link to={`/course/${course.id}`}>Ver detalles</Link> */}
-            {user.isAdmin ? (
+            {{...user}.isAdmin ? (
               <div>
                 <Link
                   className="link-unstyled me-3"

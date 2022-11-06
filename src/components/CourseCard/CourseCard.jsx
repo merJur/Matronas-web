@@ -36,14 +36,14 @@ const CourseCard = (props) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "pink" }}>
+    <div style={{ borderRadius:'15px', width:'80%', margin:'3rem auto' }}>
       <div className="course-card-column">
         <h2 className="course-card-name">{name}</h2>
         <s style={{ textDecoration: "none" }}>{typeOfCourse}</s>
       </div>
       <div className="course-card-row">
         <img src={image} alt={name} className="course-card-image" />
-        <p>{description}</p>
+        <p className="p-description">{description}</p>
       </div>
       <div className="course-card-row-s">
         <s className="course-card-s">{schedule}</s>

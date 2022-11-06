@@ -119,13 +119,14 @@ const CourseUpdateScreen = () => {
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <div className="form-outline flex-fill mb-0">
-                            <input
-                              type="text"
+                            <textarea
+                              type="textarea"
                               name="description"
                               placeholder="Descripción"
                               className="form-control update-blog description-input"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
+                              rows={4}
                            />
                           </div>
                         </div>
