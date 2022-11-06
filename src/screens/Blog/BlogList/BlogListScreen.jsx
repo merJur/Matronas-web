@@ -29,7 +29,7 @@ const BlogListScreen = () => {
     <div>
       <ul>
         {blogs.map((blog) => (
-          <li key={blog.id}>
+          <li key={blog.name}>
             <div
               className="blog-container "
               style={{
@@ -53,7 +53,7 @@ const BlogListScreen = () => {
                   Ver detalles
                 </Link>
               </div>
-              {user.isAdmin ? (
+              {{...user}.isAdmin ? (
                 <div>
                   <Link
                     className="link-unstyled me-3"
