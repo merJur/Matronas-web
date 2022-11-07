@@ -22,7 +22,7 @@ function tribuTribu() {
         Tribu de mujeres que da apoyo a todas aquellas que quieran formar parte.
       </p>
 
-      <Link className="btn btns-admin" to="#" role="button">QUIERO UNIRME A LA TRIBU</Link>
+      <Link className="btn btns-admin" to="#" role="button">QUIERO UNIRME</Link>
     </div>
   );
 }

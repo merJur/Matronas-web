@@ -1,9 +1,11 @@
 .home-picture{
     margin-top: 3rem;
     border-radius: 25px;
-    width: 100%;
+    width: 10% !important;
     height: auto;
 }
+
+
 
 .title-home{
     background-color: #E4C0C1;
