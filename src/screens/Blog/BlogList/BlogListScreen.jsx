@@ -3,7 +3,6 @@ import { getBlogs, deleteBlog } from "../../../services/BlogServices";
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
-import BlogCard from "../../../components/BlogCard/BlogCard";
 
 const BlogListScreen = () => {
   const [blogs, setBlogs] = useState([]);

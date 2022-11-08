@@ -1,33 +1,36 @@
 import React from "react";
-import Card from "../../components/Card/Card";
 import "./teenagerSexualityScreen.css";
 import CourseCard from "./../../components/CourseCard/CourseCard";
 
 const teenagerSexualityScreen = () => {
   return (
-    <div className="container">
-      <h1>FORMACIÓN DE LA MATRONA COMO EDUCADORA SEXUAL</h1>
-      <p style={{ textAlign: "justify", padding: "2px 8px" }}>
-        Somos, nos vivimos y nos expresamos como seres sexuados y es imposible
-        no hacerlo. Podemos hacerlo de una forma gratificante o insatisfactoria,
-        relajada o tensa, culpabilizada o natural... pero es imposible no
-        hacerlo. Reducir la educación sexual a una charla sobre contenidos
-        varios y en las épocas más conflictivas de la vida supone una reducción
-        de la propia sexualidad y un veto para los que no entren dentro de esas
-        determinadas etapas. La sexualidad es algo dinámico que no puede
-        apartarse del resto de los procesos de la vida. Por ello, la educación
-        sexual debe ser integrada en la educación general del individuo, para
-        ser en definitiva más humana. Es sin embargo con la llegada de la
-        pubertad y adolescencia y todo lo que conlleva - capacidad reproductiva
-        (menarquia y primera eyaculación), pensamiento hipotético deductivo,
-        cambio en la conducta social, determinación de la orientación sexual,
-        etc.- cuando se enciende la alarma y frecuentemente se solicita apoyo
-        especializado. Para que una educación sexual sea realmente efectiva,
-        debe ser ofrecida por el entorno en el que el individuo se mueve; por
-        ello los principales agentes son los padres y los educadores. Desde esta
-        perspectiva, es evidente la incapacidad del C.O.F., o la vuestra, para
-        asumir dicha función (la educación Sexual en sentido estricto) o la
-        inutilidad de planteárnosla tan siquiera.
+    <div className="img-container-teenager">
+      <img
+        src="https://res.cloudinary.com/merjur/image/upload/v1667844735/matronas/6596292_negekc.jpg"
+        alt="teenagers"
+      />
+      <h1>MATRONAS EN LA EDUCACIÓN SEXUAL</h1>
+
+      <p
+        className="text-teenagers"
+        style={{ textAlign: "center" }}
+      >
+        Somos, nos vivimos y nos expresamos como <strong>seres sexuados</strong>{" "}
+        y es imposible no hacerlo.
+        <br />
+        <br />
+        La sexualidad es algo dinámico que no puede apartarse del resto de los
+        procesos de la vida.
+        <br />
+        <br /> Por ello, la educación sexual debe ser integrada en la educación
+        general del individuo, para ser en definitiva más humana.
+        <br />
+        <br />
+        Para que una educación sexual sea realmente efectiva, debe ser ofrecida
+        por el entorno en el que el individuo se mueve.
+        <br />
+        <br />
+        Por ello los principales agentes son los padres y los educadores.
       </p>
 
       {/* <Card
@@ -52,7 +55,7 @@ const teenagerSexualityScreen = () => {
         price="15€"
       />
 
-<CourseCard
+      <CourseCard
         name="COMUNICACIÓN FAMILIAR SOBRE LA SEXUALIDAD"
         image="https://res.cloudinary.com/merjur/image/upload/v1667411747/matronas/teenager_gs2ngu.png"
         typeOfCourse="Presencial"

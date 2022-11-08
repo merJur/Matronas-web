@@ -115,17 +115,17 @@ const Header = () => {
                   <ul className="dropdown-menu">
                     <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/menarche">
-                        Menarquia. De niña a adolescente
+                        Infancia
                       </Link>
                     </li>
                     <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/teenager-sexuality">
-                        Sexualidad en la adolescencia
+                        Adolescencia
                       </Link>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
                     to="#"
@@ -150,7 +150,7 @@ const Header = () => {
                       </Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
@@ -167,7 +167,7 @@ const Header = () => {
                         Sexualidad en el embarazo
                       </Link>
                     </li>
-                    <li data-bs-toggle="offcanvas">
+                    {/* <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/courses">
                         Esferodinamia e Hipnoparto
                       </Link>
@@ -176,7 +176,7 @@ const Header = () => {
                       <Link className="dropdown-item" to="/courses">
                         Yoga Prenatal
                       </Link>
-                    </li>
+                    </li> */}
                     <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/tribu-tribu">
                         ¡Nuestra tribu de madres!
@@ -203,11 +203,11 @@ const Header = () => {
                         Sexualidad tras el postparto
                       </Link>
                     </li>
-                    <li data-bs-toggle="offcanvas">
+                    {/* <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/courses">
                         Yoga madres y bebés
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
                 <li className="nav-item dropdown">
