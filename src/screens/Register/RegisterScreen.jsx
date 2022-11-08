@@ -216,7 +216,7 @@ const RegisterScreen = () => {
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        src="https://res.cloudinary.com/merjur/image/upload/v1667907714/matronas/4912309_fwzvnt.jpg"
                         className="img-fluid"
                         alt="Register img"
                       />

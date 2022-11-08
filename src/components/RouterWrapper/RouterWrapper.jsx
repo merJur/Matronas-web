@@ -32,6 +32,7 @@ import PhysicalActivityMenopauseScreen from "../../screens/PhysicalActivityMenop
 import PageNotFound from "../../screens/NotFound/notFound";
 
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
+import Footer from './../Footer/Footer';
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
@@ -145,6 +146,7 @@ const RouterWrapper = () => {
       ) : (
         <p>Loading ...</p>
       )}
+      <Footer />
     </>
   );
 };
