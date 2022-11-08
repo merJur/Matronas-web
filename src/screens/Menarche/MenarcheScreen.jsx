@@ -40,30 +40,29 @@ const MenarcheScreen = () => {
       <CourseCard
         name="Taller de Menarquia. Primera menstruación"
         typeOfCourse="Presencial"
-        image="https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png"
+        image="https://res.cloudinary.com/merjur/image/upload/v1667941957/matronas/6911014_o4azoq.jpg"
         description="
-                 Hablaremos sobre cambios físicos y emocionales en la pubertad. 
-                 ¿Qué deben saber las niñas antes de la primera menstruación?.
-                 ¿Cómo hablar de menstruación sin transmitir miedos, estereotipos e informaciones que generen confusión?.
-                 La importancia de los referentes femeninos en este periodo de la vida. 
-                 Las competencias que se deben desarrollar en esta época para un adecuado desarrollo de la sexualidad.
-
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis dui non mauris tincidunt egestas. Aenean consequat ex velit, ut malesuada magna molestie ac. Donec tincidunt velit nec leo suscipit tempor. Pellentesque libero leo, euismod ut nibh vel, laoreet eleifend ante. Maecenas tristique hendrerit lorem, vel ultrices orci vulputate et. Maecenas feugiat non diam sit amet efficitur. Pellentesque mattis nec lectus eu mollis. In congue ultrices lectus nec mollis. Proin cursus aliquet nulla vitae tincidunt. Sed congue et velit ac sollicitudin.
+          Hablaremos sobre cambios físicos y emocionales en la pubertad.
+          ¿Qué deben saber las niñas antes de la primera menstruación?
+          ¿Cómo hablar de menstruación sin transmitir miedos, y confusión?.
+          La importancia de los referentes femeninos en este periodo de la vida.
+          Las competencias que se deben desarrollar en esta época para un adecuado desarrollo de la sexualidad.
                      "
-        schedule="15 de dciembre de 2022"
+        schedule="15 de Diciembre de 2022"
         hours="11:00h"
         price="15€"
       />
 
       <CourseCard
         name="YOGA EN LA INFANCIA"
-        typeOfCourse="Actividad"
-        image="https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png"
+        typeOfCourse="Actividad Trimestral"
+        image="https://res.cloudinary.com/merjur/image/upload/v1667943801/matronas/3731118_oep7td.jpg"
         description="
-        Aenean at est nec est vehicula gravida. Curabitur eu massa augue. Sed odio nisl, commodo vitae ultricies quis, pharetra aliquet metus. Praesent pretium, metus in tempus ultrices, mauris dui pretium magna, volutpat blandit ipsum odio a arcu. Aliquam a enim risus. Sed quis vulputate turpis, a luctus tellus. Maecenas interdum odio a justo mattis tincidunt. Mauris ultrices ex vel mauris ultrices scelerisque. Vestibulum ac dignissim magna. Aliquam mollis nulla sed nibh maximus placerat. Vestibulum dapibus molestie scelerisque. Aliquam euismod mattis eros non vulputate. Donec tellus purus, cursus malesuada tempus in, maximus et mi. Fusce dapibus a sem non sagittis. Donec tristique ullamcorper commodo. Duis laoreet fringilla rutrum.
-        Aenean at est nec est vehicula gravida. Curabitur eu massa augue. Sed odio nisl, commodo vitae ultricies quis, pharetra aliquet metus. Praesent pretium, metus in tempus ultrices, mauris dui pretium magna, volutpat blandit ipsum odio a arcu. Aliquam a enim risus. Sed quis vulputate turpis, a luctus tellus. Maecenas interdum odio a justo mattis tincidunt. Mauris ultrices ex vel mauris ultrices scelerisque. Vestibulum ac dignissim magna. Aliquam mollis nulla sed nibh maximus placerat. Vestibulum dapibus molestie scelerisque. Aliquam euismod mattis eros non vulputate. Donec tellus purus, cursus malesuada tempus in, maximus et mi. Fusce dapibus a sem non sagittis. Donec tristique ullamcorper commodo. Duis laoreet fringilla rutrum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis dui non mauris tincidunt egestas. Aenean consequat ex velit, ut malesuada magna molestie ac. Donec tincidunt velit nec leo suscipit tempor. Pellentesque libero leo, euismod ut nibh vel, laoreet eleifend ante. Maecenas tristique hendrerit lorem, vel ultrices orci vulputate et. Maecenas feugiat non diam sit amet efficitur. Pellentesque mattis nec lectus eu mollis. In congue ultrices lectus nec mollis. Proin cursus aliquet nulla vitae tincidunt. Sed congue et velit ac sollicitudin.
-                     "
+        El manejo de la respiración y las diferentes posturas del yoga 
+        permiten que los los niños desarrollen habilidades de concentración, 
+        atención, memoria y relajación. 
+        El secreto está en que sea muy lúdica y divertida; 
+        esto también se logra a través de canciones, juegos e historias"
         schedule="Martes y jueves"
         hours="17:30h"
         price="30€ mes"

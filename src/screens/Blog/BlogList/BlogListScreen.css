@@ -3,6 +3,7 @@
     padding: 6% 25%;
     border: 1px solid black;
     border-radius: 15px;
+    background-size: 70%;
 }
 .blog-link{
     text-decoration: none;
@@ -15,8 +16,10 @@
     margin-bottom: 0.5rem;
 }
 
-@media (min-width: 1080px) {
-
+@media (min-width: 1000px) {
+    .blog-container  img {
+        width: 70%;
+    }
 }
 .blog-keyWords{
     background-color:#aab966 ;
