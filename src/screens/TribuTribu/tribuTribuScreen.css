@@ -1,4 +1,4 @@
-.img-container{
+.img-container-tribu {
     margin-top: 3rem;
     height: fit-content;
     width: 80%;
@@ -6,6 +6,21 @@
     margin-right: auto;
 }
 
-.img-container img {
+.img-container-tribu img {
     width: 100%;
+}
+
+@media (min-width: 1000px) {
+    .img-container-tribu img {
+        width: 70%;
+    }
+}
+
+.text-tribu{
+    text-align: justify;
+    padding: 2px 8px;
+    background-color:  #ececec;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    
 }
