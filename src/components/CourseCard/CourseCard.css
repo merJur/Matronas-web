@@ -1,7 +1,7 @@
 .course-card-column{
     display: flex;
     flex-direction: column;
-    background-color: #aab966 ;
+    background-color: #cd4f40 ;
     border-radius: 15px;
     padding: 1rem;
     color: white;
@@ -16,7 +16,7 @@
 .course-card-row-s{
     display: flex;
     flex-direction: row;
-    background-color: #AABAAB;
+    background-color: #1b2e36;
     border-radius: 15px;
     justify-self: end;
     margin-top: auto;
@@ -30,7 +30,8 @@
 
 .p-description{
     margin:3rem;
-    text-align: justify;
+    text-align: center;
+    background-color:  #ececec;
     
 }
 
