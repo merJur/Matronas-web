@@ -8,19 +8,23 @@
 .home-icon{
     width: 5rem;
     height: 5rem;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
+    margin-top: -0.5rem;
 }
  
 .user-icon{
-    width: 5rem; 
+    width: 6rem; 
     position: absolute;
-    right: 12rem;
+    right: 9.5rem;
+    margin-top: 0.2rem;
 }
 
 .cart-icon{
-    width: 5rem;
+    width: 11rem;
     position: absolute;
-    right: 6rem;
+    right: 3rem;
+    margin-top: -1.5rem;
+    
 }
 
 .navbar-toggler-hamburguer-icon{
@@ -50,9 +54,10 @@
     margin-top: 0 !important;
     position: absolute;
     margin-left: 250px;
-    background-color:  #ececec !important; 
-    border: 1px solid  #273238  !important;
+    background-color:  #f0715a !important; 
+    border: 1px solid  #385a64  !important;
     border-radius: 0px 8px 8px 0px !important;
+    color: #ececec !important
 }
 
 .search-nav{

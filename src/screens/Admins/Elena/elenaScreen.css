@@ -1,0 +1,22 @@
+.admin-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.adminPhoto{
+    border-radius: 20px;
+}
+
+.text-admin{
+    text-align: justify;
+    padding: 2px 8px;
+    background-color:  #ececec;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+   
+    
+}
+.first-line-elena{
+    text-align: center;
+    margin-top: 1rem;
+}
