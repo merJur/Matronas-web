@@ -32,7 +32,7 @@ const Header = () => {
         <div className="container-header">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/merjur/image/upload/v1667408752/matronas/logo-om-matronas_murynl.png"
+              src="https://res.cloudinary.com/merjur/image/upload/v1667955584/matronas/logo-om-_ececec_huf2qa.png"
               className="d-inline-block align-top  home-icon"
               alt="Logo Om Matronas"
             />
@@ -40,7 +40,7 @@ const Header = () => {
           <div>
               <Link to="#">
                 <img
-                  src="https://res.cloudinary.com/merjur/image/upload/v1667410151/matronas/shopping-bag-empty_psz7tk.png"
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667955398/matronas/cart-_ececec_lccwjv.png"
                   alt="cart logo"
                   className="cart-icon"
                 />
@@ -51,7 +51,7 @@ const Header = () => {
             <div>
               <Link to="/login">
                 <img
-                  src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667955460/matronas/login-register-profile-white_kdlifn.png"
                   alt="login/profile-icon"
                   className="user-icon"
                 />
@@ -62,7 +62,7 @@ const Header = () => {
             <div>
               <Link to="/profile">
                 <img
-                  src="https://res.cloudinary.com/merjur/image/upload/v1667300638/matronas/user-icon_w9hbsr.png"
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667955460/matronas/login-register-profile-white_kdlifn.png"
                   alt="login/profile-icon"
                   className="user-icon"
                 />

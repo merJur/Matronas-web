@@ -15,8 +15,7 @@ const MenarcheScreen = () => {
         <br />
         <strong>Las matronas</strong> podemos estar presentes en muchísimas
         áreas que no solo involucran el embarazo y nacimiento.
-        <br />
-        <br />
+        
         Tenemos un rol fundamental en la educación para la salud sexual y
         afectiva de las mujeres, sus parejas, hijos e hijas, sus familias y la
         comunidad.
@@ -25,8 +24,7 @@ const MenarcheScreen = () => {
         En la medida que normalicemos estos temas, lograremos entender que{" "}
         <strong>la sexualidad</strong> es parte de los seres humanos desde
         siempre.
-        <br />
-        <br />
+        
         De esta manera estaremos en el buen camino para formar y ver crecer a
         niños, niñas y adolescentes íntegros, con mayor autoestima y tolerancia,
         y, sobre todo, más felices.
