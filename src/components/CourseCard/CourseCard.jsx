@@ -46,9 +46,9 @@ const CourseCard = (props) => {
         <p className="p-description">{description}</p>
       </div>
       <div className="course-card-row-s">
-        <s className="course-card-s">{schedule}</s>
-        <s className="course-card-s">{hours}</s>
-        <s className="course-card-s">{price}</s>
+        <p className="course-card-s">{schedule}</p>
+        <p className="course-card-s">{hours}</p>
+        <p className="course-card-s">{price}</p>
       </div>
       {isAdmin ? (
         <div>

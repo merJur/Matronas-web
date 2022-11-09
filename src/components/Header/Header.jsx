@@ -37,6 +37,15 @@ const Header = () => {
               alt="Logo Om Matronas"
             />
           </Link>
+          <div>
+              <Link to="#">
+                <img
+                  src="https://res.cloudinary.com/merjur/image/upload/v1667410151/matronas/shopping-bag-empty_psz7tk.png"
+                  alt="cart logo"
+                  className="cart-icon"
+                />
+              </Link>
+            </div>
 
           {!user ? (
             <div>
@@ -61,7 +70,7 @@ const Header = () => {
             </div>
           ) : null}
           <button
-            className="navbar-toggler hamburguer-icon"
+            className="navbar-toggler-hamburguer-icon"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
