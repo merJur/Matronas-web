@@ -21,15 +21,15 @@ const BlogDetailScreen = () => {
     return (
         <div>
             <div>
+                <img className="img-container-blogList-1" src={blog.image} alt={blog.title}/>
                 <h2 className='blog-detail-title'>{blog.title}</h2>
-                <img src={blog.image} className='imgBlog'/>
             </div>
             <div>
-                <h3>Palabras clave :</h3>
-                <p >{ `${blog.keyWords}`}</p>
+                <h3> Palabras clave: </h3>
+                <p> {`${blog.keyWords}`} </p>
             </div>
             <div className='post-text'>
-                <p style={{textAlign: 'justify', padding: '2px 8px'}}>{blog.post}</p>
+                <p>{blog.post}</p>
             </div>
         </div>
     );
