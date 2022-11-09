@@ -8,8 +8,9 @@ const AboutUs = () => {
     <div className="container">
       <img
         className="adminsPhoto"
-        src="https://res.cloudinary.com/merjur/image/upload/v1667410614/matronas/rosa-elena_o6sjjj.jpg"
+        src="https://res.cloudinary.com/merjur/image/upload/v1667743375/matronas/a0e791a4-189e-4747-8775-f6d56928bd00_p6g6sd.jpg"
         alt="Elena Rivilla y Rosa Sánchez"
+        // https://res.cloudinary.com/merjur/image/upload/v1667410614/matronas/rosa-elena_o6sjjj.jpg
       />
       <p className="text-about-us">
         Comadrona. Midwife, sage femme, partera,…MATRONA; eso somos. Las

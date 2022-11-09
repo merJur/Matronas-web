@@ -1,0 +1,14 @@
+.loading{
+    border: 2px solid#cd4f40 ;
+    background-color:  #f0715a;
+    color: #ececec;
+    border-radius: 12px;
+    width: 20%;
+    height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    margin:  25rem auto;
+    padding: 1rem;
+    
+     
+}

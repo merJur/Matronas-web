@@ -1,19 +1,21 @@
 .blog-container{
+    max-width: 85%;
     margin: 3rem auto;
-    padding: 6% 25%;
-    border: 1px solid black;
+    padding: 2% 25%;
+    border: 1px solid #1b2e36;
     border-radius: 15px;
     background-size: 70%;
 }
 .blog-link{
     text-decoration: none;
-    background-color: white;
+    background-color:  #f8f9fa;
     width: 9rem;
-    margin: 0 auto;
-    padding: 0.3rem;
+    margin: 1 auto;
+    padding: 0.8rem;
     border-radius: 12px;
-    color:  #aabaab ;
+    color: #385a64;
     margin-bottom: 0.5rem;
+    
 }
 
 @media (min-width: 1000px) {
@@ -22,18 +24,33 @@
     }
 }
 .blog-keyWords{
-    background-color:#aab966 ;
-    color: white;
-    border-radius: 25px;
+    background-color:#385a64  ;
+    color: #ececec ;
+    border-radius: 10px;
     margin-right: 1rem !important;
     margin-bottom: 1rem !important;
     padding: 0.5rem !important;
 
 }
 .blog-card-keyWords-span{
-    background-color: white;
-    color: #aab966; 
+   max-width: 70rem;
+    color: #385a64 ; 
     padding: 1.5rem;
-    line-height: 2.3rem;
-    border-radius: 15px;
+    line-height: 2.8rem;
+    
+   
+}
+.blog-card-title-blogList{
+color:  #cd4f40;
+background-color: white;
+opacity: 0.9;
+border-radius: 15px;
+padding: 1rem;
+margin-top: -1rem;
+margin-bottom: 8rem;
+margin-inline-start: -2rem;
+max-height: 20% !important;
+width: 130%;
+max-width: 60rem;
+
 }

@@ -69,3 +69,15 @@
     margin-top: 3rem;
     color: #ececec
 }
+
+@media (max-width: 1080px) {
+    .footer-container{
+        background-color: #1a2e35;   
+        height: 25rem;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+      }   
+}

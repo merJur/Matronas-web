@@ -33,6 +33,7 @@ import PageNotFound from "../../screens/NotFound/notFound";
 
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
 import Footer from './../Footer/Footer';
+import './RouterWrapper.css'
 
 const RouterWrapper = () => {
   const { isAuthFetched } = useAuthContext();
@@ -144,7 +145,7 @@ const RouterWrapper = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       ) : (
-        <p>Loading ...</p>
+        <p className="loading"> Loading ...</p>
       )}
       <Footer />
     </>

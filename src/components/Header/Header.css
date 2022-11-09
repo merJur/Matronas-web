@@ -29,12 +29,12 @@
 
 .navbar-toggler-hamburguer-icon{
    position: absolute;
-   right: 1.5rem;
-   background-color:  #cd4f40 ;
+   right: 1.8rem;
+   background-color: #f0715a;
    border: 6px solid #ececec;
    border-radius: 0.9rem;
-   width: 4rem;
-   height: 4rem;
+   width: 3.7rem;
+   height: 3.7rem;
    margin-top: 2px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .my-header{
-    background-color:   #cd4f40 ;
+    background-color:   #f0715a;
     
     }
 
@@ -55,7 +55,7 @@
     position: absolute;
     margin-left: 250px;
     background-color:  #f0715a !important; 
-    border: 1px solid  #385a64  !important;
+    border: 1px solid #cd4f40  !important;
     border-radius: 0px 8px 8px 0px !important;
     color: #ececec !important
 }
@@ -71,4 +71,42 @@
     flex-direction: row;
    
     
+}
+
+@media (max-width: 1080px) {
+    .home-icon{
+        width: 3rem;
+        height: 3rem;
+        margin-left: 1rem;
+        }
+     
+    .user-icon{
+        width: 3rem; 
+        position: absolute;
+        right: 5rem;
+        margin-top: 0.2rem;
+    }
+    
+    .cart-icon{
+        width: 6rem;
+        right: 1.5rem;
+        margin-top: -0.8rem;   
+    }
+    .navbar-toggler-hamburguer-icon{
+        position: absolute;
+        right: 1rem;
+        background-color: #f0715a;
+        border: 3px solid #ececec;
+        border-radius: 8px;
+        width: 2rem;
+        height: 2rem;
+        margin-top: 2px;
+    }
+    .navbar-toggler-icon{
+        width: 1.3rem !important;
+        margin-top: -7px;
+        margin-left: -3px
+      
+    }
+     
 }
