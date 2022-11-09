@@ -5,7 +5,7 @@ const HomeScreen = () => {
     return (
         <div>
             <div className='matronas-img'>
-                <img src='https://res.cloudinary.com/merjur/image/upload/v1667743375/matronas/a0e791a4-189e-4747-8775-f6d56928bd00_p6g6sd.jpg' alt='om-matronas'/>            
+                <img src='' alt='om-matronas'/>            
             </div>
 
             <div className='home-picture'>

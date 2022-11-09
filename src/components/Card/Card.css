@@ -1,19 +1,18 @@
 .card{
     margin: 1rem auto;
-    
+    max-width: 98% !important
     
 }
 .card-title{
     margin-top: 1rem;
 }
 .btn-card{
-    background-color: #aabaab !important;
-    border: 1px solid #aab966 !important;
-    margin-top: 1.5rem;
+    background-color:#f0715a!important;
+    border: 1px solid #cd4f40 !important;
     margin-bottom: 1rem;
-    width: 45%;
+    width: 20%;
     height: 3rem;
-    color:white !important;
+    color: #ececec!important;
 }
 
 .card-img-top-pict{
@@ -21,4 +20,15 @@
     height: 23rem;
     margin: 2rem auto;
     border-radius: 15px;
+}
+
+@media (max-width: 1080px) {
+    .btn-card{
+        background-color:#f0715a!important;
+        border: 1px solid #cd4f40 !important;
+        margin-bottom: 1rem;
+        width: 30%;
+        height: 3rem;
+        color: #ececec!important;
+    }
 }

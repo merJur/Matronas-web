@@ -24,7 +24,7 @@
 }
 .course-card-s{
     padding: 0.3rem;
-    color: white;
+    color: #ececec;;
     text-decoration: none;
 }
 
@@ -43,3 +43,33 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .course-card-column{
+        display: flex;
+        flex-direction: column;
+        background-color: #cd4f40 ;
+        border-radius: 15px;
+        color: #ececec;;
+        margin: 1rem 3rem -1rem -1.7rem !important;
+        width: 125%;
+    }
+    .p-description{
+        margin:3rem;
+        text-align: center;
+        background-color:  #ececec;
+        border-radius: 15px;
+        width: 125%;
+        margin: 1rem 3rem 1rem -1.7rem;
+        text-align: justify;
+        
+    }
+    .course-card-row-s{
+        display: flex;
+        flex-direction: row;
+        background-color: #1b2e36;
+        border-radius: 15px;
+        justify-self: end;
+        justify-content: center;
+        align-items: center;
+    }
+}

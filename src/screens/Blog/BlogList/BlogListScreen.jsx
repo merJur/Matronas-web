@@ -37,11 +37,11 @@ const BlogListScreen = () => {
                 backgroundPosition: " center center",
               }}
             >
-              <h2 className="blog-card-title">{blog.title}</h2>
+              <h2 className="blog-card-title-blogList"><strong>{blog.title}</strong></h2>
 
               <div className="blog-card-direction">
                 <p className="blog-card-keyWords-span">
-                  <strong>Palabras clave: </strong>
+                  {/* <strong>Palabras clave: </strong> */}
                   {blog.keyWords.map((keyword) => (
                     <span className="blog-keyWords" key={keyword}>
                       {keyword}
