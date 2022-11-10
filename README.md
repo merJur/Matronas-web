@@ -12,3 +12,4 @@
  VERDE OSCURO: #223e45
  GRIS CLARO: #ececec
  GRIS CLARO 2: #e1e1e1
+ ROSA HOME: #f7cbcf
