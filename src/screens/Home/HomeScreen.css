@@ -1,20 +1,69 @@
-.home-picture{
+.matronas-img-home{
     margin-top: 3rem;
-    border-radius: 25px;
-    width: 10% !important;
-    height: auto;
+    height: fit-content;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
+    
+.matronas-img-home img {
+        width: 100%;
+    }
+    
+@media (min-width: 1000px) {
+    .matronas-img-home img {
+            width: 70%;
+    }
+ }
+
 
 .title-home{
-    background-color: #E4C0C1;
+    background-color: #f7cbcf;
     margin: 1rem 2rem;
-    border-radius: 25px;
+    border-radius: 10px;
     padding: 6.5px 1px;
-
 
 }
 
 .om{
-    width: 2rem;
-    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
+
+.text-home{
+    margin-top: 3rem;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 2rem 2rem;
+    height: fit-content;
+    text-align: center;
+    /*padding: 2px 8px;*/
+    background-color:  #ececec;
+    border-radius: 15px;
+}
+
+.icons-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 15rem;
+}
+
+@media (max-width: 1000px) {
+    .icons-container img{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .icon img{
+        width:50%;
+    }
+}
+
