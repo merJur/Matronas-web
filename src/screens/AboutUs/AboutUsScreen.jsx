@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div className="container">
       <img
         className="adminsPhoto"
-        src="https://res.cloudinary.com/merjur/image/upload/v1667743375/matronas/a0e791a4-189e-4747-8775-f6d56928bd00_p6g6sd.jpg"
+        src="https://res.cloudinary.com/merjur/image/upload/v1668001509/matronas/IMG_6162_zhzt4m.jpg"
         alt="Elena Rivilla y Rosa Sánchez"
         // https://res.cloudinary.com/merjur/image/upload/v1667410614/matronas/rosa-elena_o6sjjj.jpg
       />
@@ -66,7 +66,7 @@ const AboutUs = () => {
       </p>
       <div className="cards-container row">
         <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667410188/matronas/Elena_nfs7uq.jpg"
+          image="https://res.cloudinary.com/merjur/image/upload/v1667995238/matronas/Elena_okyvkg.jpg"
           title="Elena Rivilla Lizano"
           // description="
           //       Enfermera especialista obstétrico-ginecológica (matrona).
@@ -78,7 +78,7 @@ const AboutUs = () => {
         />
 
         <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667410184/matronas/Rosa_fil5fs.jpg"
+          image="https://res.cloudinary.com/merjur/image/upload/v1667995242/matronas/Rosa_ccmo4k.jpg"
           title="Rosa Mª Sánchez Molina"
           // description="
           //       Enfermera especialista obstétrico-ginecológica (matrona).

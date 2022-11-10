@@ -6,7 +6,7 @@ const Elena = () => {
     <div className="container admin-container" >
       <img
         className="adminPhoto"
-        src="https://res.cloudinary.com/merjur/image/upload/v1667410188/matronas/Elena_nfs7uq.jpg"
+        src="https://res.cloudinary.com/merjur/image/upload/v1668004573/matronas/IMG_6163_hub9g8.jpg"
         alt="Elena Rivilla"
       />
       <div className="text-admin">

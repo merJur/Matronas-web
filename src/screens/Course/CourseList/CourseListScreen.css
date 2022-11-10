@@ -10,7 +10,7 @@ li{
 }
 .btns-course{
     background-color: #f0715a  !important;
-    border: 1px solid   #cd4f40 !important;
+    border: 1px solid  #385a64 !important;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     width: 6rem;
@@ -75,3 +75,15 @@ li{
     }
 }
 
+@media (max-width: 1080px) {
+    .course-card-column{
+        display: flex;
+        flex-direction: column;
+        background-color: #cd4f40 ;
+        border-radius: 15px;
+        padding: 1rem;
+        color: white;
+        margin:  1rem 1rem 0 0.5rem !important;
+        width: 21rem
+    }
+}

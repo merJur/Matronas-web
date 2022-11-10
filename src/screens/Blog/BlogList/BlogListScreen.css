@@ -8,41 +8,38 @@
 }
 .blog-link{
     text-decoration: none;
-    background-color:  #f8f9fa;
+    background-color:  #385a64;
     width: 9rem;
     margin: 1 auto;
     padding: 0.8rem;
     border-radius: 12px;
-    color: #385a64;
+    color: #ececec;
     margin-bottom: 0.5rem;
     
 }
 
-@media (min-width: 1000px) {
-    .blog-container  img {
-        width: 70%;
-    
-}
-}
+
 .blog-keyWords{
-    background-color:#385a64  ;
+    background-color:#f0715a ;
+    border: 1px solid  #cd4f40;
     color: #ececec ;
     border-radius: 10px;
-    margin-right: 1rem !important;
     margin-bottom: 1rem !important;
-    padding: 0.5rem !important;
+    padding: 0.2rem 0.5rem !important;
+    margin: 5px
 
 }
 .blog-card-keyWords-span{
-   max-width: 70rem;
-    color: #385a64 ; 
+    width: 35rem;
     padding: 1.5rem;
-    line-height: 2.8rem;
+    line-height: 2.5rem;
+    margin-left: -2.5rem;
+    
     
    
 }
 .blog-card-title-blogList{
-color:  #cd4f40;
+color:  #223e45 ;
 background-color: white;
 opacity: 0.9;
 border-radius: 15px;
@@ -54,4 +51,53 @@ max-height: 20% !important;
 width: 130%;
 max-width: 60rem;
 
+}
+
+@media (max-width: 1080px) {
+    .blog-container{
+        width: 100%;
+        margin: 2rem 1rem 2rem 0 ;
+        border: 1px solid #1b2e36;
+        border-radius: 15px;
+    }
+
+    .blog-card-title-blogList{
+        color:  #cd4f40;
+        margin: 0 1rem 0 -5.3rem;
+        width: 240%;
+    }
+
+    .blog-card-keyWords-span{
+        width: 260%;
+        margin: 0 1rem 0 -6.5rem; 
+        padding: 8px;
+        font-size: 13px;
+     }
+     .blog-keyWords{
+        background-color:#385a64   ;
+        color:white ;
+        opacity: 0.9;
+        border-radius: 10px;
+        margin-right: 1rem !important;
+        margin-bottom: 1rem !important;
+        padding: 0.5rem !important;
+        border: 1px solid  #ececec;
+    
+    }
+    .blog-link{
+        text-decoration: none;
+        background-color:#f0715a;
+        color: white;
+        margin-top: 2rem !important;
+        padding: 0.8rem;
+        border-radius: 12px;
+        font-size: 13px;
+        
+        
+    }
+    .row-btn-admin{
+        display: flex;
+        flex-direction: row ;
+        margin-left: -2rem;
+    }
 }

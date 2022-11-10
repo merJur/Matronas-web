@@ -25,14 +25,31 @@ const BlogDetailScreen = () => {
                 <h2 className='blog-detail-title'>{blog.title}</h2>
             </div>
             <div>
-                <h3> Palabras clave: </h3>
-                <p> {`${blog.keyWords}`} </p>
+                <h3> <u>~ Palabras clave ~</u> </h3>
+                {/* <p> {`${blog.keyWords}`} </p> */}
+                <p style={{width:'90%'}}>
+                    {blog.keyWords?.map((keyword) => ( 
+                        <span className='blog-KeyWord' key={keyword}>
+                            {keyword}
+                        </span>
+                        )
+                     )}
+                </p>
             </div>
-            <div className='post-text'>
-                <p>{blog.post}</p>
+            <div className='post-text-container'>
+                <p >{blog.post}</p>
             </div>
         </div>
     );
 };
 
 export default BlogDetailScreen;
+
+// <p>
+//                     {blog.keyWords?.map((keyword) => ( 
+//                         <span className='blog-KeyWords' key={keyword}>
+//                             {keyword}
+//                         </span>
+//                         )
+//                      )}
+//                 </p>
