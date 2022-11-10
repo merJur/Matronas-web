@@ -1,0 +1,70 @@
+.background{
+    background-color:  #223e45;
+    width: 100%;
+    margin-bottom: -3rem;
+    
+
+
+}
+.merido-Title{
+    margin: 0 auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    color:  #ececec;
+}
+
+.merido-cards{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: space-around;
+    margin: 3rem auto;
+
+}
+.merido-card-ind{
+   
+}
+
+.card-picture-merido{
+    border-radius: 50%;
+    width: 20rem;
+    margin: 2rem auto;
+}
+.merido-description{
+    justify-content: center;
+    color:  #ececec;
+    margin: 1rem auto;
+    padding: 2rem 4rem;
+
+}
+
+.merido-anchor{
+    text-decoration: none;
+    color:  #ececec
+}
+
+@media (max-width: 1080px) {
+
+    .merido-cards{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: space-around;
+        margin: 3rem auto;
+    
+    }
+}
+
+/*/ #f8f9fa gris fondo
+
+// COLORES DEFINITIVOS:
+// CORAL: #f0715a
+// CORAL OSCURO: #cd4f40
+// AZULÓN 1: #1a2e35
+// AZULÓN 2: #1b2e36
+// AZUL OSCURO CASI NEGRO: #273238
+// VERDE 1: #385a64 
+// VERDE 2: #385b65
+// VERDE OSCURO: #223e45
+// GRIS CLARO: #ececec
+// GRIS CLARO 2: #e1e1e1   */

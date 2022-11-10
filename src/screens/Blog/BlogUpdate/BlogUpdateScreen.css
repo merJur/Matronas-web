@@ -1,9 +1,12 @@
 .textarea{
     height: 20rem !important;
+    margin-top: 1rem;
 }
 
 .update-blog{
     width: 308px !important;
+    
+
 }
 
 .btns-update {
@@ -12,7 +15,10 @@
     margin-top: 1.5rem;
     width: 20rem;
     height: 3rem;
-    margin-left: -2rem
+    margin-left: 2rem;
+}
+.new-position{
+    margin-left: 0;
 }
 
 .keyword-input{
@@ -28,7 +34,9 @@
     .new-position{
         margin-top: -4.3rem !important;
         height: 2.5rem !important;
-        margin-left: -1rem
+        /* margin-left: 80rem !important; */
+        
+
     }
     .btns-update{
         background-color:#f0715a !important;
@@ -36,6 +44,8 @@
         margin-top: 1.5rem;
         width: 20rem;
         height: 3rem;
+        /* margin-left: -5rem !important; */
+        
     
     }
 }

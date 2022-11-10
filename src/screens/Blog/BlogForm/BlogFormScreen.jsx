@@ -24,15 +24,19 @@ const BlogFormScreen = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData();
-
+    console.log('tags', tags)
+    
+    for (let i = 0; i < tags.length; i++) {
+      formData.append('keyWords[]', tags[i]);
+    }
+    
     for (let value in blog) {
+      console.log(value)
       formData.append(value, blog[value]);
     }
+    
 
-    createBlog(formData, {
-      ...blog,
-      keyWords: tags,
-    }).then((blog) => {
+    createBlog(formData).then((blog) => {
       console.log("entrada de blog creada...........", blog);
       navigate("/blogs");
     });

@@ -13,10 +13,11 @@
 
 .btn-log-out {
   border: 1px solid #223e45!important;
-  background-color: #385a64  !important;
+  background-color:#f8f9fa  !important;
   margin: 1rem auto !important;
   width: 15rem;
   height: 3rem;
+  color: #223e45 !important;
   
   
   
@@ -41,8 +42,8 @@
   margin-top: 1rem;
 }
 .logo-profile{
-  width: 15em;
-  margin: 1rem auto;
+  width: 10rem;
+  margin: 3rem auto;
   
 }
 @media (max-width: 1080px) {
@@ -60,10 +61,11 @@
   }
   .btn-log-out {
     border: 1px solid #223e45!important;
-    background-color: #385a64  !important;
+    background-color:#f8f9fa  !important;
     margin: 0 auto !important;
     width: 15rem;
     height: 3rem;
+    color: #223e45 !important;
     
     
     

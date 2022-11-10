@@ -66,7 +66,7 @@ const AboutUs = () => {
       </p>
       <div className="cards-container row">
         <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667995238/matronas/Elena_okyvkg.jpg"
+          image="https://res.cloudinary.com/merjur/image/upload/v1668004573/matronas/IMG_6163_hub9g8.jpg"
           title="Elena Rivilla Lizano"
           // description="
           //       Enfermera especialista obstétrico-ginecológica (matrona).
@@ -78,8 +78,9 @@ const AboutUs = () => {
         />
 
         <Card
-          image="https://res.cloudinary.com/merjur/image/upload/v1667995242/matronas/Rosa_ccmo4k.jpg"
+          image="https://res.cloudinary.com/merjur/image/upload/v1668004575/matronas/IMG_6164_kztj3a.jpg"
           title="Rosa Mª Sánchez Molina"
+          className='cards-aboutUS'
           // description="
           //       Enfermera especialista obstétrico-ginecológica (matrona).
           //       Asesora de Lactancia Materna.

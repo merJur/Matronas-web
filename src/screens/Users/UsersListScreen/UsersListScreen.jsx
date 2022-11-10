@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { getUsers, deleteUser } from "../../../services/UserServices";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import './UsersListScreen.css'
 
 const UsersListScreen = () => {
-  const [users, setUsers, ] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const fetchUsers = useCallback(() => {
     getUsers().then((user) => {
@@ -12,21 +14,32 @@ const UsersListScreen = () => {
     });
   }, [])
 
-  const handleDelete = (id) => {
+  const fetchDelete = (id) => {
     deleteUser(id)
     .then((deletedUser) => {
       fetchUsers()
     });
-  };
-  // confirmAlert({
-  //   title: 'Confirmación',
-  //   message: '¿Estás seguro que quieres borrar?',
-  //   buttons: [
-  //     {label: 'Si',
-  //     onClick: () => deleteUser(id),
-  //   }]
-  // })
- 
+  }
+
+   const handleDelete = (id) => {
+    confirmAlert({
+      title: 'Confirmación',
+      message: '¿Estás seguro que quieres borrar?',
+      buttons: [
+        {
+          label: 'Si',
+          onClick: (ev) => fetchDelete(id)
+        },
+        {
+          label: 'No',
+          onClick: (ev) => console.log('NO')
+        }
+    ]
+    })
+   
+   
+   };
+
   useEffect(() => {
     fetchUsers()
   }, []);

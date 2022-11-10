@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className="line"></div>
                 <div>
                   <h5 className="h5-footer">
-                    Diseñado y desarrollado por <strong><i> ~ Mer & Ido ~ </i></strong>
+                     <Link to='/Mer&Ido' style={{textDecoration:'none', color:'white'}}><strong><i> ~ Mer & Ido ~ </i></strong></Link>
                     {/* <Link to='/'><strong>Home</strong></Link> */}
                   </h5>
                 </div>

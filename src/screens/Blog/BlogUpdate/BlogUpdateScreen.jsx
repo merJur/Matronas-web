@@ -38,6 +38,10 @@ const BlogUpdateScreen = () => {
     e.preventDefault();
     const formData = new FormData();
 
+    for (let i = 0; i < tags.length; i++) {
+      formData.append('keyWords[]', tags[i]);
+    }
+
     for (let value in blog) {
       formData.append(value, blog[value]);
     }
@@ -151,7 +155,7 @@ const BlogUpdateScreen = () => {
                         >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg btns-update"
+                            className="btn btn-primary btn-lg btns-update "
                           >
                             Actualiza el post del blog
                           </button>
