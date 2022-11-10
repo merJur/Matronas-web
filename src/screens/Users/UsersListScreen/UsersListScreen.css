@@ -2,7 +2,7 @@
     margin: 1rem auto;
 }
 
-.btn-delete{
+ .btn-delete{
   border: 1px solid #AABAAB !important;
   background-color: #aab966 !important;
   margin: 1.5rem auto !important;
@@ -10,11 +10,11 @@
   height: 3rem;
   color: white !important;
   font-size: 0.8rem;
-}
+} 
 .btn-edit-user{
-  border: 1px solid #aab966 !important;
-  background-color: #AABAAB !important;
-  width: 6rem;
+  border: 1px solid #cd4f40!important;
+  background-color:  #f0715a !important;
+  width: 7rem;
   height: 3rem;
   color: white !important;
   font-size: 0.8rem;
@@ -25,12 +25,12 @@
     margin-top: 2rem;
 }
 .container-user-list{
-    border: 1px solid #96778A;
+    border: 1px solid #223e45;
     margin: 0 1rem;
-    background-color:#E4C0C1;
+    background-color: #e1e1e1;
 }
 .container-li-user-list{
-    border: 1px solid #96778A ;
+    border: 1px solid #223e45;
     border-radius: 1rem;
     padding: 1rem 0;
     margin-top: 1rem;

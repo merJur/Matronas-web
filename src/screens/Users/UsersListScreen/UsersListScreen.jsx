@@ -18,7 +18,14 @@ const UsersListScreen = () => {
       fetchUsers()
     });
   };
-
+  // confirmAlert({
+  //   title: 'Confirmación',
+  //   message: '¿Estás seguro que quieres borrar?',
+  //   buttons: [
+  //     {label: 'Si',
+  //     onClick: () => deleteUser(id),
+  //   }]
+  // })
  
   useEffect(() => {
     fetchUsers()
