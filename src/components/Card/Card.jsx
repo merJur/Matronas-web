@@ -5,7 +5,7 @@ import"./Card.css";
 function Card({ image, title, description, to }) {
   return (
     <div className="card" >
-      <img src={image} className="card-img-top-pict" alt={title} />
+      <img src={image} className="card-img-top-pict " alt={title} />
       <div>
         <h3 className="card-title">{title}</h3>
         <p className="card-text" style={{textAlign: 'justify', padding: '2px 8px', maxWidth: '80%'}}>{description}</p>

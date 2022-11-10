@@ -1,4 +1,6 @@
 
+<<<<<<< HEAD
+=======
  #f8f9fa gris fondo
 
  COLORES DEFINITIVOS:
@@ -13,3 +15,4 @@
  GRIS CLARO: #ececec
  GRIS CLARO 2: #e1e1e1
  ROSA HOME: #f7cbcf
+>>>>>>> 5b679103cc940f229e397296d7f170cfc9fa64f6

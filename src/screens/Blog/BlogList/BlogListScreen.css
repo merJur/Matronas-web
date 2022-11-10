@@ -2,26 +2,26 @@
     max-width: 85%;
     margin: 3rem auto;
     padding: 2% 25%;
-    border: 1px solid #1b2e36;
+   
     border-radius: 15px;
     background-size: 70%;
 }
 .blog-link{
     text-decoration: none;
-    background-color:  #385a64;
+    background-color: #ececec ;
     width: 9rem;
     margin: 1 auto;
     padding: 0.8rem;
     border-radius: 12px;
-    color: #ececec;
+    color:#223e45 ;
     margin-bottom: 0.5rem;
     
 }
 
 
 .blog-keyWords{
-    background-color:#f0715a ;
-    border: 1px solid  #cd4f40;
+    background-color: #385a64 ;
+    border: 1px solid   #1b2e36;
     color: #ececec ;
     border-radius: 10px;
     margin-bottom: 1rem !important;
@@ -68,9 +68,10 @@ max-width: 60rem;
     }
 
     .blog-card-keyWords-span{
-        width: 260%;
-        margin: 0 1rem 0 -6.5rem; 
-        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        margin-right: 0; 
         font-size: 13px;
      }
      .blog-keyWords{
@@ -82,6 +83,7 @@ max-width: 60rem;
         margin-bottom: 1rem !important;
         padding: 0.5rem !important;
         border: 1px solid  #ececec;
+        width: 60% !important;
     
     }
     .blog-link{
@@ -100,4 +102,5 @@ max-width: 60rem;
         flex-direction: row ;
         margin-left: -2rem;
     }
+    
 }

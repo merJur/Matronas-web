@@ -123,7 +123,7 @@ const CourseUpdateScreen = () => {
                               type="textarea"
                               name="description"
                               placeholder="Descripción"
-                              className="form-control update-blog description-input textarea"
+                              className="form-control  textarea"
                               onChange={(event) => handleOnChange(event)}
                               value={course.description}
                               rows={4}

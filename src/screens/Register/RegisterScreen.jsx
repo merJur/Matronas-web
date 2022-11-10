@@ -3,6 +3,12 @@ import { createUser } from "../../services/UserServices";
 import "./RegisterScreen.css";
 import { useNavigate } from "react-router-dom";
 
+const DEFAULT_ERR_OBJ = {
+  email: "",
+  name: "",
+  password: "",
+}
+
 const RegisterScreen = () => {
   const [user, setUser] = useState({
     email: "",
@@ -11,16 +17,14 @@ const RegisterScreen = () => {
     phone: "",
     userType: "client",
   });
-  const [errors, setErrors] = useState({
-    email: "",
-    name: "",
-    password: "",
-  });
+  const [errors, setErrors] = useState(DEFAULT_ERR_OBJ);
+
+  console.log(errors)
 
   const navigate = useNavigate();
 
   const validateUser = () => {
-    const isValid = true;
+    let isValid = true;
     if (!user.name) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -48,6 +52,7 @@ const RegisterScreen = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    setErrors(DEFAULT_ERR_OBJ)
 
     const isUserValid = validateUser();
     if (isUserValid) {
@@ -104,10 +109,10 @@ const RegisterScreen = () => {
                               style={{width:'308px'}}
                             />
                           </div>
-                          <div className="flex-row">
+                          <div className="w-100">
                           {`${errors.name}` ? (
                             <span
-                              className="alert "
+                              className="my-alert "
                               role="alert"
                             >{`${errors.name}`}</span>
                           ) : null}
@@ -131,7 +136,7 @@ const RegisterScreen = () => {
                           </div>
                           {`${errors.email}` ? (
                             <span
-                              className="alert "
+                              className="my-alert"
                               role="alert"
                             >{`${errors.email}`}</span>
                           ) : null}
@@ -161,7 +166,7 @@ const RegisterScreen = () => {
                                 <div>  
                                   {`${errors.password}` ? (
                                     <span
-                                      className="alert "
+                                      className="my-alert "
                                       role="alert"
                                     >{`${errors.password}`}</span>
                                   ) : null}

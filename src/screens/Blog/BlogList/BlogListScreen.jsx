@@ -15,8 +15,7 @@ const BlogListScreen = () => {
   }, []);
 
   const handleDelete = (id) => {
-    deleteBlog(id)
-    .then((deletedBlog) => {
+    deleteBlog(id).then((deletedBlog) => {
       fetchBlogs();
     });
   };
@@ -38,22 +37,25 @@ const BlogListScreen = () => {
                 backgroundPosition: " center center",
               }}
             >
-              <h2 className="blog-card-title-blogList"><strong>{blog.title}</strong></h2>
+              <h4 className="blog-card-title-blogList">
+                <strong>{blog.title}</strong>
+              </h4>
 
               <div className="blog-card-direction">
-                <p className="blog-card-keyWords-span">
-                  {/* <strong>Palabras clave: </strong> */}
-                  {blog.keyWords.map((keyword) => (
-                    <span className="blog-keyWords" key={keyword}>
-                      {keyword}
-                    </span>
-                  ))}
-                </p>
+                <div>
+                  <div className="blog-card-keyWords-span">
+                    {blog.keyWords.map((keyword) => (
+                      <span className="blog-keyWords" key={keyword}>
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
                 <Link to={`/blog/${blog.id}`} className="blog-link ">
                   Ver detalles
                 </Link>
               </div>
-              {{...user}.isAdmin ? (
+              {{ ...user }.isAdmin ? (
                 <div className="row-btn-admin">
                   <Link
                     className="link-unstyled me-3"
