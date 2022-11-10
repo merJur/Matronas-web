@@ -4,6 +4,11 @@ import "./rosaScreen.css";
 const Rosa = () => {
   return (
     <div className="container admin-container">
+      <img
+        className="adminPhoto"
+        src="https://res.cloudinary.com/merjur/image/upload/v1668004575/matronas/IMG_6164_kztj3a.jpg"
+        alt="Rosa Sánchez"
+      />
       <div className="text-admin">
         Hola! Soy <strong>Rosa</strong>, <strong>Mujer</strong>,{" "}
         <strong>Pareja</strong>, <strong>Madre</strong>,{" "}
@@ -41,11 +46,6 @@ const Rosa = () => {
         infancia y sus tiempos lentos y que jamás dice que no a una palmerita de
         chocolate.
       </div>
-      <img
-        className="adminPhoto rosa-photo"
-        src="https://res.cloudinary.com/merjur/image/upload/v1667410184/matronas/Rosa_fil5fs.jpg"
-        alt="Rosa Sánchez"
-      />
     </div>
   );
 };

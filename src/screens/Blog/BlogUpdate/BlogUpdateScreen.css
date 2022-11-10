@@ -2,26 +2,40 @@
     height: 20rem !important;
 }
 
-.tag{
-    background-color: #aab966;
-    border-radius: 3rem;
-    width: 12rem;
-    margin-bottom: 1rem;
-    margin-left: 4.5rem;
-}
 .update-blog{
     width: 308px !important;
 }
 
 .btns-update {
-    background-color: #aabaab !important;
-    border: 1px solid #aab966 !important;
+    background-color:#f0715a !important;
+    border: 1px solid  #cd4f40 !important;
     margin-top: 1.5rem;
-    width: 17rem;
+    width: 20rem;
     height: 3rem;
+    margin-left: -2rem
 }
 
 .keyword-input{
     margin-left: 1rem;
 }
+.margin-bottom{
+    margin-bottom: 12rem !important;
+}
+@media (min-width: 1080px) {
+    .new-post-body{
+        width: 60rem !important;
+    }
+    .new-position{
+        margin-top: -4.3rem !important;
+        height: 2.5rem !important;
+        margin-left: -1rem
+    }
+    .btns-update{
+        background-color:#f0715a !important;
+        border: 1px solid  #cd4f40 !important;
+        margin-top: 1.5rem;
+        width: 20rem;
+        height: 3rem;
     
+    }
+}

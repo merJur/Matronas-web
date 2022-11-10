@@ -15,7 +15,8 @@ const BlogListScreen = () => {
   }, []);
 
   const handleDelete = (id) => {
-    deleteBlog(id).then((deletedBlog) => {
+    deleteBlog(id)
+    .then((deletedBlog) => {
       fetchBlogs();
     });
   };
@@ -53,7 +54,7 @@ const BlogListScreen = () => {
                 </Link>
               </div>
               {{...user}.isAdmin ? (
-                <div>
+                <div className="row-btn-admin">
                   <Link
                     className="link-unstyled me-3"
                     to={`/blog/${blog.id}/update`}
