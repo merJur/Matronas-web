@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getAccessToken, logout } from "../store/AccessTokenStore";
+import '../../'
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
