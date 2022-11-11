@@ -38,7 +38,7 @@ const Header = () => {
             />
           </Link>
           <div>
-              <Link to="#">
+              <Link to="/tienda">
                 <img
                   src="https://res.cloudinary.com/merjur/image/upload/v1667955398/matronas/cart-_ececec_lccwjv.png"
                   alt="cart logo"
@@ -278,7 +278,7 @@ const Header = () => {
                   />
                   <button
                     className="btn btn-outline-success  my-sm-0 btn-search"
-                    type="submit"
+                    type="submit" data-bs-toggle="offcanvas"
                   >
                     Buscar
                   </button>

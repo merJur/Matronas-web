@@ -15,11 +15,12 @@ const UsersProfileScreen = () => {
 
   return (
     <div className="container-profile">
-      
       <h1 className="profile">Hola {`${user && user.name}`}</h1>
-          {user && !user.isAdmin ?(
-              <p className="profile"><i>Te deseamos un buen día</i></p>
-          ): null}
+      {user && !user.isAdmin ? (
+        <p className="profile">
+          <i>Te deseamos un buen día</i>
+        </p>
+      ) : null}
       <div className="btn-profile">
         {user && user.isAdmin ? (
           <div className="btn-profile">
@@ -46,13 +47,17 @@ const UsersProfileScreen = () => {
             </Link>
           </div>
         ) : null}
-        <img src='https://res.cloudinary.com/merjur/image/upload/v1667410033/matronas/OM_seniwq.png' alt='logo' className="logo-profile" />
-        <button 
-        onClick={() => logoutSession()}
-        className={"btn btn-primary btn-log-out"}
-      >
-        Cerrar Sesión
-      </button>
+        <img
+          src="https://res.cloudinary.com/merjur/image/upload/v1668164202/matronas/3FB35118-5626-4D4D-86C0-FB5E7AC9A274_rfckwi.png"
+          alt="logo"
+          className="logo-profile"
+        />
+        <button
+          onClick={() => logoutSession()}
+          className={"btn btn-primary btn-log-out"}
+        >
+          Cerrar Sesión
+        </button>
       </div>
     </div>
   );

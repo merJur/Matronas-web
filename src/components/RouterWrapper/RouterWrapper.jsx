@@ -30,6 +30,7 @@ import TribuTribuScreen from "../../screens/TribuTribu/tribuTribuScreen";
 import SexualityMenopauseScreen from "../../screens/SexualityMenopause/sexualityMenopauseScreen";
 import PhysicalActivityMenopauseScreen from "../../screens/PhysicalActivityMenopause/physicalActivityMenopauseScreen";
 import PageNotFound from "../../screens/NotFound/notFound";
+import UnderConstruction from "../../screens/UnderConstruction/underConstruction";
 import MerIdo from "../../screens/MerIdo/MarIdo";
 import BlogKeywordScreen from "./../../screens/Blog/BlogKeywords/BlogKeywordScreen";
 import Footer from './../Footer/Footer';
@@ -61,6 +62,7 @@ const RouterWrapper = () => {
           <Route path="/menopause-sexuality" element={<SexualityMenopauseScreen />} />
           <Route path="/physical-activity-menopause" element={<PhysicalActivityMenopauseScreen />} />
           <Route path='/Mer&Ido' element={<MerIdo />} />
+          <Route path="/tienda" element={<UnderConstruction />} />
           {/*rutas protegidas -> hace falta tener token -> estar logado */}
           <Route
             path="/profile"

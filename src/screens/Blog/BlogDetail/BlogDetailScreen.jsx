@@ -25,7 +25,7 @@ const BlogDetailScreen = () => {
                 <h2 className='blog-detail-title'>{blog.title}</h2>
             </div>
             <div>
-                <h3> <u>~ Palabras clave ~</u> </h3>
+                <h3>~ Palabras clave ~</h3><br/>
                 {/* <p> {`${blog.keyWords}`} </p> */}
                 <p style={{width:'90%'}}>
                     {blog.keyWords?.map((keyword) => ( 
