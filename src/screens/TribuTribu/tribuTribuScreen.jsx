@@ -24,7 +24,7 @@ function tribuTribu() {
         parte.
       </p>
 
-      <Link className="btn btns-admin" to="#" role="button">
+      <Link className="btn btns-admin" to="/login" role="button">
         QUIERO UNIRME
       </Link>
     </div>

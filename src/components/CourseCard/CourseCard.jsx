@@ -37,7 +37,7 @@ const CourseCard = (props) => {
 
   return (
     <div style={{ borderRadius:'15px', width:'80%', margin:'3rem auto' }}>
-      <div className="course-card-column">
+      <div className="course-card-column courses-title">
         <h2 className="course-card-name">{name}</h2>
         <s style={{ textDecoration: "none" }}>{typeOfCourse}</s>
       </div>

@@ -10,13 +10,6 @@
         width: 100%;
     }
     
-@media (min-width: 1000px) {
-    .matronas-img-home img {
-            width: 70%;
-    }
- }
-
-
 .title-home{
     background-color: #f7cbcf;
     margin: 1rem 2rem;
@@ -49,21 +42,24 @@
     flex-direction: row;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    justify-content: center;
-    align-items: center;
+    margin-left: 190%;
 }
 .icon{
-    width: 15rem;
+    width: 12rem;
 }
 
-@media (max-width: 1000px) {
-    .icons-container img{
+@media (max-width: 1080px) {
+    .icons-container{
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 70%;
+        justify-content: flex-start ;
+        margin-left:  2rem;
     }
-    .icon img{
-        width:50%;
+    .icon {
+        width:100%;
+        margin-left: 3rem;
+        
     }
 }
 

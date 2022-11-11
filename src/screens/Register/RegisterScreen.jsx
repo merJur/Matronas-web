@@ -57,7 +57,6 @@ const RegisterScreen = () => {
     const isUserValid = validateUser();
     if (isUserValid) {
       createUser(user).then((user) => {
-        console.log("usuario creado  👍 ---------------------", user);
         navigate("/login");
       });
     }

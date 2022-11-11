@@ -54,8 +54,10 @@ const UsersListScreen = () => {
               key={user.id}
               className="mb-2 list-group-item d-flex justify-content-between align-items-center container-li-user-list"
             >
-              <p className="user-name"> <strong>{user.name} </strong></p>
-                
+              <div className="column">
+                <div className="user-name"> <strong>{user.name} </strong></div>
+                <div style={{fontSize:'12px', marginTop: '-1rem'}}>Teléfono: {user.phone}</div>
+              </div>
               
               <div className="badge">
                 <Link
