@@ -3,7 +3,8 @@
 }
 
 .blog-create-btn{
-    margin-left: -1rem;
+    margin: 0 !important;
+    width: 308px !important
 }
 .btn-add-keyword{
     margin-left: 1rem;
@@ -21,12 +22,13 @@
         width: 13rem !important;
         margin-left: -1rem
     }
-    .btns-update{
+    .my-btns-update{
         background-color:#f0715a !important;
         border: 1px solid  #cd4f40 !important;
-        margin-top: 1.5rem;
+        margin-top: 1rem auto;
         width: 20rem;
         height: 3rem;
     
     }
+   
 }

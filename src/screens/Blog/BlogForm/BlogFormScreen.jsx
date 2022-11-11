@@ -146,12 +146,10 @@ const BlogFormScreen = () => {
                         </div>
 
                         <div
-                          className="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
-                          style={{ width: "20rem" }}
-                        >
+                          >
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg btns-update blog-create-btn"
+                            className="btn btn-primary btn-lg btns-update blog-create-btn my-btns-update"
                           >
                             Crea la entrada al blog
                           </button>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { searchBlogs, getBlogs } from "../../../services/BlogServices";
+import './blogKeywordScreen.css'
 
 const BlogKeywordScreen = () => {
   const { keyword } = useParams();
@@ -31,16 +32,16 @@ const BlogKeywordScreen = () => {
           <li key={blog.id}>
             <div
               className="blog-container  "
-              style={{
+              style={{ 
+                marginBottom: '2rem',
                 backgroundImage: `url(${blog.image})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: " center center",
               }}
             >
-              <h2 className="blog-card-title">{blog.title}</h2>
+              <h2 className="blog-card-title-keywords">{blog.title}</h2>
               <div className="blog-card-direction">
                 <p className="blog-card-keyWords-span">
-                  <strong>Palabras clave: </strong>
                   {blog.keyWords.map((keyword) => (
                     <span className="blog-keyWords" key={keyword}>
                       {keyword}
@@ -48,7 +49,7 @@ const BlogKeywordScreen = () => {
                   ))}
                 </p>
                 <Link
-                  className="blog-list-link-keywords"
+                  className="link-mobile"
                   to={`/blog/${blog.id}`}
                 >
                   Entra al blog
