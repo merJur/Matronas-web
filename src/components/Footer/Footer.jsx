@@ -52,7 +52,8 @@ const Footer = () => {
                 <div>
                   <h5 className="h5-footer">
                      <Link to='/Mer&Ido' style={{textDecoration:'none', color:'white'}}><strong><i> ~ Mer & Ido ~ </i></strong></Link>
-                    {/* <Link to='/'><strong>Home</strong></Link> */}
+                     <br/>
+                    <a href='https://storyset.com/'alt='@storyset' style={{textDecoration:'none', color:'white', fontSize:'12px'}}>copyriht ©️ @storyset</a>
                   </h5>
                 </div>
             </div>

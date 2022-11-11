@@ -25,7 +25,7 @@ const MerIdo = () => {
 
                     <div className='merido-card'>
                         <img src='https://res.cloudinary.com/merjur/image/upload/v1668123111/matronas/IMG_6190_vmrlzd.jpg' alt='MerJurPer-picture' className='card-picture-merido' />
-                        <a href='https://www.linkedin.com/in/idoia-fdez-forero/' className='merido-anchor'>
+                        <a href='https://www.linkedin.com/in/mercedes-jurado-p%C3%A9rez/' className='merido-anchor'>
                             <h3>Mercedes Jurado Pérez</h3>
                         </a>
                         <div className="line"></div>
