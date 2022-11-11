@@ -22,18 +22,18 @@ const HomeScreen = () => {
                         estado de <strong>vibración y expansión.</strong>
                 </h3>
             </div>
-            
-                <div className='icons-container'>
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png" alt="niña"/> 
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411747/matronas/teenager_gs2ngu.png" alt="adolescente"/> 
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411772/matronas/women_zjzl1d.png" alt="mujer"/> 
+                <div className='col-2'>
+                    <div className='icons-container '>
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411763/matronas/girl_hndqu8.png" alt="niña"/> 
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411747/matronas/teenager_gs2ngu.png" alt="adolescente"/> 
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411772/matronas/women_zjzl1d.png" alt="mujer"/> 
+                    </div>
+                    <div className='icons-container'>
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411785/matronas/pregnancy_vef90j.png" alt="embarazo"/> 
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411828/matronas/postpartum_uptllo.png" alt="postparto"/> 
+                        <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411779/matronas/mature-women_vigzec.png" alt="menopausia"/> 
+                    </div>
                 </div>
-                <div className='icons-container'>
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411785/matronas/pregnancy_vef90j.png" alt="embarazo"/> 
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411828/matronas/postpartum_uptllo.png" alt="postparto"/> 
-                    <img className="icon" src="https://res.cloudinary.com/merjur/image/upload/v1667411779/matronas/mature-women_vigzec.png" alt="menopausia"/> 
-                </div>
-                
         </div>
     );
 };

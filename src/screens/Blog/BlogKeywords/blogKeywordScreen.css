@@ -14,6 +14,9 @@
     padding: 0.5rem;
     border-radius: 12px;
 }
+.footer-down{
+    height: 20rem
+}
 
 @media (max-width: 1080px) {
     .blog-card-title-keywords{

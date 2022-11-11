@@ -5,7 +5,7 @@
     border-radius: 15px;
     padding: 1rem;
     color: white;
-    margin:  1rem 1rem !important;
+    margin:  1rem 0 !important;
 }
 .course-card-row{
     display: flex;
@@ -44,14 +44,16 @@
 }
 
 @media (max-width: 1080px) {
-    .course-card-column{
+    .courses-title{
         display: flex;
         flex-direction: column;
         background-color: #cd4f40 ;
         border-radius: 15px;
-        color: #ececec;;
-        margin: 1rem 3rem -1rem -1.7rem !important;
-        width: 125%;
+        color: #ececec;
+        width: 18rem !important;
+        margin-left: -1rem !important
+        
+        
     }
     .p-description{
         margin:3rem;

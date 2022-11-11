@@ -58,6 +58,7 @@ const BlogKeywordScreen = () => {
             </div>
           </li>
         ))}
+        <div className="footer-down"></div>
       </ul>
     </div>
   );

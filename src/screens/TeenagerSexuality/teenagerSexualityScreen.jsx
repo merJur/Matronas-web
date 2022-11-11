@@ -30,15 +30,6 @@ const teenagerSexualityScreen = () => {
         Por ello los principales agentes son los padres y los educadores.
       </p>
 
-      {/* <Card
-        image="https://res.cloudinary.com/merjur/image/upload/v1667411747/matronas/teenager_gs2ngu.png"
-        title="TALLER SEXUALIDAD EN LA ADOLESCENCIA."
-        description="
-                La educación sexual es un elemento de la educación en general, que busca cumplir con un objetivo de carácter formativo, creando en el individuo, sea niño, joven o adulto, una serie de actitudes, valores y comportamientos ante su propio cuerpo, hacia la realidad de su sexo, así como de su rol actual y futuro. 
-                De ahí que educar sexualmente implique completar el desarrollo integral del individuo, evitando que se forme una imagen distorsionada, negativa o falsa sobre el sexo y su sexualidad, contribuyendo así a evitar futuros problemas relacionados con este aspecto, así como una forma de sensibilizar y prevenir la violencia de género.
-                "
-      /> */}
-
       <CourseCard
         name="TALLER SEXUALIDAD EN LA ADOLESCENCIA."
         image="https://res.cloudinary.com/merjur/image/upload/v1667844734/matronas/4338935_nu6crc.jpg"
