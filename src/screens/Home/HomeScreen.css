@@ -56,7 +56,7 @@
     width: 15rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 100z0px) {
     .icons-container img{
         display: flex;
         flex-direction: row;

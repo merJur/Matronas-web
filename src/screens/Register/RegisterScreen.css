@@ -37,7 +37,9 @@
     border: 1px solid rgb(200, 196, 196);
     border-radius: 8px 0px 0px 8px;
     width: 260px;
-    padding: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    
 }
 .btn-eye{
     width: 3rem;
@@ -63,9 +65,10 @@
 
 .my-alert {
     text-align: left !important;
-    width: 100% !important;
+    width: 308px !important;
     font-size: 14px !important;
     padding-top: 5px !important;
     color: #ee3c3c !important;
     display: block;
+    margin-left: 1rem;
 }

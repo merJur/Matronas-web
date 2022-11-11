@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useAuthContext } from "./../../context/AuthContext";
-// import { getBlogs } from "./../../services/BlogServices";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
@@ -18,13 +17,6 @@ const Header = () => {
     e.preventDefault();
     navigate(`/search/${search}`);
   };
-
-  // const tagSearch = useCallback(() => {
-  //   getBlogs.keyWords().then((keyWordsData) => {
-  //     setSearch(keyWordsData);
-  //     navigate("/blogDetail");
-  //   });
-  // }, []);
 
   return (
     <div>
@@ -134,32 +126,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
-                {/* <li className="nav-item dropdown">
-                  <Link
-                    className="nav-link dropdown-toggle"
-                    to="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Mujer
-                  </Link>
-                  <ul className="dropdown-menu">
-                    <li data-bs-toggle="offcanvas">
-                      <Link
-                        className="dropdown-item"
-                        to="/woman-healthy-sexuality"
-                      >
-                        Sexualidad saludable
-                      </Link>
-                    </li>
-                    <li data-bs-toggle="offcanvas">
-                      <Link className="dropdown-item" to="/fertility">
-                        Fertilidad
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
+                
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
@@ -176,16 +143,7 @@ const Header = () => {
                         Sexualidad en el embarazo
                       </Link>
                     </li>
-                    {/* <li data-bs-toggle="offcanvas">
-                      <Link className="dropdown-item" to="/courses">
-                        Esferodinamia e Hipnoparto
-                      </Link>
-                    </li>
-                    <li data-bs-toggle="offcanvas">
-                      <Link className="dropdown-item" to="/courses">
-                        Yoga Prenatal
-                      </Link>
-                    </li> */}
+                  
                     <li data-bs-toggle="offcanvas">
                       <Link className="dropdown-item" to="/tribu-tribu">
                         ¡Nuestra tribu de madres!

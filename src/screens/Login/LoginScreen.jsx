@@ -45,6 +45,7 @@ const LoginScreen = () => {
     
   const onSubmit = (event) => {
     event.preventDefault();
+    setErrors({email: "", password: "" })
 
     const isUserValid = validateUser();
     if (isUserValid) {
@@ -95,7 +96,7 @@ const LoginScreen = () => {
                           </div>
                           {`${errors.email}` ? (
                             <span
-                              className="alert"
+                              className="my-alert"
                               role="alert"
                             >{`${errors.email}`}</span>
                           ) : null}
@@ -115,15 +116,16 @@ const LoginScreen = () => {
                             <button onClick={togglePassword} type='button' className="btn-eye">
                               <img src='https://res.cloudinary.com/merjur/image/upload/v1667324728/matronas/password-eye-icon_vc2r0z.png' alt='ver contraseña' className='eye'/>
                             </button>
+                            </div>
                             <div className="flex-row">
                              {`${errors.password}` ? (
                               <span
-                                className="alert "
+                                className="my-alert "
                                 role="alert"
                               >{`${errors.password}`}</span>
                             ) : null}
                             </div>
-                          </div>
+                          
                           </div>
                         </div>
 

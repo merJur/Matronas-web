@@ -3,6 +3,7 @@ import { getBlogs, deleteBlog } from "../../../services/BlogServices";
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
+import { confirmAlert } from 'react-confirm-alert';
 
 const BlogListScreen = () => {
   const [blogs, setBlogs] = useState([]);
@@ -14,11 +15,32 @@ const BlogListScreen = () => {
     });
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDeleteBlog = (id) => {
     deleteBlog(id).then((deletedBlog) => {
       fetchBlogs();
     });
   };
+  
+
+  const handleDelete = (id) => {
+    confirmAlert({
+      title: 'Confirmación',
+      message: '¿Estás seguro que quieres borrar?',
+      buttons: [
+        {
+          label: 'Si',
+          onClick: (ev) => handleDeleteBlog(id)
+        },
+        {
+          label: 'No',
+          onClick: (ev) => console.log('NO')
+        }
+    ]
+    })
+   
+   
+   };
+    
 
   useEffect(() => {
     fetchBlogs();

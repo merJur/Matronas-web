@@ -1,0 +1,38 @@
+.blog-card-title-keywords{
+    background-color:  #ececec;
+    opacity: 0.8;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    width: 120%;
+    margin-left: -3rem;
+}
+.link-mobile{
+    color: #223e45;
+    width: 70rem ;
+    text-decoration: none;
+    background-color:  #ececec;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+@media (max-width: 1080px) {
+    .blog-card-title-keywords{
+        background-color:  #ececec;
+        opacity: 0.8;
+        border-radius: 15px;
+        padding: 0.5rem 1rem;
+        width: 220%;
+        margin-left: -4.5rem;
+        font-size: 20px;
+        
+    }
+    .link-mobile{
+        color: #223e45;
+        text-decoration: none;
+        background-color:  #ececec;
+        padding: 0.5rem;
+        border-radius: 12px;
+        margin:  -2rem ;
+     
+    }
+}    

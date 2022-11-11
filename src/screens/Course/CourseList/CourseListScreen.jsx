@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "./../../../context/AuthContext";
 import CourseCard from "../../../components/CourseCard/CourseCard";
 import "./CourseListScreen.css";
+import { confirmAlert } from 'react-confirm-alert';
 
 const CourseListScreen = () => {
   const [courses, setCourses] = useState([]);
@@ -15,9 +16,25 @@ const CourseListScreen = () => {
     });
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDeleteCourse = (id) => {
     deleteCourse(id).then((deletedCourse) => {
       fetchCourses();
+    });
+  };
+  const handleDelete = (id) => {
+    confirmAlert({
+      title: "Confirmación",
+      message: "¿Estás seguro que quieres borrar?",
+      buttons: [
+        {
+          label: "Si",
+          onClick: (ev) => handleDeleteCourse(id),
+        },
+        {
+          label: "No",
+          onClick: (ev) => console.log("NO"),
+        },
+      ],
     });
   };
 

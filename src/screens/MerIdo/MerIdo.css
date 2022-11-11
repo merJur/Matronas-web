@@ -21,9 +21,9 @@
     margin: 3rem auto;
 
 }
-.merido-card-ind{
+/* .merido-card-ind{
    
-}
+} */
 
 .card-picture-merido{
     border-radius: 50%;
@@ -52,6 +52,11 @@
         justify-content: space-around;
         margin: 3rem auto;
     
+    }
+    .merido-anchor{
+        text-decoration: none;
+        color:  #ececec;
+        
     }
 }
 
