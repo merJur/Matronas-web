@@ -1,6 +1,6 @@
 
 
-¡Muy buenas a todos! Idoia FForero <a href='https://www.linkedin.com/in/idoia-fdez-forero/'> y Mer Jurado os queremos compartir <a href='https://www.linkedin.com/in/mercedes-jurado-p%C3%A9rez/'> nuestro proyecto final del Bootcamp de Web Development de Ironhack.
+¡Bienvenidos!  <a href='https://www.linkedin.com/in/idoia-fdez-forero/'>Idoia FForero</a> y <a href='https://www.linkedin.com/in/mercedes-jurado-p%C3%A9rez/'>Mer Jurado</a> os queremos compartir  nuestro proyecto final del Bootcamp de Web Development de Ironhack.
 
 ¿Por qué Om Matronas?
 Tanto Mer como yo, somos madres. Y esta condición, es la que más nos ha marcado vitalmente. Las Matronas nos han acompañado y ayudado en esa maravillosa locura que es la maternidad.
@@ -13,7 +13,7 @@ Y en la parte técnica, el desarrollo de esta página web, se crea como un proye
     -ReactJS
     -Javascript
     -HTML & CSS
-    
+
 Y para la parte de Back-End hemos utilizado: 
     -NodeJS
     -ExpressJS
