@@ -1,10 +1,9 @@
 import axios from "axios";
 import { getAccessToken, logout } from "../store/AccessTokenStore";
-import '../../'
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
-    baseURL: process.env.API_URL || "http://localhost:3001/api",
+    baseURL: "https://lonely-lamb-raincoat.cyclic.app/" || "http://localhost:3001/api",
   });
 
   // interceptors response / request
